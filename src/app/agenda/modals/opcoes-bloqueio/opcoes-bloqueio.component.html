@@ -1,0 +1,70 @@
+<ion-content class="backgroundContentApp" scrollY="false">
+
+  <ion-row class="ion-justify-content-center ion-text-center colorTextApp">
+    <ion-col
+            style="font-size: 20px; padding-top: 30px;">{{ 'AGENDA.MODALS.OPCOESAGENDAMENTO.HORARIOBLOQUEADO' | translate }}</ion-col>
+  </ion-row>
+  <ion-row class="ion-justify-content-center ion-text-center colorTextApp">
+
+  </ion-row>
+  <ion-row style="padding: 5px; padding-top: 30px;">
+    <ion-col class="texto" style="text-align: center;">
+      <span style="color: white; border: 1px solid var(--ion-color-danger); padding: 10px; border-radius: 20px; background-color: var(--ion-color-danger);">
+      {{ dadosAgendamento.horarioInicio?.substr(0, 5) }} - {{ dadosAgendamento.horarioFim?.substr(0, 5) }}
+      </span>
+    </ion-col>
+  </ion-row>
+
+</ion-content>
+
+<ion-footer class="backgroundFooterApp">
+
+  <ion-row style="padding: 0 20px">
+
+    <ion-col size="12" style="padding: 5px">
+      <ion-button
+              color="transparent"
+              class="buttons"
+              expand="block"
+              type="submit"
+              (click)="editarObsBloqueioModal()"
+              style="color: var(--ion-color-primary); font-weight: bold;"
+      >
+        <ion-icon name="create" style="color: var(--ion-color-primary); padding-right: 5px;"></ion-icon>
+        {{ 'AGENDA.EDITAROBSERVACAO' | translate }}
+      </ion-button>
+    </ion-col>
+
+    <ion-col *ngIf="(this.parametrosLight.desmarcarAgendamentosEBloqueio && claims_Agenda.Desbloquear) || tipoLogin==='gestor'" size="12" style="padding: 5px">
+      <ion-button
+              color="transparent"
+              class="global-btn backgroundButtonApp"
+              expand="block"
+              type="submit"
+              (click)="removerBloqueioButton()"
+              style="color: var(--ion-color-danger) !important; border-color: var(--ion-color-danger); font-weight: bold;"
+      >
+        <ion-icon name="close"
+                  style="color: var(--ion-color-danger); padding-right: 2.5px;"></ion-icon>
+        {{ 'AGENDA.MODALS.OPCOESAGENDAMENTO.REMOVERBLOQUEIO' | translate }}
+      </ion-button>
+    </ion-col>
+
+  </ion-row>
+
+  <ion-row class="ion-justify-content-center"
+           style="background-color: var(--ion-color-primary); border-radius: 5px; margin: 20px;">
+
+    <ion-col size="12" class="ion-no-padding">
+      <ion-button
+              class="backgroundButtonApp"
+              expand="block"
+              type="submit"
+              (click)="close()"
+              style=" --box-shadow: none; margin: auto; height: 50px">
+        {{ 'AGENDA.MODALS.OPCOESAGENDAMENTO.VOLTARPARAAGENDA' | translate }}
+      </ion-button>
+    </ion-col>
+
+  </ion-row>
+</ion-footer>

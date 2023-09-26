@@ -1,0 +1,670 @@
+{
+  "project_info": {
+    "project_number": "814006119129",
+    "project_id": "one-beleza-3",
+    "storage_bucket": "one-beleza-3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:814006119129:android:4f3a16c6dc34225c4decc8",
+        "android_client_info": {
+          "package_name": "belvedere.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "814006119129-b11anfhpaade1m8e4bg1jnuc5gnlq4hg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "belvedere.app",
+            "certificate_hash": "1683c26496c895cb58e7a08916eac010d0b22e5c"
+          }
+        },
+        {
+          "client_id": "814006119129-m1mkt3rov0r9jb9enbvbtvu3mmr4ucaq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_rsi0TtiB2FFaApuYdKeYElEpcCLxOKc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "814006119129-m1mkt3rov0r9jb9enbvbtvu3mmr4ucaq.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "814006119129-0fjg9g7s43diabltns2ia94uiqaj4fil.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "terezinha.app"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:814006119129:android:30b4494f9dc594e84decc8",
+        "android_client_info": {
+          "package_name": "bobkids.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "814006119129-t3r1bkhp07rba226o6m54jskqqkr3ftt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "bobkids.app",
+            "certificate_hash": "6237d022123a375f535cdb4fb1bc569d29327915"
+          }
+        },
+        {
+          "client_id": "814006119129-m1mkt3rov0r9jb9enbvbtvu3mmr4ucaq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_rsi0TtiB2FFaApuYdKeYElEpcCLxOKc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "814006119129-m1mkt3rov0r9jb9enbvbtvu3mmr4ucaq.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "814006119129-0fjg9g7s43diabltns2ia94uiqaj4fil.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "terezinha.app"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:814006119129:android:b20fd122a82005ca4decc8",
+        "android_client_info": {
+          "package_name": "cappone.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "814006119129-tabnv8muqno6vicuvnucl93bi9rsqc85.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "cappone.app",
+            "certificate_hash": "709b0ae2fc76ae46b01002f4e2972101ccaa0c45"
+          }
+        },
+        {
+          "client_id": "814006119129-m1mkt3rov0r9jb9enbvbtvu3mmr4ucaq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_rsi0TtiB2FFaApuYdKeYElEpcCLxOKc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "814006119129-m1mkt3rov0r9jb9enbvbtvu3mmr4ucaq.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "814006119129-0fjg9g7s43diabltns2ia94uiqaj4fil.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "terezinha.app"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:814006119129:android:7620cb08a288eeb04decc8",
+        "android_client_info": {
+          "package_name": "club7.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "814006119129-08cjc0ror2vd39h9qugimpt7patosdn9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "club7.app",
+            "certificate_hash": "09befd5b01c86504fd0c8bded94451a8d7a87c88"
+          }
+        },
+        {
+          "client_id": "814006119129-m1mkt3rov0r9jb9enbvbtvu3mmr4ucaq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_rsi0TtiB2FFaApuYdKeYElEpcCLxOKc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "814006119129-m1mkt3rov0r9jb9enbvbtvu3mmr4ucaq.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "814006119129-0fjg9g7s43diabltns2ia94uiqaj4fil.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "terezinha.app"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:814006119129:android:ab2fb2c04b7f381e4decc8",
+        "android_client_info": {
+          "package_name": "dehlanio.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "814006119129-bgve473g140rnfm0g3de8rm9ih3qev8t.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "dehlanio.app",
+            "certificate_hash": "ad70c14213f719f6f37e18de16c041254f0312a4"
+          }
+        },
+        {
+          "client_id": "814006119129-m1mkt3rov0r9jb9enbvbtvu3mmr4ucaq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_rsi0TtiB2FFaApuYdKeYElEpcCLxOKc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "814006119129-m1mkt3rov0r9jb9enbvbtvu3mmr4ucaq.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "814006119129-0fjg9g7s43diabltns2ia94uiqaj4fil.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "terezinha.app"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:814006119129:android:832b11337e6eba1d4decc8",
+        "android_client_info": {
+          "package_name": "fogo.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "814006119129-r40a4166h6ap92tg0ot1peqv220215uv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "fogo.app",
+            "certificate_hash": "da0340e9e253ea692556d8b5e164ee3953624f3e"
+          }
+        },
+        {
+          "client_id": "814006119129-m1mkt3rov0r9jb9enbvbtvu3mmr4ucaq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_rsi0TtiB2FFaApuYdKeYElEpcCLxOKc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "814006119129-m1mkt3rov0r9jb9enbvbtvu3mmr4ucaq.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "814006119129-0fjg9g7s43diabltns2ia94uiqaj4fil.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "terezinha.app"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:814006119129:android:11f84e76ee0d6b584decc8",
+        "android_client_info": {
+          "package_name": "ienzo.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "814006119129-fnp350cckvv6k632fgj2ervh7cbpl88f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "ienzo.app",
+            "certificate_hash": "cded1b7b0d9e70256e3a6906c456b905e2cc0972"
+          }
+        },
+        {
+          "client_id": "814006119129-m1mkt3rov0r9jb9enbvbtvu3mmr4ucaq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_rsi0TtiB2FFaApuYdKeYElEpcCLxOKc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "814006119129-m1mkt3rov0r9jb9enbvbtvu3mmr4ucaq.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "814006119129-0fjg9g7s43diabltns2ia94uiqaj4fil.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "terezinha.app"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:814006119129:android:7bbe7f0ef06f765e4decc8",
+        "android_client_info": {
+          "package_name": "lestilo.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "814006119129-hje97fie9inu0httprlfqjo7l76metsp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "lestilo.app",
+            "certificate_hash": "983cd4d0880404f88d95be856c3d1a75643657ae"
+          }
+        },
+        {
+          "client_id": "814006119129-m1mkt3rov0r9jb9enbvbtvu3mmr4ucaq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_rsi0TtiB2FFaApuYdKeYElEpcCLxOKc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "814006119129-m1mkt3rov0r9jb9enbvbtvu3mmr4ucaq.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "814006119129-0fjg9g7s43diabltns2ia94uiqaj4fil.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "terezinha.app"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:814006119129:android:2a098ff10f1821ff4decc8",
+        "android_client_info": {
+          "package_name": "mee.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "814006119129-kpquipghsv9cpaf5lkfjpjvjngu2ci35.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "mee.app",
+            "certificate_hash": "eefa892b3cfbff723bb0654707f30a5f46b28e5a"
+          }
+        },
+        {
+          "client_id": "814006119129-m1mkt3rov0r9jb9enbvbtvu3mmr4ucaq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_rsi0TtiB2FFaApuYdKeYElEpcCLxOKc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "814006119129-m1mkt3rov0r9jb9enbvbtvu3mmr4ucaq.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "814006119129-0fjg9g7s43diabltns2ia94uiqaj4fil.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "terezinha.app"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:814006119129:android:ebe36b08a197de5f4decc8",
+        "android_client_info": {
+          "package_name": "richardbarbearia.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "814006119129-cegajhc1d1m9enp5rl6e46prpm8k3onq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "richardbarbearia.app",
+            "certificate_hash": "ab1d9340560de6c6c4c5cee5ba5483c8c402f5b5"
+          }
+        },
+        {
+          "client_id": "814006119129-m1mkt3rov0r9jb9enbvbtvu3mmr4ucaq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_rsi0TtiB2FFaApuYdKeYElEpcCLxOKc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "814006119129-m1mkt3rov0r9jb9enbvbtvu3mmr4ucaq.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "814006119129-0fjg9g7s43diabltns2ia94uiqaj4fil.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "terezinha.app"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:814006119129:android:4638a0cff6c2328d4decc8",
+        "android_client_info": {
+          "package_name": "rincones.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "814006119129-9obqoriar8rhnjtceo4g21mbo9kdgp1v.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "rincones.app",
+            "certificate_hash": "1af3b180f92a537ee3edebde09af14b0ef639364"
+          }
+        },
+        {
+          "client_id": "814006119129-m1mkt3rov0r9jb9enbvbtvu3mmr4ucaq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_rsi0TtiB2FFaApuYdKeYElEpcCLxOKc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "814006119129-m1mkt3rov0r9jb9enbvbtvu3mmr4ucaq.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "814006119129-0fjg9g7s43diabltns2ia94uiqaj4fil.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "terezinha.app"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:814006119129:android:88a23d881bdd99e84decc8",
+        "android_client_info": {
+          "package_name": "snoons.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "814006119129-ilq72d97mu4am2kv4t93kcb161m12f8o.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "snoons.app",
+            "certificate_hash": "a0793a332987746359acacbaf47d4d18e8dfdeec"
+          }
+        },
+        {
+          "client_id": "814006119129-m1mkt3rov0r9jb9enbvbtvu3mmr4ucaq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_rsi0TtiB2FFaApuYdKeYElEpcCLxOKc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "814006119129-m1mkt3rov0r9jb9enbvbtvu3mmr4ucaq.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "814006119129-0fjg9g7s43diabltns2ia94uiqaj4fil.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "terezinha.app"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:814006119129:android:83dfeb22bde554ba4decc8",
+        "android_client_info": {
+          "package_name": "terezinha.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "814006119129-7mg83a3rs3md73gi23dg22qpgr4nsoel.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "terezinha.app",
+            "certificate_hash": "f6fed0c373b3542e464d2d486ea203d778626350"
+          }
+        },
+        {
+          "client_id": "814006119129-m1mkt3rov0r9jb9enbvbtvu3mmr4ucaq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_rsi0TtiB2FFaApuYdKeYElEpcCLxOKc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "814006119129-m1mkt3rov0r9jb9enbvbtvu3mmr4ucaq.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "814006119129-0fjg9g7s43diabltns2ia94uiqaj4fil.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "terezinha.app"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:814006119129:android:7f4461cb4cb6213b4decc8",
+        "android_client_info": {
+          "package_name": "toca.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "814006119129-q144o3ia02b43g78ruih4a9gti8p9kq5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "toca.app",
+            "certificate_hash": "d777ee0929b46e83b01137fb4c4416022ce2e49a"
+          }
+        },
+        {
+          "client_id": "814006119129-m1mkt3rov0r9jb9enbvbtvu3mmr4ucaq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_rsi0TtiB2FFaApuYdKeYElEpcCLxOKc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "814006119129-m1mkt3rov0r9jb9enbvbtvu3mmr4ucaq.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "814006119129-0fjg9g7s43diabltns2ia94uiqaj4fil.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "terezinha.app"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:814006119129:android:32ffd6c2ce2632044decc8",
+        "android_client_info": {
+          "package_name": "will.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "814006119129-tpuds5e2foi80fo66qg24tosiq9381u2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "will.app",
+            "certificate_hash": "8ef97a4355112b605b61ced6c2edbe0d9a6f8233"
+          }
+        },
+        {
+          "client_id": "814006119129-m1mkt3rov0r9jb9enbvbtvu3mmr4ucaq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_rsi0TtiB2FFaApuYdKeYElEpcCLxOKc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "814006119129-m1mkt3rov0r9jb9enbvbtvu3mmr4ucaq.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "814006119129-0fjg9g7s43diabltns2ia94uiqaj4fil.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "terezinha.app"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

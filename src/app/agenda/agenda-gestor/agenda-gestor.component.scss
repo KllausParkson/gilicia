@@ -1,0 +1,149 @@
+ion-content[bgLogin] {
+  --background: var(--background-app);
+  background-color: #e9e9e9;
+}
+
+ion-content {
+  --background: transparent;
+  --color: var(--cor-texto-escuro);
+}
+
+ion-col[logoE] {
+  --background: var(--background-empresa-logo);
+}
+
+.appointmentColFirstRow {
+  margin-top: 7px;
+}
+
+.ver-mais {
+  padding-top: 24px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.appointmentColSecondRow {
+  margin-bottom: 0;
+}
+
+.search-row {
+  box-shadow: 0 1px 1px 0 var(--cor-cards-geral);
+  background-color: var(--cor-cards-geral);
+  margin: 1% auto 1% auto;
+  max-width: 440px;
+  border-radius: 10px;
+}
+
+.status-badge {
+  font-size: 12px;
+  color: white;
+  /*  padding: 2px; */
+  border-radius: 50px;
+  width: 90.47px;
+  padding: 0;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bloquear-ver-iniciar {
+  padding-top: 18px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.playButtonAndamento {
+  color: white;
+  border: 2px solid var(--ion-color-secondary);
+  padding: 5px;
+  background-color: var(--ion-color-secondary);
+  border-radius: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  //padding-top: 15px;
+}
+
+.playButton {
+  color: var(--ion-color-primary);
+  border: 2px solid var(--ion-color-primary);
+  padding: 5px;
+  // background-color: var(--ion-color-secondary);
+  border-radius: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.confirmButton {
+  color: var(--ion-color-secondary);
+  //border: 2px solid var(--ion-color-primary);
+  padding: 5px;
+  // background-color: var(--ion-color-secondary);
+  border-radius: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.addButtonFixed {
+  position: absolute;
+  left: 50%;
+  //top: 88.5%; definido no html
+  transform: translate(-50%, -50%);
+}
+
+.addButtonFixedText {
+  text-align: center;
+  white-space: nowrap;
+}
+
+.elipses {
+  position: absolute;
+  top: 40%;
+  left: 95%;
+  height: 30%;
+  width: 5%;
+}
+
+ion-item {
+  --min-height: 0px;
+  --inner-border-width: 0 0 0 0;
+}
+
+.autocomplete {
+  width: 100%;
+  border: none;
+}
+
+.pesquisa-container {
+  font-size: 12px;
+}
+
+.pesquisa-container ion-grid {
+  border: 1px solid var(--cor-texto-escuro);
+}
+
+ion-refresher {
+  position: absolute;
+  top: 10px;
+  z-index: 10;
+}
+
+.agendamento {
+  max-width: 440px;
+  margin: 10px auto 0 auto;
+  -webkit-padding-end: 0 !important;
+  padding-inline-end: 0 !important;
+}
+
+.aviso-nao-tem {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  color: var(--cor-texto-escuro);
+  padding-left: 4%;
+  padding-right: 4%;
+}
+
+#btnAgendamento ion-button {
+  --background: var(--cor-fundo-botaoAgendar);
+}

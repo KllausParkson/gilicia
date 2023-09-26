@@ -1,0 +1,65 @@
+<ion-header mode="md">
+  <ion-toolbar>
+    <ion-title style="color: var(--cor-texto-barraTopo)"
+      >{{ "LOGIN.REGISTER.BEWELCOME" | translate }}</ion-title
+    >
+    <ion-buttons slot="primary">
+      <ion-button (click)="closeModal()">
+        <ion-icon
+          name="close"
+          slot="icon-only"
+          style="transform: scale(1.5); color: var(--cor-texto-barraTopo)"
+        ></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-grid mode="md" style="margin: 3%">
+    <!--    <div class="ion-text-end">-->
+    <!--      <small>-->
+    <!--        <span style="color: red;">*</span>-->
+    <!--        <span style="color: #616161;">Campos Obrigatórios</span>-->
+    <!--      </small>-->
+    <!--    </div>-->
+    <ion-row style="text-align: justify">
+      <span style="color: #616161; font-size: 14px">
+        Não foi possível obter seu email anteriormente, por favor nos informe abaixo o seu email.
+      </span>
+    </ion-row>
+    <ion-row class="ion-justify-content-center">
+      <form *ngIf="getEmailForm" [formGroup]="getEmailForm">
+        <ion-col >
+          <ion-row style="text-align: justify">
+            <span style="color: #616161; font-size: 14px">
+              <br />Por favor, nos informe seu nome email para continuarmos seu cadastro.
+            </span>
+          </ion-row>
+        </ion-col>
+        <ion-col >
+          <kendo-floatinglabel text="* Insira seu email ">
+            <input 
+              class="text_box"
+              kendoTextBox
+              formControlName="email"
+            />
+          </kendo-floatinglabel>
+        </ion-col>
+      </form>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+<ion-footer mode="md">
+  <div class="footer-buttons">
+    <ion-button
+      (click)="saveEmail()"
+      color="primary"
+      expand="block"
+      type="submit"
+      [disabled]="!getEmailForm.valid"
+      fill="clear"
+    >
+      {{ "LOGIN.REGISTER.REALIZARCADASTRO" | translate }}
+    </ion-button>
+  </div>
+</ion-footer>

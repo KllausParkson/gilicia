@@ -1,0 +1,120 @@
+ion-grid {
+  height: 95%;
+  overflow-y: auto;
+}
+ion-grid.data-toolbar {
+    margin: 0 0;
+    background-color: #fff;
+    border-radius: 8px;
+  }
+  
+  .segment {
+    background-color: var(--ion-color-primary);
+    height: 36px;
+  }
+  
+  .calendar-container {
+    height: 36px;
+    background-color: white;
+    border: 1px solid var(--ion-color-primary);
+    border-radius: 10px;
+    align-items: center;
+    align-content: center;
+    padding: 0;
+  
+    .icon-calendar {
+      max-width: 25px;
+      cursor: pointer;
+    }
+  
+    ion-icon {
+      transform: scale(2);
+      margin-left: 1px;
+      color: var(--ion-color-primary);
+    }
+  
+    span {
+      margin: 5px;
+      cursor: pointer;
+      color: var(--cor-texto-escuro);
+      font-size: 14px;
+    }
+  
+    .date-label {
+      margin-right: 10px;
+    }
+  
+    .buttons {
+      right: 0;
+      height: 100%;
+      max-width: 90px;
+      min-width: 90px;
+  
+      .arrow-button-prev, .arrow-button-next {
+        right: 0;
+        height: 100%;
+        border: 0.5px solid #d4d3d3;
+        text-align: center;
+        margin: 0;
+        padding-top: 5px;
+  
+        i {
+          transform: scale(1.5)
+        }
+      }
+  
+      .arrow-button-prev {
+        border-radius: 10px 0 0 10px;
+      }
+  
+      .arrow-button-next {
+        border-radius: 0 10px 10px 0;
+      }
+    }
+  
+    .buttons:first-child {
+      height: 100%;
+    }
+  
+    .icon {
+      color: var(--cor-texto-escuro);
+    }
+  
+  }
+  .date {
+    height: 125px;
+    position: sticky;
+  }
+  
+  .index {
+    padding-right: 10px;
+    font-weight: bold;
+  }
+  
+  ion-card {
+    display: block;
+    border-radius: 8px;
+  
+    .label-font-size {
+      font-size: 16px;
+    }
+  }
+  
+  @media screen and (max-width: 380px) {
+    .index {
+      font-size: 14px;
+    }
+  
+    ion-card {
+      padding: 0;
+  
+      .label-font-size {
+        font-size: 14px;
+      }
+    }
+  
+    ion-card-content {
+      padding: 10px;
+    }
+  }
+  

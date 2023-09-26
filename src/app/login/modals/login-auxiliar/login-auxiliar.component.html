@@ -1,0 +1,118 @@
+<ion-header mode="md">
+  <ion-toolbar>
+    <ion-title style="color: var(--cor-texto-barraTopo)">
+      {{ "LOGIN.AUXILIAR.TITLE" | translate }}
+    </ion-title>
+    <ion-buttons slot="primary">
+      <ion-button (click)="closeModal()">
+        <ion-icon
+          name="close"
+          slot="icon-only"
+          style="transform: scale(1.5); color: var(--cor-texto-barraTopo)"
+        ></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="backgroundContentApp" scrollY="false">
+  <div>
+    <ion-row class="ion-padding-top colorTextApp">
+      <ion-col size="12" style="padding: 10px 10px 0 10px">
+        <kendo-floatinglabel
+          text="{{ 'LOGIN.EMAIL' | translate }}"
+          class="colorTextApp"
+          style=" font-size: 16px !important"
+        >
+          <div class="input">
+            <ion-input
+              type="email"
+              [(ngModel)]="email"
+              class="LoginInput"
+            ></ion-input>
+          </div>
+        </kendo-floatinglabel>
+        <!-- <ion-label style="margin-left: 5px; color: var(--ion-color-primary);">{{'LOGIN.EMAIL' | translate}}</ion-label> -->
+      </ion-col>
+    </ion-row>
+  </div>
+  <div class="aviso">
+    <ion-row class="colorTextApp">
+      <ion-col class="aviso" size="12" style="font-size: 12px">
+        <ion-icon
+          name="alert-circle-outline"
+          style="
+            transform: scale(2.1);
+            padding-right: 4px;
+            font-size: 11px;
+            padding-top: 2px;
+          "
+        ></ion-icon>
+        {{ "LOGIN.AUXILIAR.EMAILMENSAGEM" | translate }}
+      </ion-col>
+    </ion-row>
+  </div>
+  <ion-row class="colorTextApp">
+    <ion-col size="12" style="padding: 0 10px 0 10px">
+      <kendo-floatinglabel
+        text="{{ 'LOGIN.SENHAAUXILIAR' | translate }}"
+        class="textConfig colorTextApp"
+        
+      >
+        <div class="input">
+          <ion-input
+            id="senha"
+            type="password"
+            [(ngModel)]="senha"
+            class="LoginInput"
+          ></ion-input>
+        </div>
+      </kendo-floatinglabel>
+    </ion-col>
+  </ion-row>
+  <div class="aviso">
+    <ion-row class="colorTextApp">
+      <ion-col class="aviso" size="12" style="font-size: 12px">
+        <ion-icon
+          name="alert-circle-outline"
+          style="
+            transform: scale(2.1);
+            padding-right: 4px;
+            font-size: 11px;
+            padding-top: 2px;
+          "
+        ></ion-icon>
+        {{ "LOGIN.AUXILIAR.SENHAMENSAGEM" | translate }}
+      </ion-col>
+    </ion-row>
+  </div>
+</ion-content>
+
+<ion-footer class="backgroundFooterApp">
+  <ion-row class="global-footer-row">
+    <ion-col size="6" class="global-footer-col-left">
+      <ion-button
+        color="#ffffff00"
+        class="back global-back-btn"
+        type="cancel"
+        (click)="closeModal()"
+        expand="block"
+      >
+        <span style="color: var(--cor-texto-escuro)">{{
+          "LOGIN.AUXILIAR.BUTTON.CANCELAR" | translate
+        }}</span>
+      </ion-button>
+    </ion-col>
+    <ion-col size="6" class="global-footer-col-right">
+      <ion-button
+        color="primary"
+        (click)="login()"
+        class="submit-btn global-footer-btn"
+        expand="block"
+        type="button"
+      >
+        <span>{{ "LOGIN.AUXILIAR.BUTTON.LOGIN" | translate }}</span>
+      </ion-button>
+    </ion-col>
+  </ion-row>
+</ion-footer>

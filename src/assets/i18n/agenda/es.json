@@ -1,0 +1,545 @@
+{
+	"AGENDA": {
+		"1SERVICO": "Solo se puede reservar 1 servicio empezando por el profesional",
+		"5SERVICOS": "Solo puedes reservar hasta 5 servicios",
+		"ADDOBSERVACAO": "Añadir nota",
+		"AGENDADO": "Programado",
+		"AGENDAGESTOR": {
+			"PESQUISA": {
+				"CELULAR": "Móvil",
+				"EMAIL": "Email",
+				"NOME": "Nombre"
+			},
+			"PESQUISAR": "Buscador profesional",
+			"SELECIONECOLABORADOR": "Seleccione un colaborador para consultar su horario."
+		},
+		"AGENDAMENTO": "Planificación",
+		"AGENDAPROFISSIONAL": {
+			"BLOQUEIO": "Tiempo bloqueado",
+			"CONCLUIDO": "Terminado",
+			"EMANDAMENTO": "En proceso",
+			"HORARIOLIVRE": "Tiempo libre",
+			"INICIARATENDIMENTO": "Empieza el servicio",
+			"NOVOAGENDAMENTOTEXT": "¿Quiere iniciar una nueva cita?",
+			"PROXIMO": "Siguiente"
+		},
+		"AGENDAR": "Crear",
+		"APPOINTMENT": {
+			"ANDAMENTO": "En proceso",
+			"AS": "la",
+			"CONFIRMARALERT": {
+				"HEADER": "confirmación",
+				"MESSAGE": "¿Quieres confirmar esta cita?",
+				"NO": "No",
+				"YES": "Sí"
+			},
+			"DESMARCAR": "Cancelar",
+			"DESMARCARALERT": {
+				"CANCELAR": "No",
+				"EXCLUIR": "Sí",
+				"HEADER": "Deseleccionar horario",
+				"HEADERBLOQUEIO": "Desbloquear horario",
+				"MESSAGE": "¿Está seguro de que desea anular la selección de esta programación?",
+				"MESSAGEBLOQUEIO": "¿Estás seguro de que quieres desbloquear esta vez?",
+				"REMOVERBLOQUEIO": "Desbloquear"
+			},
+			"EDITAR": "Editar",
+			"EXIBIRDETALHESALERT": {
+				"DETALHES": "Detalles del servicio"
+			},
+			"FINALIZADO": "Terminado",
+			"MARCADO": "Marcado",
+			"PROFESSIONAL": "Profesional",
+			"SERVICE": "Servicio"
+		},
+		"ATE": "a",
+		"ATENDIMENTO": "Servicio al cliente",
+		"BLOQUEADO": "Bloqueado",
+		"BLOQUEAR": "Cuadra",
+		"BLOQUEIO": "Bloquear",
+		"BUSCANAORETORNOURESULTADO": "La búsqueda no arrojó resultados",
+		"BUTTON": {
+			"AGENDAR": "Agendar",
+			"CANCELAR": "Cancelar",
+			"CONFIRMAR": "Confirmar",
+			"CRIAR": "Crear"
+		},
+		"CADASTRORAPIDO": {
+			"MODAL": {
+				"ALERTA": {
+					"CELULAREXIST": "¡Móvil ya registrado!",
+					"CPFEXIST": "¡CPF ya está registrado!",
+					"EMAILEXIST": "¡Correo electrónico ya registrado!"
+				}
+			}
+		},
+		"CALENDARIO": {
+			"ABRIL": "Abril",
+			"AGOSTO": "Agosto",
+			"DEZEMBRO": "Diciembre",
+			"DOMINGO": "Domingo",
+			"FEVEREIRO": "Febrero",
+			"HOJE": "Hoy",
+			"JANEIRO": "Enero",
+			"JULHO": "Julio",
+			"JUNHO": "Junio",
+			"MAIO": "Mayo",
+			"MARCO": "Marzo",
+			"NOVEMBRO": "Noviembre",
+			"OUTUBRO": "Octubre",
+			"QUARTA": "Miércoles",
+			"QUINTA": "Jueves",
+			"SABADO": "Sábado",
+			"SEGUNDA": "Lunes",
+			"SETEMBRO": "Septiembre",
+			"SEXTA": "viernes",
+			"TERCA": "Martes"
+		},
+		"CONFIRMADO": "Confirmado",
+		"CONFIRMAR": "Confirmar",
+		"DEFAULTERROR": "¡Ocurrió un error!",
+		"DESBLOQUEAR": "Desbloquear",
+		"DOMINGO": "Domingo",
+		"EDITAROBSERVACAO": "Editar nota",
+		"ERROR": {
+			"HORARIOINTERVALO": "¡Error! ¡Tiempo de intervalo!",
+			"HORARIONAODISPONIVEL": "¡Error! ¡Tiempo no disponible!",
+			"LOADINGAGENDAMENTO": "¡Error! ¡Se ha producido un error al cargar los horarios! Inténtalo de nuevo",
+			"NAOPERMITEENCAIXE": "¡Error! ¡No se permite el montaje!",
+			"NAOPERMITESIMULTANEIDADE": "¡Error! ¡No se permite la concurrencia!"
+		},
+		"ERROTERMINAL": "Su sesión ha expirado, inicie sesión nuevamente",
+		"EXECUTADO": "Terminado",
+		"FINANCEIRO": {
+			"HISTORICO-CLIENTE": {
+				"CLIENTE": "Cliente"
+			}
+		},
+		"FORCELOGOUT": "Saliendo de tu cuenta...",
+		"HORARIOLIVRE": "Tiempo libre",
+		"INATIVO": {
+			"CLIENTEALERT": {
+				"HEADER": "AVISO",
+				"MESSAGE": "El acceso a la información de esta empresa no está disponible temporalmente. Póngase en contacto con la empresa por teléfono o WhatsApp. Gracias."
+			},
+			"GESTORALERT": {
+				"HEADER": "AVISO",
+				"MESSAGE": "Aplicación bloqueada temporalmente. Pida a la dirección que se ponga en contacto con One Beleza. Gracias."
+			},
+			"PROFISSIONALALERT": {
+				"HEADER": "AVISO",
+				"MESSAGE": "Aplicación bloqueada temporalmente. Pida a la dirección que se ponga en contacto con One Beleza. Gracias."
+			}
+		},
+		"INICIAR": "Empezar",
+		"LANCADOS": "listados",
+		"LOADINGAGENDAMENTO": "Llevar...",
+		"MOBILIDADE": "Vía cliente",
+		"MODAL": {
+			"NOVOAGENDAMENTO": {
+				"DATASELECIONADA": "Fecha",
+				"HORARIOCHECK": "Hora",
+				"SALAO": "Peluquería",
+				"SERVICOCHECK": "Servicio"
+			},
+			"PRIMEIROACESSO": "Para brindarle un mejor servicio, debe aceptar nuestros Términos y condiciones y nuestra Política de privacidad"
+		},
+		"MODALEDITARAGENDAMENTO": {
+			"DATA": "Fecha *",
+			"HORARIOSDISP": "Horarios disponibles *",
+			"PROFISSIONAL": "Profesional *",
+			"SERVICO": "Servicio *",
+			"TITLE": "Editar horario"
+		},
+		"MODALNOVOAGENDAMENTO": {
+			"AGENDACEL": "Agenda del teléfono",
+			"DEFAULTITEM": "¿Tiene alguna preferencia profesional?",
+			"ESCOLHAPROFISSIONAL": "Seleccione el profesional",
+			"ESCOLHERPROFISSIONAL": "Elija Profesional",
+			"ESCOLHERSERVICOS": "Elija Servicios",
+			"NOMESERVICO": "Servicio",
+			"PESQUISA": "Buscar",
+			"SALAO": "Sala",
+			"TITLE": "Hacer citas",
+			"TITLECONFIRMA": "Confirmar cita"
+		},
+		"MODALNOVOBLOQUEIO": {
+			"TITLE": "Bloquear"
+		},
+		"MODALS": {
+			"ALERT": {
+				"MENSAGEM": {
+					"DESMARCAR": "¿Está seguro de que desea eliminar esta etiqueta?"
+				},
+				"NAO": "No",
+				"SIM": "Sí"
+			},
+			"AVALIARAPPMODAL": {
+				"AVALIARDEPOIS": "Evaluar más tarde",
+				"BUTTON": {
+					"AVALIARAGORA": "Califícalo ahora"
+				},
+				"QUESTION": "¿Estás disfrutando de APLICATIVO?",
+				"TEXT": "Evaluar la app  en la tienda"
+			},
+			"CADASTRORAPIDO": {
+				"CAMPOSOBRIGATORIOS": "Campos obligatorios",
+				"CANCEL": "Cancelar",
+				"CELULAR": "Celular",
+				"CONFIRM": "Confirmar",
+				"CPF": "Nº de identificación",
+				"EMAIL": "E-mail",
+				"EMAILAUTO": "Correo electrónico automático",
+				"MENSAGEM": "El cliente utilizará el siguiente correo electrónico para acceder a la aplicación One. Por lo tanto, intente ingresar la dirección de correo electrónico real del cliente.",
+				"NOME": "Nombre",
+				"SUCCESS": "¡Registro exitoso!",
+				"TITULO": "Registro de cliente rápido",
+				"VALIDATION": {
+					"CPF": "¡Error! ¡CPF no válido!",
+					"EMAIL": "Introduzca una dirección de correo electrónico válida o déjela en blanco para generar un correo electrónico automático.",
+					"REQUIRED": {
+						"CELULAR": "Se requiere teléfono celular",
+						"NOME": "El nombre es obligatorio"
+					}
+				}
+			},
+			"CONFIRMACAOAGENDAMENTO": {
+				"TEXT": "Su salón y su profesional recibirán una notificación confirmando la programación del servicio.",
+				"TITLE": "¡Servicio programado!",
+				"VOLTARPARAAGENDA": "Volver al calendario"
+			},
+			"DETALHESCLIENTE": {
+				"TITLE": "Detalles del cliente"
+			},
+			"DIASRETORNO": {
+				"INCLUIRDETALHESCLIENTE": "Agregar detalles del cliente",
+				"INCLUIRDIASRETORNOCLIENTE": "Dias para volver",
+				"INFO": "Incluya detalles sobre su cliente para que la recepcionista y otros empleados tengan acceso",
+				"SALVAR": "Guardar"
+			},
+			"EDITARAGENDAMENTOCLIENTEMODAL": {
+				"DATA": "Fecha",
+				"EDITARAGENDAMENTO": "Editar horario",
+				"HORARIOSDISPONIVEIS": "Horarios disponibles",
+				"PROFISSIONAL": "Profesional",
+				"SALVAR": "Guardar",
+				"SERVICO": "Servicio"
+			},
+			"INFOSEMPRESAMODAL": {
+				"SOBRE": "Info",
+				"TELEFONE": "Teléfono"
+			},
+			"LANCARSERVICOPRODUTO": {
+				"PESQUISA": {
+					"CELULAR": "Móvil",
+					"EMAIL": "Email",
+					"NOME": "Nombre"
+				}
+			},
+			"LIECONCORDO": "He leido y estoy de acuerdo con los terminos",
+			"NOVOAGENDAMENTO": {
+				"ADICIONARNAAGENDA": "¿Agregar horario al calendario?",
+				"AGENDAR": "Confirmar",
+				"CANCELAR": "Cancelar",
+				"CLIENTESEMPERMISSAOAGENDAMENTO": "El establecimiento ha desactivado la reserva a través del cliente.",
+				"CONCLUIR": "Completo",
+				"DANGER": "¡Ocurrió un error!",
+				"DATAPASSADA": "Programación para una fecha pasada.",
+				"EXISTEAGENDAMENTO": "Error al programar. ¡El tiempo elegido estaba ocupado!",
+				"EXPLICACAOBLOQUEIO": "Agregue una nota para el tiempo bloqueado aquí (opcional)",
+				"HORARIOINICIO": "Hora de inicio",
+				"HORARIONAODISPONIVEL": "Tiempo no disponible",
+				"HORARIOS": "Este empleado no tiene más horas hoy",
+				"HORARIOTERMINO": "Hora de finalización",
+				"INADIMPLENTE": "Por favor, consulte con la propiedad para hacer una cita.",
+				"INCLUIR": "Incluir",
+				"MARQUEOSERVICO": "Verifique primero el servicio anterior para liberar los tiempos de este.",
+				"NAOPERMITESIMULTANEIDADE": "La propiedad ha deshabilitado la concurrencia entre reservas.",
+				"PROXIMO": "Siguiente",
+				"SELECIONARINTERVALOBLOQUEIO": "Seleccionar intervalo de bloqueo",
+				"SEMPROFISSIONAISDIA": "No hay profesionales que realicen este servicio en este día.",
+				"SERVICOJAMARCADO": "Solo se puede reservar un servicio de suscripción a la vez. Espere a que se ejecute el servicio actual para programarlo nuevamente o desmarque el existente para programarlo en otro momento.",
+				"SUCESSO": "Programación realizada con éxito",
+				"TEXT": "¿Quieres insertar las citas en el calendario de tu teléfono? Seleccione a continuación los horarios deseados, si no lo desea, simplemente haga clic en siguiente.",
+				"TEXTOVISITANTE": "Para hacer citas, regístrese en nuestro sistema.",
+				"VISITANTE": "Usuario invitado",
+				"VOLTAR": "Regreso"
+			},
+			"NOVOAGENDAMENTOPROFISSIONAL": {
+				"AGENDAR": "Libro",
+				"ALLCLIENTSABSENT": "No hay clientes presentes.",
+				"CLIENTE": "Cliente",
+				"CLIENTESPRESENTES": "Clientes presentes",
+				"CONFIRMAREDICAO": "Confirmar edición",
+				"DATASELECIONADA": "Fecha seleccionada",
+				"ESCOLHERHORARIO": "Elige el tiempo",
+				"HORARIOFIM": "hora de finalización",
+				"HORARIOINICIO": "Hora de inicio",
+				"HORARIOSDISPONIVEIS": "Horarios disponibles",
+				"INFOCLIENTE": {
+					"CODIGO": "Código",
+					"EMAIL": "E-mail",
+					"NAME": "Nombre",
+					"PHONE": "Celular"
+				},
+				"INFOSERVICO": {
+					"DURATION": "Duración",
+					"GROUP": "Grupo",
+					"NAME": "Nombre",
+					"PRICE": "Precio"
+				},
+				"NAOCADASTRADO": "No registrado",
+				"OBSERVACAO": "Nota",
+				"PERSONALIZARHORARIO": "Personalizar horario",
+				"REQUIREDFIELD": "Campos obligatorios",
+				"SEMHORARIOSDISPONIVEIS": "No hay horas disponibles.",
+				"SERVICO": "Servicio",
+				"TITLE": "Calendario",
+				"TITLEEDICAO": "Editar horario"
+			},
+			"OPCOESAGENDAMENTO": {
+				"CLIENTE": "Cliente",
+				"CRIARAGENDAMENTO": "Crear horario",
+				"CRIARBLOQUEIO": "Crear bloque",
+				"DATA": "Fecha",
+				"DESMARCAR": "Marcar",
+				"EDITAR": "Editar",
+				"EDITARAGENDAMENTO": "Editar horario",
+				"EDITARDETALHESCLIENTE": "Días de devolución/Detalles del cliente\n",
+				"HORARIO": "Horario",
+				"HORARIOBLOQUEADO": "Tiempo bloqueado",
+				"HORARIOLIVRE": "Tiempo libre",
+				"INICIO": "Primero",
+				"OBSERVACAO": "Nota",
+				"OUTROSAGENDAMENTOS": "Otras citas",
+				"REGISTRARSERVICOPRODUTOSEMFICHA": "Registrar servicio/producto",
+				"REMOVERBLOQUEIO": "Desbloquear",
+				"RESUMOAGENDAMENTO": "Ver servicios / productos lanzados",
+				"SERVICO": "Servicio",
+				"TERMINO": "Final",
+				"TITLE": "Opciones de programación",
+				"VERMAIS": "Ver más",
+				"VOLTARPARAAGENDA": "Volver a la agenda"
+			},
+			"OUTROSAGENDAMENTOS": {
+				"FECHAR": "cerca"
+			},
+			"RESUMOAGENDAMENTO": {
+				"EDITARQUIMICA": {
+					"CONFIRMAR": "Confirmar",
+					"OBSERVACAO": "Nota",
+					"PARTES": "Fiestas",
+					"TITLE": "Editar Química"
+				},
+				"EXIBENOMEALERT": {
+					"BUTTON": {
+						"FECHAR": "cerca"
+					},
+					"TITLE": {
+						"PRODUTO": "Descripción del producto",
+						"SERVICO": "Descripción del servicio"
+					}
+				},
+				"FECHARMODAL": {
+					"BUTTON": "Cerrar"
+				},
+				"FINALIZAATENDIMENTO": {
+					"BUTTON": "Servicio final"
+				},
+				"LANCARSERVICOPRODUTO": {
+					"ADICIONARQUIMICA": "Agregar química",
+					"ALERTJAEXISTENTE": {
+						"CANCELAR": "No",
+						"CONFIRMAR": "Sí",
+						"MENSAGEM": "Uno de los servicios/productos elegidos ya se ha lanzado anteriormente. Quieres proceder?"
+					},
+					"ALERTNENHUMLANCAMENTO": {
+						"MESSAGE": "¡No se han lanzado servicios o productos!",
+						"TITLE": "¿Estás seguro?"
+					},
+					"ALERTREMOCAO": {
+						"CANCELARREMOCAO": "Cancelar",
+						"CONFIRMARREMOCAO": "Eliminar",
+						"HEADER": "¿Quiere eliminar el servicio / producto lanzado?",
+						"MESSAGE": "Si el servicio / producto seleccionado continúa, no se publicará en el archivo del cliente."
+					},
+					"ALERTREMOCAOPRODUTO": {
+						"HEADER": "¿Quieres eliminar el producto liberado?"
+					},
+					"ALERTREMOCAOSERVICO": {
+						"HEADER": "¿Quieres eliminar el servicio lanzado?"
+					},
+					"BUTTON": "Agregar servicio o producto",
+					"BUTTONTITLE": "Añadir",
+					"CLIENTE": "Cliente",
+					"DESEJAADICIONARAUXILIAR": "¿Quieres añadir un ayudante?",
+					"ELEMENTOAUXILIAR": "Ayudante",
+					"FINALIZARBUTTON": "Servicio final",
+					"HORARIO": "Horario",
+					"HORARIOAGENDADO": "Hora",
+					"INFOAGENDAMENTO": "Citas de clientes:",
+					"LISTAQUIMICAS": "Química",
+					"MENSAGEMESTOQUE": "¡Se ha alcanzado el límite de existencias!",
+					"NAO": "No",
+					"OBSERVACAO": "Nota",
+					"PESQUISA": {
+						"CODIGOPRODUTO": "Código de barras",
+						"DURACAOSERVICO": "Duración",
+						"NOMEPRODUTO": "Nombre",
+						"NOMESERVICO": "Nombre",
+						"PRECOPRODUTO": "Precio",
+						"PRECOSERVICO": "Precio"
+					},
+					"PESQUISARAUXILIAR": "Búsqueda auxiliar",
+					"PESQUISARPRODUTO": "Buscar producto",
+					"PESQUISARSERVICO": "Servicio de búsqueda",
+					"PRECO": "Precio",
+					"PRODUTOPESQUISADOQUIMICA": {
+						"ADICIONAR": "Añadir"
+					},
+					"PRODUTOS": "Productos ",
+					"QUANTIDADE": "Cantidad",
+					"RAPIDO": "Lanzar servicio rápido",
+					"SEMLANCAMENTOS": "¡Ningún servicio o producto lanzado!",
+					"SERVICO": "Servicio",
+					"SERVICOPESQUISADO": {
+						"REGISTRAR": "Registro"
+					},
+					"SERVICOS": "Servicios",
+					"SERVICOSPRODUTOS": "Servicio/Producto",
+					"SIM": "Sí",
+					"SUBTOTAL": "Total parcial",
+					"SUCCESS": "¡Servicio agregado exitosamente!",
+					"SUCCESSPRODUTO": "Producto agregado exitosamente!",
+					"TITLELANCAR": "Lanzar servicio o producto",
+					"TITLEREGISTRAR": "Registro",
+					"TITLERESUMO": "Fecha del Cliente",
+					"TOAST": {
+						"COMANDAFECHADA": "¡Error! ¡No se permite el registro de servicios para comandos cerrados!",
+						"PACOTESERVICOENCONTRADO": "¡Valor del paquete aplicado para el servicio!",
+						"SUCESSO": "¡Registrado con éxito!"
+					},
+					"TOTAL": "Total"
+				},
+				"LANCARSERVICOPRODUTORAPIDO": {
+					"BUTTON": "Lanzar servicio programado"
+				},
+				"LANCARTODOSSERVICOS": {
+					"MENSAGE": "¿Desea agregar todos los servicios programados para este cliente hoy?",
+					"NAO": "No",
+					"SIM": "Sí",
+					"TITLE": "Lanzar todos los servicios"
+				},
+				"NOVAQUIMICA": {
+					"OBSERVACAO": "Nota",
+					"PARTES": "Fiestas",
+					"REGISTROQUIMICA": "Registrar Química"
+				},
+				"POPOVERATENDIMENTO": {
+					"ALERT": {
+						"MESSAGE": "¿Quieres borrar?",
+						"NAO": "No",
+						"SIM": "Sí"
+					},
+					"CANCELAR": "Cancelar",
+					"CONFIRMAR": "Confirmar",
+					"DESEJAEXCLUIR": "¿Quieres borrar?",
+					"DESEJAEXCLUIRTODOSITENS": "¿Desea eliminar todos los elementos?",
+					"EDITAR": "Editar información",
+					"EXCLUIR": "Eliminar elemento",
+					"EXCLUIR'": "",
+					"EXCLUIRTODOSITENS": "Eliminar todos los elementos"
+				}
+			},
+			"SERVICOASSINATURA": {
+				"CANCELAR": "Cancelar",
+				"MARCADO": "Servicio ya programado",
+				"REMARCAR": "Reprogramar",
+				"TEXTOPRIPARTE": "Ya tienes una cita de servicio",
+				"TEXTOQUARPARTE": "solo después de haber hecho lo que está programado, o puede optar por desmarcarlo para marcar este.",
+				"TEXTOSEGPARTE": "En el día",
+				"TEXTOTERPARTE": " La suscripción le permite programar otra"
+			},
+			"SERVICOOUPROFISSIONAL": {
+				"NOVO": "Nuevo",
+				"PROFISSIONAL": "Elija Profesional",
+				"SERVICO": "Elija el servicio"
+			}
+		},
+		"NAOEXISTEMHORARIOS": "No hay horas registradas para el día actual.",
+		"NAOREGISTRADO": "No registrado",
+		"NEXTAPPOINTMENTS": "Tus próximas citas",
+		"NOAPPOINTMENTS": "No tiene citas para los próximos 30 días.",
+		"OBSERVACAO": "Nota",
+		"PERFIS": {
+			"AUXILIAR": "Asistente",
+			"CLIENTE": "Cliente",
+			"GESTOR": "Gerente",
+			"PROFISSIONAL": "Profesional"
+		},
+		"PERMISSION": "¡No está permitido registrar nuevos clientes!",
+		"POLITICA": "Política de privacidad",
+		"PRECOADEFINIR": "No definido",
+		"PRESENTE": "Presente",
+		"QUARTA": "Miércoles",
+		"QUINTA": "Jueves",
+		"REGISTRADO": "Registrado",
+		"SABADO": "Sábado",
+		"SEGUNDA": "Lunes",
+		"SERVICOPROFISSIONAL": {
+			"TITLE": "Iniciar nueva cita"
+		},
+		"SEXTA": "Viernes",
+		"TERCA": "Martes",
+		"TERMOS": "Términos y condiciones",
+		"TITLE": "Horario",
+		"VERMAIS": "Ver más",
+		"VERSERVICOPRODUTOS": "Ver servicios / productos"
+	},
+	"LOGIN": {
+		"COLABORADOR": "El éxito",
+		"ESCOLHERESTABELECIMENTO": "Elija otro establecimiento",
+		"ESCOLHERESTABELECIMENTOBARBEARIA": "Peluquería",
+		"ESCOLHERESTABELECIMENTOESTETICA": "Estética",
+		"ESCOLHERESTABELECIMENTOSALAO": "Sala",
+		"ESCOLHERESTABELECIMENTOTATUAGEM": "Tatuaje",
+		"MODALESTABELECIMENTO": {
+			"TITLE": "Elija establecimiento"
+		},
+		"NAOTEMBARBEARIASACESSADAS": "¡No hay peluquerías a las que se haya accedido previamente!",
+		"NAOTEMBARBEARIASPROXIMAS": "¡No hay peluquerías cerca de ti!",
+		"NAOTEMCLINICASACESSADAS": "¡No se ha accedido previamente a ninguna clínica de estética!",
+		"NAOTEMCLINICASPROXIMAS": "¡No hay clínicas de estética cerca de ti!",
+		"NAOTEMEMPRESASACESSADAS": "¡No hay empresas a las que se haya accedido previamente!",
+		"NAOTEMEMPRESASPROXIMAS": "¡No hay empresas cercanas a ti!",
+		"NAOTEMESTUDIOSACESSADOS": "¡No se ha accedido previamente a ningún estudio de tatuajes!",
+		"NAOTEMESTUDIOSPROXIMOS": "¡No hay salones de tatuajes cerca de ti!",
+		"NAOTEMSALOESACESSADOS": "¡No hay salones de belleza a los que se haya accedido previamente!",
+		"NAOTEMSALOESPROXIMOS": "¡No hay salones de belleza cerca de ti!",
+		"PESQUISARESTABELECIMENTO": "Establecimiento de búsqueda",
+		"PROXIMOSAVOCE": "Cerca de usted",
+		"REMOVAL": {
+			"ALERT": {
+				"ACCEPT": "Ok",
+				"CANCEL": "Cancelar",
+				"HEADER": "Confirmar eliminación",
+				"MESSAGE": "¿Quiere confirmar la eliminación de la empresa de la lista?"
+			}
+		},
+		"ULTIMOSACESSOS": "Últimos accesos"
+	},
+	"PERFIL": {
+		"CARDHISTORICO": {
+			"PRODUTOS": "Productos",
+			"SERVICOS": "Servicios",
+			"SUBTOTAL": "Total parcial",
+			"TOTAL": "Total"
+		},
+		"MODALEDITAR": {
+			"EDITAR": "Editar contraseña",
+			"SALVARSENHA": "Guardar contraseña",
+			"SENHAINCORRETA": "¡Contraseña actual incorrecta!"
+		},
+		"VANTAGENS": "Ventajas"
+	}
+}

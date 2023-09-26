@@ -1,0 +1,99 @@
+ion-content[bgLogin] {
+  --background: 'none';
+  background: var(--FundoAgenda) !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  background-position: var(--position-bg) !important;
+}
+
+ion-col[logoE] {
+  --background: var(--background-empresa-logo);
+}
+
+ion-toolbar {
+  --background: var(--cor-fundo-barraTopo);
+  --min-height: 45px !important;
+  --max-height: 45px !important;
+  
+}
+::ng-deep .servicoProfissional{
+  .modal-wrapper {
+    height: 20% !important;
+    width: 70% !important;
+    min-width: 300px !important;
+    min-height: 75px !important;
+    max-width: 490px;
+    max-height: 775px;
+    border-radius: 5px;
+    --box-shadow: 0 28px 48px rgba(0, 0, 0, 0.4);
+  }
+}
+::ng-deep {
+  .alertDiario {
+    .alert-message {
+      height: 560px;
+      max-height: 1000px;
+      width: 330px;
+      max-width: 1000px;
+    }
+    .alert-wrapper {
+      width: 330px;
+      max-width: 1000px;
+    }
+  }
+}
+
+ion-title.title {
+  //padding-right: 50px !important;
+  position: unset;
+}
+
+.appointmentColFirstRow {
+  margin-top: 7px;
+}
+
+.appointmentColSecondRow {
+  margin-bottom: 7px;
+}
+
+.k-floating-label-container {
+  color: #041592 !important;
+  font-weight: 600;
+}
+
+.k-floating-label-container > .k-label,
+.k-floating-label-container.k-state-focused > .k-label {
+  color: #041592 !important;
+}
+
+.input {
+  display: flex;
+  align-items: center;
+  height: 36px;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+// ion-refresher-content {
+//     position: relative;
+//     padding-bottom: 200px;
+//     background-color: var(--base-background-color-body);
+
+//     .refresher-pulling, .refresher-refreshing {
+//       position: relative;
+//       top: 30px;
+//     }
+//   }
+
+// ion-refresher-content {
+//     padding-bottom: 200px;
+//     background-color: yellow;
+
+//     .refresher-pulling {
+//       position: fixed;
+//       top: 50px;
+//     }
+//   }
+
+//url('https://oneproducao.blob.core.windows.net/one2/Imagens/One_Logo_App.png')
+//   /** Logo **/
+//   --background-empresa-logo:#707070 url('https://oneproducao.blob.core.windows.net/one2/Imagens/One_Logo_App.png') no-repeat center center;

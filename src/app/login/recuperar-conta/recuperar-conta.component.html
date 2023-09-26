@@ -1,0 +1,105 @@
+
+<ion-content class="backgroundContentApp" bgLogin>
+  <div style="height: 80%; display: flex; align-items: center; justify-content: center;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-image: var(--background-app);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      justify-content: space-around;
+      outline: var(--bordaNoLogin);
+      outline-offset: -15px;
+  ">
+    <ion-card class="backgroundCard">
+      <ion-grid>
+        <ion-row class="ion-justify-content-center">
+          <ion-col size="6">
+            <div style="
+            height: var(--tamanho-logo);
+            background-image: var(--estabelecimento-logo-sobre);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+          "></div>
+          </ion-col>
+        </ion-row>
+        <div *ngIf="view == null">
+          <ion-row style="padding-top: 40px;">
+            <ion-col class="message ion-text-center" size="12">
+              {{'LOGIN.RECUPERARCONTA.ENTRESENHA' | translate}}
+            </ion-col>
+          </ion-row>
+            <form [formGroup]="recuperarContaForm" style="width: 100%;">
+              <ion-row class="ion-align-itens-center">
+                <ion-col class="show-passowrd-btn" size="12">
+                  <kendo-floatinglabel text="{{'LOGIN.RECUPERARCONTA.SENHA' | translate}} *">
+                    <input formControlName="senha" kendoTextBox class="input-password" type="{{showPassword ? 'text' : 'password'}}" minlength="4">
+                  </kendo-floatinglabel>
+                  <ion-button fill="clear" color="medium" (click)="changePasswordVisibility()">
+                    <ion-icon *ngIf="!showPassword" name="eye-outline"></ion-icon>
+                    <ion-icon *ngIf="showPassword" name="eye-off-outline"></ion-icon> 
+                  </ion-button>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col size="12">
+                  <kendo-floatinglabel text="{{'LOGIN.RECUPERARCONTA.CONFIRMARSENHA' | translate}} *">
+                    <input formControlName="confirmarSenha" kendoTextBox class="input input-menor" type="{{showPassword ? 'text' : 'password'}}" minlength="4">
+                  </kendo-floatinglabel>
+                  <div class="validation-errors">
+                    <ng-container *ngFor="let validation of validation_messages.senha">
+                      <div class="error-message"
+                        *ngIf="recuperarContaForm.get('confirmarSenha').hasError('confirmedValidator') && (recuperarContaForm.get('confirmarSenha').dirty || recuperarContaForm.get('confirmarSenha').touched)">
+                        <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message | translate }}
+                      </div>
+                    </ng-container>
+                  </div>
+                </ion-col>
+              </ion-row>
+            </form>
+          <ion-row style="padding-top: 40px;">
+            <ion-button class="buttons" expand="block" (click)="recuperarConta()" [disabled]="!recuperarContaForm.valid">
+              {{'LOGIN.RECUPERARCONTA.ATIVAR' | translate}}
+            </ion-button>
+          </ion-row>
+        </div>
+        <div *ngIf="view != null">
+          <div *ngIf="view === true">
+            <ion-row class="ion-padding ion-justify-content-center ion-align-items-center">
+              <ion-col size-xs="12" size-md="6">
+                <ion-chip outline color="success" style="justify-content: center;display: flex;">
+                  <ion-icon name="checkmark-circle-outline" color="success" style="transform: scale(1.5);"></ion-icon>
+                  <ion-label>{{'LOGIN.RECUPERARCONTA.SUCESSO' | translate}}</ion-label>
+                </ion-chip>
+              </ion-col>
+            </ion-row>
+            <ion-row class="ion-padding-top">
+              <ion-col class="message ion-text-center" size="12">
+                {{'LOGIN.RECUPERARCONTA.MENSAGEMSUCESSO' | translate}}
+              </ion-col>
+            </ion-row>
+          </div>
+          <div *ngIf="view !== true">
+            <ion-row class="ion-padding ion-justify-content-center ion-align-items-center">
+              <ion-col size-xs="12" size-md="6">
+                <ion-chip outline color="danger" style="justify-content: center;display: flex;">
+                  <ion-icon name="close-circle-outline" color="danger" style="transform: scale(1.5);"></ion-icon>
+                  <ion-label>{{'LOGIN.RECUPERARCONTA.ERROR' | translate}}</ion-label>
+                </ion-chip>
+              </ion-col>
+            </ion-row>
+            <ion-row class="ion-padding-top">
+              <ion-col class="message ion-text-center" size="12">
+                {{'LOGIN.RECUPERARCONTA.MENSAGEMERROR' | translate}}
+              </ion-col>
+            </ion-row>
+          </div>
+        </div>
+      </ion-grid>
+    </ion-card>
+  </div>
+</ion-content>

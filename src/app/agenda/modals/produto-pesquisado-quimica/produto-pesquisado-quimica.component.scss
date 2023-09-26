@@ -1,0 +1,7 @@
+ion-button::part(native) {
+  box-shadow: none;
+}
+
+ion-toolbar {
+  --background: var(--cor-fundo-barraTopo);
+}

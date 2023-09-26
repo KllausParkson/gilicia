@@ -1,0 +1,545 @@
+{
+	"AGENDA": {
+		"1SERVICO": "プロフェッショナルから始まるサービスは 1 つだけ予約できます",
+		"5SERVICOS": "最大 5 つのサービスのみ予約できます",
+		"ADDOBSERVACAO": "メモを追加",
+		"AGENDADO": "予定",
+		"AGENDAGESTOR": {
+			"PESQUISA": {
+				"CELULAR": "携帯電話",
+				"EMAIL": "メール",
+				"NOME": "名"
+			},
+			"PESQUISAR": "プロを選んでください ",
+			"SELECIONECOLABORADOR": "プロを選んで、スケジュールを確認してください "
+		},
+		"AGENDAMENTO": "スケジューリング",
+		"AGENDAPROFISSIONAL": {
+			"BLOQUEIO": "ブロックされた時間",
+			"CONCLUIDO": "結論",
+			"EMANDAMENTO": "進行中",
+			"HORARIOLIVRE": "座席あり",
+			"INICIARATENDIMENTO": "サービス開始",
+			"NOVOAGENDAMENTOTEXT": "新しいスケジュールを開始したいですか？",
+			"PROXIMO": "次へ"
+		},
+		"AGENDAR": "スケジュールに沿って",
+		"APPOINTMENT": {
+			"ANDAMENTO": "進行中",
+			"AS": "で",
+			"CONFIRMARALERT": {
+				"HEADER": "確認",
+				"MESSAGE": "この予定を確認しますか?",
+				"NO": "いや",
+				"YES": "はい"
+			},
+			"DESMARCAR": "マークオフ",
+			"DESMARCARALERT": {
+				"CANCELAR": "いや",
+				"EXCLUIR": "はい",
+				"HEADER": "スケジュールを解除する",
+				"HEADERBLOQUEIO": "時間のロックを解除",
+				"MESSAGE": "この予定の選択を解除してもよろしいですか？",
+				"MESSAGEBLOQUEIO": "今回はロックを解除してもよろしいですか？",
+				"REMOVERBLOQUEIO": "ロックを解除する"
+			},
+			"EDITAR": "編集する",
+			"EXIBIRDETALHESALERT": {
+				"DETALHES": "サービスの詳細"
+			},
+			"FINALIZADO": "終了しました",
+			"MARCADO": "マークされた",
+			"PROFESSIONAL": "プロフェッショナル",
+			"SERVICE": "サービス"
+		},
+		"ATE": "から",
+		"ATENDIMENTO": "カスタマーサービス",
+		"BLOQUEADO": "ブロックされています",
+		"BLOQUEAR": "予約受付不可",
+		"BLOQUEIO": "ブロック",
+		"BUSCANAORETORNOURESULTADO": "検索は結果を返しませんでした",
+		"BUTTON": {
+			"AGENDAR": "スケジュールに沿って",
+			"CANCELAR": "キャンセルする",
+			"CONFIRMAR": "確認する",
+			"CRIAR": "作成する"
+		},
+		"CADASTRORAPIDO": {
+			"MODAL": {
+				"ALERTA": {
+					"CELULAREXIST": "モバイルはすでに登録されています！",
+					"CPFEXIST": "CPFはすでに登録されています！",
+					"EMAILEXIST": "すでに登録されたメール！"
+				}
+			}
+		},
+		"CALENDARIO": {
+			"ABRIL": "4月",
+			"AGOSTO": "8月",
+			"DEZEMBRO": "12月",
+			"DOMINGO": "日曜日",
+			"FEVEREIRO": "2月",
+			"HOJE": "きょう",
+			"JANEIRO": "1月",
+			"JULHO": "7月",
+			"JUNHO": "六月",
+			"MAIO": "五月",
+			"MARCO": "行進",
+			"NOVEMBRO": "11月",
+			"OUTUBRO": "10月",
+			"QUARTA": "水曜日",
+			"QUINTA": "木曜日",
+			"SABADO": "土曜日",
+			"SEGUNDA": "月曜日",
+			"SETEMBRO": "9月",
+			"SEXTA": "金曜日",
+			"TERCA": "火曜日"
+		},
+		"CONFIRMADO": "確認済み",
+		"CONFIRMAR": "確認する",
+		"DEFAULTERROR": "エラーが発生しました！",
+		"DESBLOQUEAR": "ロックを解除する",
+		"DOMINGO": "日曜日",
+		"EDITAROBSERVACAO": "メモを編集",
+		"ERROR": {
+			"HORARIOINTERVALO": "エラー！インターバルタイム！",
+			"HORARIONAODISPONIVEL": "エラー！時間がありません！",
+			"LOADINGAGENDAMENTO": "エラー スケジュールの読み込み中にエラーが発生しました。もう一度やり直してください",
+			"NAOPERMITEENCAIXE": "エラー！フィッティングは許可されていません！",
+			"NAOPERMITESIMULTANEIDADE": "エラー！同時実行は許可されていません!"
+		},
+		"ERROTERMINAL": "セッションの有効期限が切れています。もう一度ログインしてください",
+		"EXECUTADO": "実行された",
+		"FINANCEIRO": {
+			"HISTORICO-CLIENTE": {
+				"CLIENTE": "お客様"
+			}
+		},
+		"FORCELOGOUT": "ログアウト...",
+		"HORARIOLIVRE": "自由時間",
+		"INATIVO": {
+			"CLIENTEALERT": {
+				"HEADER": "警告",
+				"MESSAGE": "この会社の情報へのアクセスは一時的に利用できません。電話またはWhatsAppで会社に連絡してください。ありがとう。"
+			},
+			"GESTORALERT": {
+				"HEADER": "警告",
+				"MESSAGE": "アプリケーションが一時的にブロックされました。管理者に One Beleza に連絡するよう依頼してください。ありがとう。"
+			},
+			"PROFISSIONALALERT": {
+				"HEADER": "警告",
+				"MESSAGE": "アプリケーションが一時的にブロックされました。管理者に One Beleza に連絡するよう依頼してください。ありがとう。"
+			}
+		},
+		"INICIAR": "開始",
+		"LANCADOS": "発売",
+		"LOADINGAGENDAMENTO": "持参。。。",
+		"MOBILIDADE": "顧客経由",
+		"MODAL": {
+			"NOVOAGENDAMENTO": {
+				"DATASELECIONADA": "日付",
+				"HORARIOCHECK": "時間",
+				"SALAO": "会社",
+				"SERVICOCHECK": "サービス"
+			},
+			"PRIMEIROACESSO": "より良いサービスを提供するには、利用規約とプライバシーポリシーに同意する必要があります。"
+		},
+		"MODALEDITARAGENDAMENTO": {
+			"DATA": "日にち *",
+			"HORARIOSDISP": "利用可能な時間*",
+			"PROFISSIONAL": "プロ *",
+			"SERVICO": "サービス *",
+			"TITLE": "スケジュールの編集"
+		},
+		"MODALNOVOAGENDAMENTO": {
+			"AGENDACEL": "電話帳",
+			"DEFAULTITEM": "あなたはプロの好みがありますか？",
+			"ESCOLHAPROFISSIONAL": "専門家を選択してください",
+			"ESCOLHERPROFISSIONAL": "プロフェッショナルを選択",
+			"ESCOLHERSERVICOS": "サービスを選択",
+			"NOMESERVICO": "サービス",
+			"PESQUISA": "検索",
+			"SALAO": "ホール",
+			"TITLE": "予約をする",
+			"TITLECONFIRMA": "予約を確認する"
+		},
+		"MODALNOVOBLOQUEIO": {
+			"TITLE": "ブロック"
+		},
+		"MODALS": {
+			"ALERT": {
+				"MENSAGEM": {
+					"DESMARCAR": "このタグを削除してもよろしいですか？"
+				},
+				"NAO": "いや",
+				"SIM": "はい"
+			},
+			"AVALIARAPPMODAL": {
+				"AVALIARDEPOIS": "後で評価する",
+				"BUTTON": {
+					"AVALIARAGORA": "今すぐ評価"
+				},
+				"QUESTION": "APPを楽しんでいますか？",
+				"TEXT": "店舗でアプリを評価する"
+			},
+			"CADASTRORAPIDO": {
+				"CAMPOSOBRIGATORIOS": "必須フィールド",
+				"CANCEL": "キャンセルする",
+				"CELULAR": "携帯電話",
+				"CONFIRM": "確認する",
+				"CPF": "CPF",
+				"EMAIL": "メール",
+				"EMAILAUTO": "自動メール",
+				"MENSAGEM": "以下の電子メールは、お客様がOneアプリケーションにアクセスするために使用されます。したがって、お客様の実際の電子メールを通知するようにしてください。",
+				"NOME": "名",
+				"SUCCESS": "登録が正常に完了しました。",
+				"TITULO": "迅速な顧客登録",
+				"VALIDATION": {
+					"CPF": "間違い！無効なCPF！",
+					"EMAIL": "有効なメールアドレスを入力するか、空白のままにして自動メールアドレスを生成してください。",
+					"REQUIRED": {
+						"CELULAR": "携帯電話は必須です",
+						"NOME": "名前が必要です"
+					}
+				}
+			},
+			"CONFIRMACAOAGENDAMENTO": {
+				"TEXT": "あなたのサロンと専門家は、サービスの予約を確認する通知を受け取ります。",
+				"TITLE": "定期サービス！",
+				"VOLTARPARAAGENDA": "議事に戻る"
+			},
+			"DETALHESCLIENTE": {
+				"TITLE": "お客様情報"
+			},
+			"DIASRETORNO": {
+				"INCLUIRDETALHESCLIENTE": "顧客の詳細を追加",
+				"INCLUIRDIASRETORNOCLIENTE": "戻るまでの日数",
+				"INFO": "受付係や他の従業員がアクセスできるように、顧客に関する詳細を含めます",
+				"SALVAR": "保存する"
+			},
+			"EDITARAGENDAMENTOCLIENTEMODAL": {
+				"DATA": "日付",
+				"EDITARAGENDAMENTO": "スケジュールの編集",
+				"HORARIOSDISPONIVEIS": "利用可能な時間",
+				"PROFISSIONAL": "プロフェッショナル",
+				"SALVAR": "保存する",
+				"SERVICO": "サービス"
+			},
+			"INFOSEMPRESAMODAL": {
+				"SOBRE": "約",
+				"TELEFONE": "電話番号"
+			},
+			"LANCARSERVICOPRODUTO": {
+				"PESQUISA": {
+					"CELULAR": "携帯電話",
+					"EMAIL": "メール",
+					"NOME": "名"
+				}
+			},
+			"LIECONCORDO": "利用規約を読み、同意します",
+			"NOVOAGENDAMENTO": {
+				"ADICIONARNAAGENDA": "カレンダーにスケジュールを追加しますか？",
+				"AGENDAR": "スケジュールに沿って",
+				"CANCELAR": "キャンセルする",
+				"CLIENTESEMPERMISSAOAGENDAMENTO": "宿泊施設は顧客による予約を無効にしています。",
+				"CONCLUIR": "結論",
+				"DANGER": "エラーが発生しました！",
+				"DATAPASSADA": "過去の日付のスケジュールを設定します。",
+				"EXISTEAGENDAMENTO": "スケジューリング時のエラー。選んだ時間は忙しかった！",
+				"EXPLICACAOBLOQUEIO": "ブロックされた時間についてここにメモを追加します（オプション）",
+				"HORARIOINICIO": "始まる時間",
+				"HORARIONAODISPONIVEL": "時間はありません",
+				"HORARIOS": "この従業員は今日もう時間がありません",
+				"HORARIOTERMINO": "終了時間",
+				"INADIMPLENTE": "予約については宿泊施設までご確認ください。",
+				"INCLUIR": "含む",
+				"MARQUEOSERVICO": "最初に前のサービスを確認して、このサービスの時間を解放します。",
+				"NAOPERMITESIMULTANEIDADE": "プロパティは、予約間の同時実行を無効にしています。",
+				"PROXIMO": "次へ",
+				"SELECIONARINTERVALOBLOQUEIO": "ブロッキング範囲を選択します",
+				"SEMPROFISSIONAISDIA": "この日にこのサービスを行う専門家はいません。",
+				"SERVICOJAMARCADO": "一度に予約できるサブスクリプション サービスは 1 つだけです。現在のサービスが実行されるのを待って再度スケジュールするか、既存のサービスのチェックを外して別の時間にスケジュールします。",
+				"SUCESSO": "スケジューリングが成功しました",
+				"TEXT": "電話のカレンダーに予定を挿入しますか？以下から希望のスケジュールを選択してください。希望しない場合は、[次へ]をクリックしてください。",
+				"TEXTOVISITANTE": "予約するには、システムに登録してください。",
+				"VISITANTE": "ゲスト ユーザー",
+				"VOLTAR": "戻る"
+			},
+			"NOVOAGENDAMENTOPROFISSIONAL": {
+				"AGENDAR": "スケジュールに沿って",
+				"ALLCLIENTSABSENT": "お客様はいません。",
+				"CLIENTE": "お客様",
+				"CLIENTESPRESENTES": "現在の顧客",
+				"CONFIRMAREDICAO": "編集を確認",
+				"DATASELECIONADA": "選択した日付",
+				"ESCOLHERHORARIO": "時間を選択してください",
+				"HORARIOFIM": "終了時間",
+				"HORARIOINICIO": "始まる時間",
+				"HORARIOSDISPONIVEIS": "利用可能な時間",
+				"INFOCLIENTE": {
+					"CODIGO": "コード",
+					"EMAIL": "メール",
+					"NAME": "名",
+					"PHONE": "携帯電話"
+				},
+				"INFOSERVICO": {
+					"DURATION": "期間",
+					"GROUP": "団体",
+					"NAME": "名",
+					"PRICE": "価格"
+				},
+				"NAOCADASTRADO": "未登録",
+				"OBSERVACAO": "注",
+				"PERSONALIZARHORARIO": "スケジュールのカスタマイズ",
+				"REQUIREDFIELD": "必須フィールド",
+				"SEMHORARIOSDISPONIVEIS": "利用できる時間はありません。",
+				"SERVICO": "サービス",
+				"TITLE": "予約する",
+				"TITLEEDICAO": "スケジュールの編集"
+			},
+			"OPCOESAGENDAMENTO": {
+				"CLIENTE": "お客様",
+				"CRIARAGENDAMENTO": "スケジュールを作成する",
+				"CRIARBLOQUEIO": "ロックを作成する",
+				"DATA": "日付",
+				"DESMARCAR": "予約解除",
+				"EDITAR": "編集する",
+				"EDITARAGENDAMENTO": "スケジュールの編集",
+				"EDITARDETALHESCLIENTE": "返却日数・お客様情報\n",
+				"HORARIO": "時間",
+				"HORARIOBLOQUEADO": "ブロックされた時間",
+				"HORARIOLIVRE": "自由時間",
+				"INICIO": "開始",
+				"OBSERVACAO": "注",
+				"OUTROSAGENDAMENTOS": "その他の予定",
+				"REGISTRARSERVICOPRODUTOSEMFICHA": "サービス/製品の登録",
+				"REMOVERBLOQUEIO": "ロックを解除する",
+				"RESUMOAGENDAMENTO": "立ち上げられたサービス/製品を見る",
+				"SERVICO": "サービス",
+				"TERMINO": "学期",
+				"TITLE": "スケジューリングオプション",
+				"VERMAIS": "もっと見る",
+				"VOLTARPARAAGENDA": "スケジュールに戻る"
+			},
+			"OUTROSAGENDAMENTOS": {
+				"FECHAR": "閉じる"
+			},
+			"RESUMOAGENDAMENTO": {
+				"EDITARQUIMICA": {
+					"CONFIRMAR": "確認する",
+					"OBSERVACAO": "注",
+					"PARTES": "部品",
+					"TITLE": "化学を編集する"
+				},
+				"EXIBENOMEALERT": {
+					"BUTTON": {
+						"FECHAR": "閉じる"
+					},
+					"TITLE": {
+						"PRODUTO": "製品説明",
+						"SERVICO": "サービスの説明"
+					}
+				},
+				"FECHARMODAL": {
+					"BUTTON": "閉じる"
+				},
+				"FINALIZAATENDIMENTO": {
+					"BUTTON": "エンドサービス"
+				},
+				"LANCARSERVICOPRODUTO": {
+					"ADICIONARQUIMICA": "化学を追加する",
+					"ALERTJAEXISTENTE": {
+						"CANCELAR": "いや",
+						"CONFIRMAR": "はい",
+						"MENSAGEM": "選択したサービス/製品の1つは、以前にすでに開始されています。続行しますか？"
+					},
+					"ALERTNENHUMLANCAMENTO": {
+						"MESSAGE": "サービスや製品はリリースされていません!",
+						"TITLE": "確かですか。"
+					},
+					"ALERTREMOCAO": {
+						"CANCELARREMOCAO": "キャンセルする",
+						"CONFIRMARREMOCAO": "削除する",
+						"HEADER": "リリースされたサービス/製品を削除しますか？",
+						"MESSAGE": "続行すると、選択したサービス/製品は顧客のファイルに投稿されません。"
+					},
+					"ALERTREMOCAOPRODUTO": {
+						"HEADER": "リリースされた製品を削除しますか？"
+					},
+					"ALERTREMOCAOSERVICO": {
+						"HEADER": "起動したサービスを削除しますか？"
+					},
+					"BUTTON": "サービスまたは製品を追加する",
+					"BUTTONTITLE": "カートに追加",
+					"CLIENTE": "お客様",
+					"DESEJAADICIONARAUXILIAR": "ヘルパーを追加しますか？",
+					"ELEMENTOAUXILIAR": "アシスタント",
+					"FINALIZARBUTTON": "エンドサービス",
+					"HORARIO": "時間",
+					"HORARIOAGENDADO": "時間",
+					"INFOAGENDAMENTO": "顧客の予定：",
+					"LISTAQUIMICAS": "化学薬品",
+					"MENSAGEMESTOQUE": "在庫制限に達しました！",
+					"NAO": "いや",
+					"OBSERVACAO": "注",
+					"PESQUISA": {
+						"CODIGOPRODUTO": "バーコード",
+						"DURACAOSERVICO": "期間",
+						"NOMEPRODUTO": "名",
+						"NOMESERVICO": "名",
+						"PRECOPRODUTO": "価格",
+						"PRECOSERVICO": "価格"
+					},
+					"PESQUISARAUXILIAR": "検索ヘルパー",
+					"PESQUISARPRODUTO": "製品を検索",
+					"PESQUISARSERVICO": "検索サービス",
+					"PRECO": "価格",
+					"PRODUTOPESQUISADOQUIMICA": {
+						"ADICIONAR": "カートに追加"
+					},
+					"PRODUTOS": "製品",
+					"QUANTIDADE": "額",
+					"RAPIDO": "クイックサービスを開始",
+					"SEMLANCAMENTOS": "サービスや製品はリリースされていません！",
+					"SERVICO": "サービス",
+					"SERVICOPESQUISADO": {
+						"REGISTRAR": "登録"
+					},
+					"SERVICOS": "サービス",
+					"SERVICOSPRODUTOS": "サービス/製品",
+					"SIM": "はい",
+					"SUBTOTAL": "小計",
+					"SUCCESS": "サービスが正常に追加されました！",
+					"SUCCESSPRODUTO": "製品が正常に追加されました！",
+					"TITLELANCAR": "サービスまたは製品を起動する",
+					"TITLEREGISTRAR": "登録",
+					"TITLERESUMO": "顧客向けのリリース",
+					"TOAST": {
+						"COMANDAFECHADA": "間違い！閉じたコマンドのサービス登録は許可されていません！",
+						"PACOTESERVICOENCONTRADO": "パッケージ値がサービスに適用されました！",
+						"SUCESSO": "登録に成功しました！"
+					},
+					"TOTAL": "合計"
+				},
+				"LANCARSERVICOPRODUTORAPIDO": {
+					"BUTTON": "定期サービスの開始"
+				},
+				"LANCARTODOSSERVICOS": {
+					"MENSAGE": "今日、この顧客のために予定されているすべてのサービスを追加しますか?",
+					"NAO": "いや",
+					"SIM": "はい",
+					"TITLE": "すべてのサービスを起動"
+				},
+				"NOVAQUIMICA": {
+					"OBSERVACAO": "注",
+					"PARTES": "部品",
+					"REGISTROQUIMICA": "化学を登録する"
+				},
+				"POPOVERATENDIMENTO": {
+					"ALERT": {
+						"MESSAGE": "削除しますか？",
+						"NAO": "いや",
+						"SIM": "はい"
+					},
+					"CANCELAR": "キャンセルする",
+					"CONFIRMAR": "確認する",
+					"DESEJAEXCLUIR": "削除しますか？",
+					"DESEJAEXCLUIRTODOSITENS": "すべてのアイテムを削除しますか？",
+					"EDITAR": "情報の編集",
+					"EXCLUIR": "アイテムを削除",
+					"EXCLUIR'": "",
+					"EXCLUIRTODOSITENS": "すべてのアイテムを削除する"
+				}
+			},
+			"SERVICOASSINATURA": {
+				"CANCELAR": "キャンセルする",
+				"MARCADO": "サービスはすでに予定されています",
+				"REMARCAR": "予定を変更する",
+				"TEXTOPRIPARTE": "すでにサービス予約を行っています",
+				"TEXTOQUARPARTE": "スケジュールされたことを実行した後にのみ、またはチェックを外してこれをチェックすることもできます。",
+				"TEXTOSEGPARTE": "日中に",
+				"TEXTOTERPARTE": " サブスクリプションを使用すると、別のスケジュールを設定できます"
+			},
+			"SERVICOOUPROFISSIONAL": {
+				"NOVO": "新しい",
+				"PROFISSIONAL": "プロフェッショナルを選択",
+				"SERVICO": "サービスの選択"
+			}
+		},
+		"NAOEXISTEMHORARIOS": "当日の登録時間はありません。",
+		"NAOREGISTRADO": "未登録",
+		"NEXTAPPOINTMENTS": "あなたの次の予定",
+		"NOAPPOINTMENTS": "次の30日間の予定はありません。",
+		"OBSERVACAO": "注",
+		"PERFIS": {
+			"AUXILIAR": "アシスタント",
+			"CLIENTE": "お客様",
+			"GESTOR": "マネージャー",
+			"PROFISSIONAL": "プロフェッショナル"
+		},
+		"PERMISSION": "新規顧客の登録はできません！",
+		"POLITICA": "プライバシーポリシー",
+		"PRECOADEFINIR": "未定義",
+		"PRESENTE": "贈り物",
+		"QUARTA": "水曜日",
+		"QUINTA": "木曜日",
+		"REGISTRADO": "登録済み",
+		"SABADO": "土曜日",
+		"SEGUNDA": "月曜日",
+		"SERVICOPROFISSIONAL": {
+			"TITLE": "新しい予定を開始する"
+		},
+		"SEXTA": "金曜日",
+		"TERCA": "火曜日",
+		"TERMOS": "利用規約",
+		"TITLE": "スケジュール",
+		"VERMAIS": "もっと見る",
+		"VERSERVICOPRODUTOS": "サービス/製品を見る"
+	},
+	"LOGIN": {
+		"COLABORADOR": "成功する",
+		"ESCOLHERESTABELECIMENTO": "別の施設を選択してください",
+		"ESCOLHERESTABELECIMENTOBARBEARIA": "理髪店",
+		"ESCOLHERESTABELECIMENTOESTETICA": "美学",
+		"ESCOLHERESTABELECIMENTOSALAO": "ホール",
+		"ESCOLHERESTABELECIMENTOTATUAGEM": "入れ墨",
+		"MODALESTABELECIMENTO": {
+			"TITLE": "設立を選択"
+		},
+		"NAOTEMBARBEARIASACESSADAS": "以前にアクセスした理髪店はありません！",
+		"NAOTEMBARBEARIASPROXIMAS": "お近くに理髪店はありません！",
+		"NAOTEMCLINICASACESSADAS": "これまでにエステティッククリニックにアクセスしたことはありません！",
+		"NAOTEMCLINICASPROXIMAS": "お近くに美容クリニックはありません！",
+		"NAOTEMEMPRESASACESSADAS": "以前にアクセスした会社はありません！",
+		"NAOTEMEMPRESASPROXIMAS": "お近くに会社はありません！",
+		"NAOTEMESTUDIOSACESSADOS": "以前にタトゥーパーラーにアクセスしたことはありません！",
+		"NAOTEMESTUDIOSPROXIMOS": "お近くにタトゥーパーラーはありません！",
+		"NAOTEMSALOESACESSADOS": "以前にアクセスした美容院はありません！",
+		"NAOTEMSALOESPROXIMOS": "お近くに美容院はありません！",
+		"PESQUISARESTABELECIMENTO": "検索施設",
+		"PROXIMOSAVOCE": "あなたの近くに",
+		"REMOVAL": {
+			"ALERT": {
+				"ACCEPT": "わかった",
+				"CANCEL": "キャンセルする",
+				"HEADER": "削除を確認する",
+				"MESSAGE": "会社がリストから削除されたことを確認しますか？"
+			}
+		},
+		"ULTIMOSACESSOS": "最終アクセス"
+	},
+	"PERFIL": {
+		"CARDHISTORICO": {
+			"PRODUTOS": "製品",
+			"SERVICOS": "サービス",
+			"SUBTOTAL": "小計",
+			"TOTAL": "合計"
+		},
+		"MODALEDITAR": {
+			"EDITAR": "パスワードを編集",
+			"SALVARSENHA": "パスワードを保存する",
+			"SENHAINCORRETA": "現在のパスワードが正しくありません！"
+		},
+		"VANTAGENS": "利点"
+	}
+}

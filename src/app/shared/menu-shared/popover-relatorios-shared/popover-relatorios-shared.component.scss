@@ -1,0 +1,25 @@
+ion-item {
+  cursor: pointer;
+
+  ion-label {
+    padding: 5px;
+  }
+}
+
+ion-item:hover {
+  --color: var(--ion-color-primary);
+}
+
+ion-icon {
+  color: currentColor !important;
+}
+
+.ripple-parent {
+  position: relative;
+  overflow: hidden;
+}
+
+ion-list ion-item {
+  --color-activated: var(--ion-color-primary);
+  --ripple-color: var(--ion-color-primary);
+}

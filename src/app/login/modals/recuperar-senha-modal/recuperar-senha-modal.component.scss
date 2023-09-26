@@ -1,0 +1,54 @@
+.LoginInput {
+  padding: 8px;
+  width: 100%;
+  border-radius: 6px;
+  border: 1px solid var(--ion-color-primary);
+  background-color: var(--cor-caixa-login);
+  color: var(--cor-texto-caixa-login);
+}
+
+.inputSenha{
+  display: flex;
+}
+
+.message {
+  color: #888888;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+
+  ion-button {
+    width: 50%;
+  }
+}
+
+.segment {
+  background-color: var(--ion-color-primary);
+}
+
+.input-codigo {
+  display: flex;
+  flex-direction: row;
+  width: 100% !important;
+  justify-content: center !important;
+  -moz-webkit-text-security: disc;
+  -moz-text-security: disc;
+  ion-input {
+    text-align: center;
+    line-height: 30px;
+    font-size: 30px;
+    font-weight: bold;
+    letter-spacing: 20px;
+    border: #ccc;
+    width: 100%;
+    outline: none;
+    border-radius: 3px;
+  }
+}
+
+ion-toolbar {
+  --background: var(--cor-fundo-barraTopo);
+}

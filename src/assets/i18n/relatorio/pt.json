@@ -1,0 +1,85 @@
+{
+	"AGENDA": {
+		"MODALS": {
+			"INFOSEMPRESAMODAL": {
+				"SOBRE": "Sobre",
+				"TELEFONE": "Telefone"
+			}
+		}
+	},
+	"RELATORIOS": {
+		"AVALAIACOES": {
+			"DETALHES": "Detalhes"
+		},
+		"AVALIACOES": {
+			"COLABORADOR": "Avaliações do colaborador",
+			"EMPRESA": "Avaliações da empresa",
+			"MEDIA": "Média",
+			"MELHORNOTA": "Melhor nota"
+		},
+		"BUSCANAORETORNOURESULTADO": "A busca não retornou resultados",
+		"EXTRATOCHATBOT": {
+			"ABRIRCARDS": "Abrir todos os extratos",
+			"BALANCOPERIODO": "Balanço entre os dias pesquisados",
+			"DATA": "Data",
+			"MENSAGENSPERIODO": "Número total de mensagens do período",
+			"SEMDADOS": "Não há movimentações neste período",
+			"TAXAADESAO": "Taxa de adesão",
+			"TITLE": "Extrato do Chatbot",
+			"VALOR": "Valor"
+		},
+		"PRODUTOS": {
+			"MESSAGE": "Não tem produtos para este período",
+			"OUTROS": "Outros",
+			"VALORTOTAL": "Valor total"
+		},
+		"RECEITASAPURADAS": {
+			"TICKETMEDIO": "Ticket médio",
+			"TOTAL": "Total receitas apuradas",
+			"TOTALCREDANT": "Total receitas de credito antecipado",
+			"TOTALFICHAS": "Total de fichas",
+			"TOTALORCAMENTOS": "Total receitas de orçamentos",
+			"TOTALOUTROS": "Total outras receitas ",
+			"TOTALPRODUTOS": "Total receitas de produtos",
+			"TOTALSERVICOS": "Total receitas de serviços"
+		},
+		"RECEITASESTIMADAS": {
+			"TOTAL": "Total receita estimada"
+		},
+		"RELATORIOCLIENTE": {
+			"BUTTONSEGMENT": {
+				"GERAL": "Geral",
+				"PRODUTOS": "Produtos",
+				"SERVICOS": "Serviços"
+			}
+		},
+		"RESUMOCHATBOT": {
+			"AGENDAMENTOS": "Agendamentos",
+			"CONFIRMACOES": "Confirmações",
+			"INTERACOESBOT": "Interações do Bot",
+			"INTERACOESUSER": "Interações do Usuário",
+			"MENSAGENSTROCADAS": "Mensagens Trocadas",
+			"RESUMODODIA": "Resumo do dia",
+			"SALDORESTANTE": "Saldo restante",
+			"TOTALGASTO": "Total Gasto",
+			"VISUALIZAREXTRATO": "Visualizar extrato completo"
+		},
+		"SERVICOS": {
+			"MESSAGE": "Não tem serviços para este período",
+			"OUTROS": "Outros",
+			"VALORTOTAL": "Valor total"
+		},
+		"TITLE": {
+			"AVALIACOES": "Avaliações",
+			"CLIENTES": "Clientes",
+			"FATURAMENTO": "Ranking Produtividade",
+			"LUCRATIVIDADEGERAL": "Lucratividade Geral",
+			"PRODUTOS": "Top 10 Produtos",
+			"RANKINGLUCRATIVIDADE": "Ranking Lucratividade",
+			"RECEITASAPURADAS": "Receitas Apuradas",
+			"RECEITASESTIMADAS": "Receitas Estimadas",
+			"RESUMOCHATBOT": "Resumo do Chatbot",
+			"SERVICOS": "Top 10 Serviços"
+		}
+	}
+}

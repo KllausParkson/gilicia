@@ -1,0 +1,20 @@
+.notificationBtn {
+    ion-icon {
+        font-size: 28px;
+        margin-right: 5px;
+    }
+
+    span {
+        background: #f00;
+        border-radius: 50%;
+        color: #fff;
+        font-size: 10px;
+        position: absolute;
+        top: 0;
+        right: 5px;
+        height: 14px;
+        width: 14px;
+        text-align: center;
+        padding-top: 3px;
+    }
+}

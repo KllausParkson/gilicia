@@ -1,0 +1,54 @@
+<ion-grid class="data-toolbar backgroundCard"  style="border-radius: 8px !important;">
+  <ion-row class="ion-justify-content-center ion-align-items-center">
+    <ion-col size-sm="9" size-xs="12" *ngIf="segment">
+      <ion-segment id="ion-segment" mode="ios"  class="segment backgroundButtonApp" [(ngModel)]="segment" (ionChange)="segmentChanged($event)">
+        <ion-segment-button value="dia">
+          <ion-label id="dia" [ngStyle]="{'color': segment == 'dia' ? 'var(--cor-texto-escuro)' : 'var(--cor-texto-claro)'}">{{'FINANCEIRO.DATA.DIA' | translate}}</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="semana">
+          <ion-label id="semana"  [ngStyle]="{'color': segment == 'semana' ? 'var(--cor-texto-escuro)' : 'var(--cor-texto-claro)'}">{{'FINANCEIRO.DATA.SEMANA' | translate}}</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="mes">
+          <ion-label id="mes"  [ngStyle]="{'color': segment == 'mes' ? 'var(--cor-texto-escuro)' : 'var(--cor-texto-claro)'}">{{'FINANCEIRO.DATA.MES' | translate}}</ion-label>
+        </ion-segment-button>
+        <!-- <ion-segment-button value="ano">
+          <ion-label id="ano"  [ngStyle]="{'color': segment == 'ano' ? '#000' : '#fff'}">{{'FINANCEIRO.DATA.ANO' | translate}}</ion-label>
+        </ion-segment-button> -->
+      </ion-segment>
+    </ion-col>
+    <ion-col size-sm="12" size-xs="12">
+      <ion-row class="ion-justify-content-center calendar-container backgroundApp" style="text-align: center;"  #dateToolbar>
+        
+        <ion-col  class="ion-no-padding ion-no-margin date-label" (click)="openCalendar()" style="font-size: 12px;">
+          <ion-icon name="calendar" class="icon-calendar" style="transform: scale(2); padding-right: 3px"></ion-icon>
+          <span>{{'FINANCEIRO.DATA.PERIODO' | translate}}</span>
+          <span>{{ startDate | date:"shortDate" }}</span>
+          <span *ngIf="endDate" style="margin: 0;">- {{endDate | date:"shortDate" }}</span>
+        </ion-col>
+      </ion-row>
+      <kendo-popup #popup [anchor]="dateToolbarRef" [anchorAlign]="anchorAlign" [popupAlign]="popupAlign" (anchorViewportLeave)="showCalendar = false" *ngIf="showCalendar" style="transform: scale(0.85);">
+        <ng-container *ngIf="endDate == null; else multiviewcalendar">
+          <kendo-calendar 
+            (valueChange)="selectDateCalendar($event)"
+            [value]="startDate"
+            [focusedDate]="startDate"
+          >
+          </kendo-calendar>
+        </ng-container>
+        <ng-template #multiviewcalendar>
+          <kendo-multiviewcalendar #calendar kendoDateRangeSelection
+            (selectionRangeChange)="selectDateCalendar($event)"
+            [selectionRange]="{start: startDate, end: endDate}"
+            [views]="1">
+            <kendo-datetimepicker-messages
+              today="{{'FINANCEIRO.DATA.TODAY' | translate }}">
+            </kendo-datetimepicker-messages>
+          </kendo-multiviewcalendar>
+        </ng-template>
+        <ion-button (click)="openCalendar()">
+          Buscar
+        </ion-button>
+      </kendo-popup>
+    </ion-col>
+  </ion-row>
+</ion-grid>

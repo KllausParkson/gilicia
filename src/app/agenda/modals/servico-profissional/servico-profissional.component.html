@@ -1,0 +1,36 @@
+<ion-header mode="md">
+    <ion-toolbar>
+      <ion-title
+        style="color: var(--cor-texto-barraTopo)"
+        >Começar novo agendamento
+      </ion-title>
+      <ion-buttons slot="primary">
+        <ion-button (click)="modalClose()">
+          <ion-icon
+            name="close"
+            slot="icon-only"
+            style="transform: scale(1.5); color: var(--cor-texto-barraTopo)"
+          ></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+<ion-content class="cabecalho backgroundContentApp">
+    <ion-col size="12" style="display: flex;justify-content: space-evenly;flex-direction: column; height: 100%;">
+        <ion-row style="width: 100%;
+        display: flex;
+        flex-direction: column;height: 100%;">
+            <ion-button style="    height: 100%;
+            width: 99%;" (click)="selectProf()">
+                <ion-icon name="add-outline" slot="start"
+                    style="font-size: 1.8em; color: var(--cor-texto-botaoAgendar)"></ion-icon>
+                <span style="font-size: 12px;">{{'AGENDA.MODALS.SERVICOOUPROFISSIONAL.PROFISSIONAL' | translate}}</span>
+              </ion-button>
+        </ion-row>
+        <ion-row style="width: 100%;height: 100%;">
+            <ion-button (click)="selectServ()" style="width: 100%;height: 87%;"><ion-icon name="add-outline" slot="start"
+                    style="font-size: 1.8em; color: var(--cor-texto-botaoAgendar)" ></ion-icon> 
+                    <span style="font-size: 12px; color: var(--cor-texto-botaoAgendar)">{{'AGENDA.MODALS.SERVICOOUPROFISSIONAL.SERVICO' | translate}}</span></ion-button>
+        </ion-row>
+    </ion-col>
+</ion-content>

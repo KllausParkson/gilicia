@@ -1,0 +1,95 @@
+<ion-footer>
+  <ion-toolbar
+    style="display: flex; flex-direction: column; justify-content: center"
+  >
+    <ion-row
+      style="
+        justify-content: space-evenly;
+        flex-wrap: nowrap;
+        background-color: var(--cor-fundo-menushared);
+      "
+    >
+      <ion-col size="sm">
+        <ion-button (click)="onClick('agenda')" color="clear">
+          <div
+            [ngStyle]="{
+              color:
+                active == 'agenda'
+                  ? 'var(--cor-textoSelecionado-menushared)'
+                  : 'var(--cor-texto-menushared)'
+            }"
+            class="ColunaIcones"
+          >
+            <ion-icon name="calendar-outline"></ion-icon>
+            <ion-label>{{ "SHARED.MENU.AGENDA" | translate }}</ion-label>
+          </div>
+        </ion-button>
+      </ion-col>
+
+      <ion-col *ngIf="onHistorico" size="sm">
+        <ion-button (click)="onClickHistorico($event)" color="clear">
+          <div
+            [ngStyle]="{
+              color:
+                active == 'historico'
+                  ? 'var(--cor-textoSelecionado-menushared)'
+                  : 'var(--cor-texto-menushared)'
+            }"
+            class="ColunaIcones"
+          >
+            <ion-icon name="cash-outline"></ion-icon>
+            <ion-label [translate]="'SHARED.MENU.HISTORICO'"></ion-label>
+          </div>
+        </ion-button>
+      </ion-col>
+
+      <ion-col *ngIf="onRelatorios" size="sm">
+        <ion-button (click)="onClickRelatorios($event)" color="clear">
+          <div
+            [ngStyle]="{
+              color:
+                active == 'relatorios'
+                  ? 'var(--cor-textoSelecionado-menushared)'
+                  : 'var(--cor-texto-menushared)'
+            }"
+            class="ColunaIcones"
+          >
+            <ion-icon name="reader-outline"></ion-icon>
+            <ion-label>{{ "SHARED.MENU.RELATORIOS" | translate }}</ion-label>
+          </div>
+        </ion-button>
+      </ion-col>
+
+      <ion-col *ngIf="onPerfil" size="sm">
+        <ion-button (click)="onClick('perfil')" color="clear">
+          <div
+            [ngStyle]="{
+              color:
+                active === 'perfil'
+                  ? 'var(--cor-textoSelecionado-menushared)'
+                  : 'var(--cor-texto-menushared)'
+            }"
+            class="ColunaIcones"
+          >
+            <ion-icon name="person-outline"></ion-icon>
+            <ion-label [translate]="'SHARED.MENU.PERFIL'"></ion-label>
+          </div>
+        </ion-button>
+      </ion-col>
+
+      <ion-col size="sm">
+        <ion-button (click)="onClickOpcoes($event)" color="clear">
+          <div
+            [ngStyle]="{ color: 'var(--cor-texto-menushared)' }"
+            class="ColunaIcones"
+          >
+            <ion-icon name="settings-outline"></ion-icon>
+            <ion-label>{{ "SHARED.MENU.OPCOES" | translate }}</ion-label>
+          </div>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>
+<!-- Necessario app-locale-sahred para a traducao funcionar corretamente -->
+<app-locale-shared style="visibility: hidden"></app-locale-shared>

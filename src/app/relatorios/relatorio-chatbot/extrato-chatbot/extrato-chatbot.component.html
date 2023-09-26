@@ -1,0 +1,182 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title class="tituloExtrato">
+      {{'RELATORIOS.EXTRATOCHATBOT.TITLE' | translate}}
+    </ion-title>
+    <ion-buttons slot="primary">
+      <ion-button (click)="closeModal()">
+        <i class="icon ion-md-close" slot="icon-only" style="zoom:1.5;"></i>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-grid class="backgroundContentApp" fixed>
+  <ion-row>
+    <ion-col size="12">
+      <app-data-toolbar [startDate]="dataInicial" [endDate]="dataFinal" (dateEmmiter)="receiveDate($event)">
+      </app-data-toolbar>
+    </ion-col>
+  </ion-row>
+
+  <ion-row class="ion-justify-content-center calendar-container backgroundCard" style="text-align: center;">
+    <ion-col class="ion-no-padding ion-no-margin date-label" style="font-size: 12px;">
+      <ion-icon name="card-outline" class="icon-calendar" style="transform: scale(2); padding-right: 3px"></ion-icon>
+      <span>{{'RELATORIOS.RESUMOCHATBOT.SALDORESTANTE' | translate}}: </span>
+      <span style="margin: 0;">{{ Saldo | currencyGlobal }}</span>
+    </ion-col>
+  </ion-row>
+
+
+  <ion-row class="list" [ngStyle]="{'max-height': divContentHeight}" size="12"
+    *ngIf="whatsappCobranca?.informacoesWhatsapp?.length !== 0;else SemDados">
+    <ion-col>
+      <ion-row>
+        <ion-col size="8"></ion-col>
+        <ion-col size="4">
+          <button (click)="abreTodosCards()">
+            {{'RELATORIOS.EXTRATOCHATBOT.ABRIRCARDS' | translate}}
+          </button>
+        </ion-col>
+      </ion-row>
+      <ion-card class="global-card-relatorios backgroundCard colorTextApp" *ngFor="let item of whatsappCobranca?.informacoesWhatsapp;index as i"
+        (click)="abreCardSelecionado(i)">
+        <ion-card-content>
+          <ion-row>
+            <ion-col size="8" size-xs="7">
+              <span class="label-font-size">{{'RELATORIOS.EXTRATOCHATBOT.DATA' | translate}}: </span>
+            </ion-col>
+            <ion-col size="4" size-xs="5" class="ion-text-end label-font-size global-bold-primary"
+              style="display: flex; align-items: center; overflow-wrap: anywhere; justify-content: flex-end;">
+              {{ item.dataMovimentacao }}
+            </ion-col>
+          </ion-row>
+        </ion-card-content>
+        <ion-card-content>
+          <ion-row>
+            <ion-col size="8" size-xs="7">
+              <span class="label-font-size">{{'RELATORIOS.RESUMOCHATBOT.MENSAGENSTROCADAS' | translate}}:</span>
+            </ion-col>
+            <ion-col size="4" size-xs="5" class="ion-text-end label-font-size global-bold-primary"
+              style="display: flex; align-items: center; overflow-wrap: anywhere; justify-content: flex-end;">
+              {{ item.mensagensTrocadas }}
+            </ion-col>
+          </ion-row>
+        </ion-card-content>
+        <ng-container *ngIf="openCard[i] == true">
+          <ion-card-content>
+            <ion-row>
+              <ion-col size="8" size-xs="7">
+                <span class="label-font-size">{{'RELATORIOS.RESUMOCHATBOT.INTERACOESBOT' | translate}}:</span>
+              </ion-col>
+              <ion-col size="4" size-xs="5" class="ion-text-end label-font-size global-bold-primary"
+                style="display: flex; align-items: center; overflow-wrap: anywhere; justify-content: flex-end;">
+                {{ item.quantidadeInteracaoBot }}
+              </ion-col>
+            </ion-row>
+          </ion-card-content>
+          <ion-card-content>
+            <ion-row>
+              <ion-col size="8" size-xs="7">
+                <span class="label-font-size">{{'RELATORIOS.RESUMOCHATBOT.INTERACOESUSER' | translate}}:</span>
+              </ion-col>
+              <ion-col size="4" size-xs="5" class="ion-text-end label-font-size global-bold-primary"
+                style="display: flex; align-items: center; overflow-wrap: anywhere; justify-content: flex-end;">
+                {{ item.quantidadeInteracaoUsuario }}
+              </ion-col>
+            </ion-row>
+          </ion-card-content>
+          <ion-card-content>
+            <ion-row>
+              <ion-col size="8" size-xs="7">
+                <span class="label-font-size">{{'RELATORIOS.RESUMOCHATBOT.AGENDAMENTOS' | translate}}:</span>
+              </ion-col>
+              <ion-col size="4" size-xs="5" class="ion-text-end label-font-size global-bold-primary"
+                style="display: flex; align-items: center; overflow-wrap: anywhere; justify-content: flex-end;">
+                {{ item.quantidadeAgendamentos }}
+              </ion-col>
+            </ion-row>
+          </ion-card-content>
+
+          <ion-card-content>
+            <ion-row>
+              <ion-col size="8" size-xs="7">
+                <span class="label-font-size">{{'RELATORIOS.RESUMOCHATBOT.CONFIRMACOES' | translate}}:</span>
+              </ion-col>
+              <ion-col size="4" size-xs="5" class="ion-text-end label-font-size global-bold-primary"
+                style="display: flex; align-items: center; overflow-wrap: anywhere; justify-content: flex-end;">
+                {{ item.quantidadeConfirmacoes }}
+              </ion-col>
+            </ion-row>
+          </ion-card-content>
+
+
+          <ion-card-content>
+            <ion-row>
+              <ion-col size="8" size-xs="7">
+                <span class="label-font-size">{{'RELATORIOS.EXTRATOCHATBOT.TAXAADESAO' | translate}}:</span>
+              </ion-col>
+              <ion-col size="4" size-xs="5" class="ion-text-end label-font-size global-bold-primary"
+                style="display: flex; align-items: center; overflow-wrap: anywhere; justify-content: flex-end;">
+                {{ taxaDeAdesao[i] }}
+              </ion-col>
+            </ion-row>
+          </ion-card-content>
+
+        </ng-container>
+        <ion-card-content>
+          <ion-row>
+            <ion-col size="8" size-xs="7">
+              <span class="label-font-size">{{'RELATORIOS.EXTRATOCHATBOT.VALOR' | translate}}:</span>
+            </ion-col>
+            <ion-col size="4" size-xs="5" class="ion-text-end label-font-size global-bold-primary"
+              style="display: flex; align-items: center; overflow-wrap: anywhere; justify-content: flex-end;">
+              {{ item.custoCliente | currencyGlobal }}
+            </ion-col>
+          </ion-row>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+
+  <ng-template #SemDados>
+    <ion-row class="colorTextApp" style="justify-content: center;">
+      <ion-col class="message colorTextApp" size="12">
+        {{'RELATORIOS.EXTRATOCHATBOT.SEMDADOS' | translate}}
+      </ion-col>
+    </ion-row>
+  </ng-template>
+
+  <ion-row class="list" [ngStyle]="{'max-height': divContentHeight}" size="12"
+    *ngIf="whatsappCobranca?.informacoesWhatsapp?.length > 0">
+    <ion-col>
+      <ion-card class="global-card-relatorios backgroundCard colorTextApp">
+        <ion-card-content>
+          <ion-row>
+            <ion-col size="8" size-xs="7">
+              <span class="label-font-size">{{'RELATORIOS.EXTRATOCHATBOT.MENSAGENSPERIODO' | translate}}: </span>
+            </ion-col>
+            <ion-col size="4" size-xs="5" class="ion-text-end label-font-size global-bold-primary"
+              style="display: flex; align-items: center; overflow-wrap: anywhere; justify-content: flex-end;">
+              {{ totalMensagens }}
+            </ion-col>
+          </ion-row>
+        </ion-card-content>
+
+        <ion-card-content>
+          <ion-row>
+            <ion-col size="8" size-xs="7">
+              <span class="label-font-size">{{'RELATORIOS.EXTRATOCHATBOT.BALANCOPERIODO' | translate}}:</span>
+            </ion-col>
+            <ion-col size="4" size-xs="5" class="ion-text-end label-font-size global-bold-primary"
+              style="display: flex; align-items: center; overflow-wrap: anywhere; justify-content: flex-end;">
+              {{ totalGasto | currencyGlobal }}
+            </ion-col>
+          </ion-row>
+        </ion-card-content>
+
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-grid>

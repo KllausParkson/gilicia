@@ -1,0 +1,39 @@
+<ion-content class="backgroundContentApp" bgLogin>
+  <div style="height: 80%; display: flex; align-items: center; justify-content: center;">
+    <ion-card class="backgroundCard">
+      <ion-grid>
+        <ion-row class="ion-justify-content-center">
+          <ion-col size="6">
+            <div style="
+            height: var(--tamanho-logo);
+            background-image: var(--estabelecimento-logo-sobre);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+          "></div>
+          </ion-col>
+        </ion-row>
+        <ion-row class="ion-padding" style="padding-top: 40px;">
+          <ion-col class="ion-text-center" size="12" style="color: var(--ion-color-primary); font-size: large;">
+            {{'LOGIN.CONFIRMACAOCADASTRO.TITLE' | translate }}
+          </ion-col>
+        </ion-row>
+        <ion-row class="ion-justify-content-center">
+          <ion-icon *ngIf="success" name="checkmark-circle-outline" style="transform: scale(7); color: #2dd36f;"></ion-icon><!-- se o retorno da api for positivo-->
+          <ion-icon *ngIf="error" name="close-circle-outline" style="transform: scale(7); color: #eb445a;"></ion-icon><!-- se o retorno da api for negativo-->
+        </ion-row>
+        <ion-row>
+          <ion-col size="2"></ion-col>
+          <ion-col *ngIf="success" size="8" style="text-align: center; font-size: 14px;">
+            {{ 'LOGIN.CONFIRMACAOCADASTRO.FIRSTTEXTSUCCESS' | translate | replace : 'EMAILCONTA' : email }}
+            <br>
+            <br>
+            {{ 'LOGIN.CONFIRMACAOCADASTRO.SECONDTEXTSUCCESS' | translate }}
+          </ion-col>
+          <ion-col *ngIf="error" size="8" style="text-align: center; font-size: 14px;">{{ 'LOGIN.CONFIRMACAOCADASTRO.TEXTERROR' | translate }} </ion-col>
+          <ion-col size="2"></ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card>
+  </div>
+</ion-content>

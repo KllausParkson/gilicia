@@ -1,0 +1,771 @@
+<ion-header mode="md">
+  <ion-toolbar>
+    <ion-title *ngIf="
+        segment != 'check' && segment != 'teste' && segment != 'calendario'&& segment != 'selecionaProfissional'
+      " style="color: var(--cor-texto-barraTopo)">
+      {{
+      "AGENDA.MODALNOVOAGENDAMENTO.ESCOLHERSERVICOS" | translate
+      }}</ion-title>
+    <ion-title *ngIf="segment == 'check'" style="color: var(--cor-texto-barraTopo)">{{
+      "AGENDA.MODALNOVOAGENDAMENTO.TITLECONFIRMA" | translate }}
+    </ion-title>
+    <ion-title *ngIf="segment == 'calendario'" style="color: var(--cor-texto-barraTopo)">{{
+      "AGENDA.MODALNOVOAGENDAMENTO.AGENDACEL" | translate }}
+    </ion-title>
+    <ion-title *ngIf="segment == 'teste'|| segment == 'selecionaProfissional'" style="color: var(--cor-texto-barraTopo)">{{
+      "AGENDA.MODALNOVOAGENDAMENTO.ESCOLHERPROFISSIONAL" | translate
+      }}</ion-title>
+    <ion-title *ngIf="segment != 'calendario'" small style="
+        font-size: 12px;
+        font-weight: 200;
+        padding-left: 20px;
+        padding-right: 10px;
+        color: var(--cor-texto-barraTopo);
+      ">
+      {{ this.userData.authenticatedBranch.nomeEmpresaFilial }}</ion-title>
+    <ion-buttons slot="primary">
+      <ion-button *ngIf="segment != 'calendario'" (click)="closeModal()">
+        <ion-icon name="close" slot="icon-only"
+          style="transform: scale(1.5); color: var(--cor-texto-barraTopo)"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="backgroundApp" mode="md">
+  <div mode="md" style="height: 100%">
+    <ng-container [ngSwitch]="segment">
+      <ng-container style="overflow-y: auto;" *ngSwitchCase="'selecionaProfissional'">
+        <ion-col size="12">
+          <ng-container *ngFor="
+          let profissional of allProfissionais;
+          index as j
+        ">
+            <ng-container>
+              <ion-card class="card-horarios-profissional backgroundApp">
+                <ion-row style="display: flex">
+                  <ion-col size="3" class="colunas-card" (click)="profissionalSelecionado(profissional)">
+                    <ion-avatar>
+                      <ion-img [src]="
+                      profissional.foto != null
+                        ? profissional.foto
+                        : 'https://oneproducao.blob.core.windows.net/one2/Imagens/Sem_FotoPerfil.png'
+                    ">
+                      </ion-img>
+                    </ion-avatar>
+                  </ion-col>
+                  <ion-col size="7" class="colunas-card-profissional" style="justify-content: start" (click)="profissionalSelecionado(profissional)">
+                    <ion-label style="
+                    font-weight: bolder;
+                    font-size: small;
+                    text-align: start;
+                  ">
+                      {{ profissional.nome }}<br></ion-label>
+                      <ion-label style="
+                    font-size: small;
+                    text-align: start;
+                  ">{{profissional.profissao}}</ion-label>
+                  </ion-col>
+                  <ion-col size="2" *ngIf="profissional.curriculo" style="display: flex; align-items: center;" (click)="openCurriculo(j,0)">
+                    <ion-icon *ngIf="profissional.curriculo" name="information-circle-outline" style="color: var(--ion-color-primary);" >
+                              </ion-icon>
+                  </ion-col>
+
+                </ion-row>
+                <ion-row>
+                </ion-row>
+              </ion-card>
+            </ng-container>
+          </ng-container>
+        </ion-col>
+      </ng-container>
+      <ion-list class="backgroundApp" mode="md" style="height: 100%" *ngSwitchCase="'servicos'">
+        <ion-segment mode="md" class="SwipedTabs-tabs" style="overflow-x: scroll" scrollable>
+          <ion-segment-button mode="md" class="gservs colorTextApp"
+            *ngFor="let gServico of gServicosDisponiveis; index as i" id="segment-{{ i }}" (click)="selectTab(i)"
+            [ngClass]="{
+              'SwipedTabs-activeTab':
+                SwipedTabsSlider &&
+                (SwipedTabsSlider.getActiveIndex() == i ||
+                  (tabs?.length - 1 == i && SwipedTabsSlider.isEnd()))
+            }">
+            {{ gServico.descricao? gServico.descricao:gServico.gservNome }}
+          </ion-segment-button>
+        </ion-segment>
+        <ion-slides class="backgroundApp" mode="md" style="height: 100%" #SwipedTabsSlider
+          (ionSlideDrag)="animateIndicator($event)" (ionSlideWillChange)="updateIndicatorPosition()"
+          (ionSlideDidChange)="updateIndicatorPosition()" (pan)="updateIndicatorPosition()" [pager]="false">
+          <ng-container *ngFor="let gServico of gServicosDisponiveis; index as i">
+            <ion-slide>
+              <ng-container>
+                <ion-card class="backgroundApp" style="width: 100%; box-shadow: none; height: 100%">
+                  <ion-card-content mode="md" [ngStyle]="{ 'overflow-y': 'auto' }" class="cardServicos colorTextApp">
+                    <ion-row *ngFor="let servico of gServico.servicos; index as j" style="padding-top: 10px">
+                      <ion-col size="1" style="padding-left: 5px; text-align: left">
+                        <ion-checkbox [disabled]="maxServico" [(ngModel)]="servicosSelecionados[i][j]"
+                          (ngModelChange)="marcarServico(i, j)">
+                        </ion-checkbox>
+                      </ion-col>
+                      <ion-col size="11" style="text-align: left; line-height: 1.7"
+                        (click)="checkBoxSelectionFromText(i, j)">
+                        {{ servico.descricao ? servico.descricao : servico.nomeServico }}
+                        <div *ngIf="
+                            servico.valorServico === 0.0;
+                            then adefinir;
+                            else exibir
+                          "></div>
+                        <ng-template #adefinir><span *ngIf="parametrosLight.precoServicoNoApp">- {{
+                            "AGENDA.PRECOADEFINIR" | translate }}</span></ng-template>
+                        <ng-template #exibir><span *ngIf="parametrosLight.precoServicoNoApp">- 
+                          {{ (servico.valorServico? servico.valorServico : servico.precoServico) | currencyGlobal }}
+                        </span></ng-template>
+                      </ion-col>
+                    </ion-row>
+                  </ion-card-content>
+                </ion-card>
+              </ng-container>
+            </ion-slide>
+          </ng-container>
+          
+        </ion-slides>
+      </ion-list>
+
+      <ion-list class="backgroundApp" *ngSwitchCase="'teste2'" style="height: 100%">
+        <div style="border-bottom: 1px solid rgba(0, 0, 0, 0.1)">
+          <app-calendario [parametrosLight]="parametrosLight" [clientSchedule]="true"
+            (dataSelecionada)="atualizaMinDateFinal($event)">
+          </app-calendario>
+        </div>
+        <div class="backgroundApp" [ngStyle]="{ height: divHeight }" *ngIf="temHorario">
+          <ion-row *ngIf="listaCarregada" class="forecast_container" [ngStyle]="{
+              'min-width': this.servicosMarcados?.length * 200,
+              'max-width': this.servicosMarcados?.length * 200,
+              height: '100%'
+            }">
+            <ng-container *ngIf="listaProfissionaisDisponiveis">
+              <ng-container *ngFor="
+                  let profissional of listaProfissionaisDisponiveis;
+                  index as i
+                ">
+                <ion-card class="ion-justify-content-center cardRArr backgroundMenuApp" [ngStyle]="{
+                    'max-width':
+                      listaProfissionaisDisponiveis?.length <= 2
+                        ? '98%'
+                        : '200px'
+                  }">
+                  <div class="div-container backgroundItemApp2">
+                    <span *ngIf="profissional == undefined"
+                      style="color: var(--ion-color-danger); font-size: 20px">{{ "Nenhum colaborador trabalha nesse dia"
+                      }}
+                    </span>
+                    <ion-item class="nomeServicoLabel backgroundItemApp2">
+                      <ion-row style="width: 100%;">
+                        <ion-col size="12">
+                          <ion-row style="display: flex; width: 100%">
+                            <ion-col size="1.5" style="display: flex; align-items: center">
+                              <ion-icon name="information-circle-outline" (click)="exibeDetalhesAlert(i)"
+                                style="color: var(--ion-color-primary);">
+                              </ion-icon>
+                            </ion-col>
+                            <ion-col size="9" class="ion-no-padding" style="display: flex; align-items: center">
+
+                              <ion-label class="text-servico-label" style="font-size: 13px">
+                                {{ this.listHorariosExib[i][0].servicoNome }}
+                              </ion-label>
+                            </ion-col>
+                            <ion-col size="1.5" style=" display: flex; align-items: center; justify-content: flex-end;">
+                              <ion-icon name="close-circle-outline" (click)="removerAgendamento(i)" style="
+                                  color: red;
+                                  display: flex;
+                                  justify-content: center;
+                                  align-items: center;
+                                  padding-right: 0;
+                                ">
+                              </ion-icon>
+                            </ion-col>
+                          </ion-row>
+                        </ion-col>
+                      </ion-row>
+
+                    </ion-item>
+                    <ion-item class="nomeServicoLabel backgroundItemApp2">
+                      <ion-row style="width: 100%;">
+                        <ion-col size="12">
+                          <ion-row style="width: 100%; display: flex; align-items: center; ">
+                            <ion-col size="1.5">
+                              <ion-icon name="cut-outline" (click)="exibeDetalhesAlert(i)"
+                                style="color: var(--ion-color-primary); ">
+                              </ion-icon>
+                            </ion-col>
+                            <ion-col size="7" class="ion-no-padding" style="display: flex; align-items: center">
+                              <!-- Não remover a classe selec-->
+                              <ion-label class="text-servico-label selec-profissional" style="font-size: '13px'">
+                                - - - - -
+                              </ion-label>
+
+                            </ion-col>
+                            <ion-col size="1">
+                              <ion-icon name="time-outline" (click)="exibeDetalhesAlert(i)"
+                                style="color: var(--ion-color-primary); font-size: 15px !important;">
+                              </ion-icon>
+                            </ion-col>
+                            <ion-col size="2.5">
+                              <!-- Não remover a classe selec-->
+                              <ion-row>
+                                <ion-label class="text-servico-label selec-horario"
+                                  style="color: var(--ion-color-primary);font-size: '13px';">
+                                  - - - -
+                                </ion-label>
+                              </ion-row>
+                            </ion-col>
+                          </ion-row>
+                        </ion-col>
+                      </ion-row>
+
+                    </ion-item>
+
+                    <ion-col class="show" size="12">
+                      <ion-row style="display: contents">
+                        <ion-input id="'pesquisa' + i" class="form-control input" type="text" name="search"
+                          autocomplete="off" style="text-align: left" placeholder="Pesquisa" maxlength="20"
+                          (input)="inicializaSearchList($event.target.value, i)">
+                          <ion-icon style="padding: 0 8px; color: var(--cor-texto-escuro)"
+                            name="search-outline"></ion-icon>
+                        </ion-input>
+                      </ion-row>
+                    </ion-col>
+                  </div>
+
+                  <ion-row style="padding-top: 10px">
+                    <span *ngIf="!colaboradorCheck[i].exib" style="color: var(--ion-color-primary)">
+                      {{
+                      "AGENDA.MODALS.NOVOAGENDAMENTO.MARQUEOSERVICO"
+                      | translate
+                      }}
+                    </span>
+                  </ion-row>
+                  <ng-container *ngIf="colaboradorCheck[i].exib" style="
+                      min-width: 200px;
+                      display: grid;
+                      min-height: 45%;
+                      max-height: 70%;
+                    ">
+                    <div *ngIf="profissional != undefined" class="divCards"
+                      style="padding-bottom: calc(env(safe-area-inset-bottom) + env(safe-area-inset-top));"
+                      [ngStyle]="{'height': cardHeight}">
+                      <ng-container>
+                        <ng-container>
+                          <ion-card class="card-horarios-profissional backgroundApp">
+                            <ion-row style="display: flex">
+                              <ion-col size="3" class="colunas-card">
+                                <ion-avatar>
+                                  <ion-img [src]="
+                                      profissional.foto != null
+                                        ? profissional.foto
+                                        : 'https://oneproducao.blob.core.windows.net/one2/Imagens/Sem_FotoPerfil.png'
+                                    ">
+                                  </ion-img>
+                                </ion-avatar>
+                              </ion-col>
+                              <ion-col size="9" class="colunas-card" style="justify-content: center">
+                                <ion-label style="
+                                    font-weight: bolder;
+                                    font-size: medium;
+                                    text-align: start;
+                                  ">
+                                  {{ profissional.nome }}</ion-label>
+                              </ion-col>
+
+                            </ion-row>
+                            <ion-row>
+                              <ion-col style="position: relative;">
+
+                                <ng-container>
+
+                                  <div mode="md" class="noScroll" style="
+                                    overflow-y: auto;
+                                    display: flex;
+                                    min-width: 100px;
+                                    margin-left: 5px;
+                                  " [ngStyle]="{ 'max-height': columnTimes }">
+
+                                    <ng-container *ngFor="
+                                      let horario of listHorariosExib[0][0]
+                                        .horariosDisponiveis;
+                                      index as buttonIndex
+                                    ">
+                                      <ion-button mode="md" class="horario column-{{ 0 }}{{ 0 }}" style="
+                                        width: fit-content;
+                                        
+                                      " [disabled]="horario.disabled"
+                                        (click)="horarioButtonClick($event, listHorariosExib[0][0], horario, 0, buttonIndex, 0)">
+                                        {{
+                                        horario.horarioInicio?.substr(0, 5)
+                                        }}</ion-button>
+                                    </ng-container>
+                                    <div *ngIf="listHorariosExib[0][0].semHorario">
+                                      <span>{{
+                                        "AGENDA.MODALS.NOVOAGENDAMENTO.HORARIOS"
+                                        | translate
+                                        }}</span>
+                                    </div>
+                                  </div>
+
+                                </ng-container>
+
+                              </ion-col>
+                              <ion-col size="1"
+                                *ngIf="listHorariosExib[0][0].horariosDisponiveis.length > screenWidth / 100 " style="
+                            position: absolute;
+                            left: 92%;
+                            
+                            ">
+                                <!--Quantidade de horarios para mostrar seta varia de acordo com tamanho da tela -->
+                                <ion-icon name="chevron-forward-outline" (click)="verHorariosAlert()" style="color: var(--ion-color-primary); 
+                              background-color: transparent;
+                              margin-top: 13px;
+                              margin-right: 5px;
+                              position: relative;
+                              float:right;
+                              "></ion-icon>
+
+                              </ion-col>
+                            </ion-row>
+                          </ion-card>
+                        </ng-container>
+                      </ng-container>
+                    </div>
+                  </ng-container>
+                </ion-card>
+              </ng-container>
+            </ng-container>
+          </ion-row>
+        </div>
+
+        <ng-container *ngIf="!temHorario">
+          <ion-row class="semProfissionaisDia">
+            <ion-col size="1">
+              <ion-icon name="information-circle-outline"></ion-icon>
+            </ion-col>
+            <ion-col size="11">
+              <ion-text>
+                {{
+                "AGENDA.MODALS.NOVOAGENDAMENTO.SEMPROFISSIONAISDIA"
+                | translate
+                }}
+              </ion-text>
+            </ion-col>
+          </ion-row>
+        </ng-container>
+      </ion-list>
+
+      <ion-list class="backgroundApp" *ngSwitchCase="'teste'" style="height: 100%">
+        <div style="border-bottom: 1px solid rgba(0, 0, 0, 0.1)">
+          <app-calendario [parametrosLight]="parametrosLight" [clientSchedule]="true"
+            (dataSelecionada)="atualizaMinDateFinal($event)">
+          </app-calendario>
+        </div>
+        <div class="backgroundApp" [ngStyle]="{ height: divHeight }" *ngIf="temHorario">
+          <ion-row *ngIf="listaCarregada" class="forecast_container" [ngStyle]="{
+              'min-width': this.servicosMarcados?.length * 200,
+              'max-width': this.servicosMarcados?.length * 200,
+              height: '100%'
+            }">
+            <ng-container *ngIf="listaProfissionaisDisponiveis">
+              <ng-container *ngFor="
+                  let profissional of listaProfissionaisDisponiveis;
+                  index as i
+                ">
+                <ion-card class="ion-justify-content-center cardRArr backgroundMenuApp" [ngStyle]="{
+                    'max-width':
+                      listaProfissionaisDisponiveis?.length <= 2
+                        ? '98%'
+                        : '200px'
+                  }">
+                  <div class="div-container backgroundItemApp2">
+                    <span *ngIf="profissional[0] == undefined"
+                      style="color: var(--ion-color-danger); font-size: 20px">{{ "Nenhum colaborador trabalha nesse dia"
+                      }}
+                    </span>
+                    <ion-item class="nomeServicoLabel backgroundItemApp2">
+                      <ion-row style="width: 100%;">
+                        <ion-col size="12">
+                          <ion-row style="display: flex; width: 100%">
+                            <ion-col size="1.5" style="display: flex; align-items: center">
+                              <ion-icon name="information-circle-outline" (click)="exibeDetalhesAlert(i)"
+                                style="color: var(--ion-color-primary);">
+                              </ion-icon>
+                            </ion-col>
+                            <ion-col size="9" class="ion-no-padding" style="display: flex; align-items: center">
+
+                              <ion-label class="text-servico-label" style="font-size: 13px">
+                                {{ this.listHorariosExib[i][0].servicoNome }}
+                              </ion-label>
+                            </ion-col>
+                            <ion-col size="1.5" style=" display: flex; align-items: center; justify-content: flex-end;">
+                              <ion-icon name="close-circle-outline" (click)="removerAgendamento(i)" style="
+                                  color: red;
+                                  display: flex;
+                                  justify-content: center;
+                                  align-items: center;
+                                  padding-right: 0;
+                                ">
+                              </ion-icon>
+                            </ion-col>
+                          </ion-row>
+                        </ion-col>
+                      </ion-row>
+
+                    </ion-item>
+                    <ion-item class="nomeServicoLabel backgroundItemApp2">
+                      <ion-row style="width: 100%;">
+                        <ion-col size="12">
+                          <ion-row style="width: 100%; display: flex; align-items: center; ">
+                            <ion-col size="1.5">
+                              <ion-icon name="cut-outline" (click)="exibeDetalhesAlert(i)"
+                                style="color: var(--ion-color-primary); ">
+                              </ion-icon>
+                            </ion-col>
+                            <ion-col size="7" class="ion-no-padding" style="display: flex; align-items: center">
+                              <!-- Não remover a classe selec-->
+                              <ion-label class="text-servico-label selec-profissional" style="font-size: '13px'">
+                                - - - - -
+                              </ion-label>
+
+                            </ion-col>
+                            <ion-col size="1">
+                              <ion-icon name="time-outline" (click)="exibeDetalhesAlert(i)"
+                                style="color: var(--ion-color-primary); font-size: 15px !important;">
+                              </ion-icon>
+                            </ion-col>
+                            <ion-col size="2.5">
+                              <!-- Não remover a classe selec-->
+                              <ion-row>
+                                <ion-label class="text-servico-label selec-horario"
+                                  style="color: var(--ion-color-primary);font-size: '13px';">
+                                  - - - -
+                                </ion-label>
+                              </ion-row>
+                            </ion-col>
+                          </ion-row>
+                        </ion-col>
+                      </ion-row>
+
+                    </ion-item>
+
+                    <ion-col class="show" size="12">
+                      <ion-row style="display: contents">
+                        <ion-input id="'pesquisa' + i" class="form-control input" type="text" name="search"
+                          autocomplete="off" style="text-align: left" placeholder="Pesquisa" maxlength="20"
+                          (input)="inicializaSearchList($event.target.value, i)">
+                          <ion-icon style="padding: 0 8px; color: var(--cor-texto-escuro)"
+                            name="search-outline"></ion-icon>
+                        </ion-input>
+                      </ion-row>
+                    </ion-col>
+                  </div>
+
+                  <ion-row style="padding-top: 10px">
+                    <span *ngIf="!colaboradorCheck[i].exib" style="color: var(--ion-color-primary)">
+                      {{
+                      "AGENDA.MODALS.NOVOAGENDAMENTO.MARQUEOSERVICO"
+                      | translate
+                      }}
+                    </span>
+                  </ion-row>
+                  <ng-container *ngIf="colaboradorCheck[i].exib" style="
+                      min-width: 200px;
+                      display: grid;
+                      min-height: 45%;
+                      max-height: 70%;
+                    ">
+                    <div *ngIf="profissional[0] != undefined" class="divCards"
+                      style="padding-bottom: calc(env(safe-area-inset-bottom) + env(safe-area-inset-top));"
+                      [ngStyle]="{'height': cardHeight}">
+                      <ng-container *ngFor="
+                          let profissional of listHorariosExib[i];
+                          index as j
+                        ">
+                        <ng-container>
+                          <ion-card class="card-horarios-profissional backgroundApp">
+                            <ion-row style="display: flex">
+                              <ion-col size="3" class="colunas-card">
+                                <ion-avatar [ngClass]="styleChange(i,j)" (click)="openCurriculo(i,j)">
+                                  <ion-img [src]="
+                                      profissional.foto != null
+                                        ? profissional.foto
+                                        : 'https://oneproducao.blob.core.windows.net/one2/Imagens/Sem_FotoPerfil.png'
+                                    ">
+                                  </ion-img>
+                                </ion-avatar>
+                              </ion-col>
+                              <ion-col size="9" class="colunas-card" style="justify-content: center">
+                                <ion-label style="
+                                    font-weight: bolder;
+                                    font-size: medium;
+                                    text-align: start;
+                                  ">
+                                  {{ profissional.nome }}</ion-label>
+                              </ion-col>
+
+                            </ion-row>
+                            <ion-row>
+                              <ion-col style="position: relative;">
+
+                                <ng-container *ngIf="
+                                  listHorariosExib[i][j] != 0 &&
+                                  listHorariosExib[i][j] != null
+                                ">
+
+                                  <div mode="md" class="noScroll" style="
+                                    overflow-y: auto;
+                                    display: flex;
+                                    min-width: 100px;
+                                    margin-left: 5px;
+                                  " [ngStyle]="{ 'max-height': columnTimes }">
+
+                                    <ng-container *ngFor="
+                                      let horario of listHorariosExib[i][j]
+                                        .horariosDisponiveis;
+                                      index as buttonIndex
+                                    ">
+                                      <ion-button mode="md" class="horario column-{{ i }}{{ j }}" style="
+                                        width: fit-content;
+                                        
+                                      " [disabled]="horario.disabled"
+                                        (click)="horarioButtonClick($event, listHorariosExib[i][j], horario, j, buttonIndex, i)">
+                                        {{
+                                        horario.horarioInicio?.substr(0, 5)
+                                        }}</ion-button>
+                                    </ng-container>
+                                    <div *ngIf="listHorariosExib[i][j].semHorario">
+                                      <span>{{
+                                        "AGENDA.MODALS.NOVOAGENDAMENTO.HORARIOS"
+                                        | translate
+                                        }}</span>
+                                    </div>
+                                  </div>
+
+                                </ng-container>
+
+                              </ion-col>
+                              <ion-col size="1"
+                                *ngIf="listHorariosExib[i][j].horariosDisponiveis.length > screenWidth / 100 " style="
+                            position: absolute;
+                            left: 92%;
+                            
+                            ">
+                                <!--Quantidade de horarios para mostrar seta varia de acordo com tamanho da tela -->
+                                <ion-icon name="chevron-forward-outline" (click)="verHorariosAlert()" style="color: var(--ion-color-primary); 
+                              background-color: transparent;
+                              margin-top: 13px;
+                              margin-right: 5px;
+                              position: relative;
+                              float:right;
+                              "></ion-icon>
+
+                              </ion-col>
+                            </ion-row>
+                          </ion-card>
+                        </ng-container>
+                      </ng-container>
+                    </div>
+                  </ng-container>
+                </ion-card>
+              </ng-container>
+            </ng-container>
+          </ion-row>
+        </div>
+
+        <ng-container *ngIf="!temHorario">
+          <ion-row class="semProfissionaisDia">
+            <ion-col size="1">
+              <ion-icon name="information-circle-outline"></ion-icon>
+            </ion-col>
+            <ion-col size="11">
+              <ion-text>
+                {{
+                "AGENDA.MODALS.NOVOAGENDAMENTO.SEMPROFISSIONAISDIA"
+                | translate
+                }}
+              </ion-text>
+            </ion-col>
+          </ion-row>
+        </ng-container>
+      </ion-list>
+      <ng-container *ngSwitchCase="'calendario'">
+        <div style="margin: 3%">
+          <ion-row class="ion-justify-content-center ion-text-center">
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <span>{{
+                "AGENDA.MODALS.NOVOAGENDAMENTO.TEXT" | translate
+                }}</span>
+            </ion-col>
+          </ion-row>
+          <ng-container style="overflow-y: auto" *ngFor="let servico of ListServiceSuccess; index as i">
+            <ion-row class="cardAgendaGoogle" style="display: flex; align-items: center">
+              <ion-col size="8">
+                <span style="color: var(--ion-color-primary)">{{
+                  servico.profissionalInfo.servicoNome
+                  }}</span>
+                <br />
+                <span style="font-size: 12px; text-transform: capitalize">{{
+                  servico.agendamento.dataAg | date: "EEEE"
+                  }}</span>
+                &nbsp;
+                <span style="font-size: 12px">{{
+                  servico.agendamento.dataAg | date: "shortDate"
+                  }}</span>
+                <br />
+                <span style="font-size: 12px">{{ servico.agendamento.horarioInicio?.substr(0, 5) }} -
+                  {{ servico.agendamento.horarioFim?.substr(0, 5) }}</span>
+              </ion-col>
+              <ion-col size="4">
+                <ion-button (click)="abrePagAgendarGoogle(servico); disableButton($event)">
+                  {{
+                  "AGENDA.MODALS.NOVOAGENDAMENTO.INCLUIR" | translate
+                  }}</ion-button>
+              </ion-col>
+            </ion-row>
+          </ng-container>
+        </div>
+      </ng-container>
+
+      <ion-list class="backgroundApp" style="height: 100%" *ngSwitchCase="'check'">
+        <div style="height: 100%; overflow: auto">
+          <ion-row style="padding-left: 10px">
+            <ion-col size="4" style="text-align: center; color: var(--ion-color-primary); ">
+              {{ "AGENDA.MODAL.NOVOAGENDAMENTO.DATASELECIONADA" | translate }}
+            </ion-col>
+            <ion-col size="8" style="text-align: center; color: var(--ion-color-primary); ">
+              {{ "AGENDA.MODALNOVOAGENDAMENTO.SALAO" | translate }}</ion-col>
+          </ion-row>
+          <ion-row style="
+              border-bottom: 1px solid var(--cor-texto-escuro);
+              padding-bottom: 20px;
+              padding-left: 10px;
+              align-items: center;
+            ">
+            <ion-col size="4" style="text-align: center; color: var(--cor-texto-escuro); opacity: 0.6;">{{
+              dataExibicao.toString() }}
+            </ion-col>
+            <ion-col size="8"
+              style="text-align: center; color: var(--cor-texto-escuro); opacity: 0.6; font-weight: bold">
+              {{ userData.authenticatedBranch.nomeEmpresaFilial }}
+            </ion-col>
+          </ion-row>
+          <ion-row style="padding-top: 10px">
+            <ion-col size="12">
+              <ion-row>
+                <ion-col size="6" class="appointmentColFirstRow"
+                  style="color: var(--ion-color-primary); text-align: center">{{
+                  "AGENDA.MODAL.NOVOAGENDAMENTO.SERVICOCHECK" | translate
+                  }}</ion-col>
+                <ion-col size="5" class="appointmentColFirstRow"
+                  style="color: var(--ion-color-primary); text-align: center">{{
+                  "AGENDA.MODAL.NOVOAGENDAMENTO.HORARIOCHECK" | translate
+                  }}</ion-col>
+              </ion-row>
+            </ion-col>
+          </ion-row>
+
+          <ng-container *ngFor="let agendamento of listNovosAgendamentos; index as i">
+            <ion-card class="backgroundApp colorTextApp" mode="md" style="margin: 20px 10px 10px 10px">
+              <ion-row mode="md" style="display: flex; align-items: center" class="backgroundCard">
+                <ion-col mode="md" size="7" size-xs="6" class="appointmentColSecondRow ion-no-padding">
+                  <ng-template [ngIf]="agendamento?.profissionalInfo.foto != null" [ngIfElse]="NaoTemFoto">
+                    <ion-item mode="md" lines="none" text-wrap class="ion-item-style cardHorario">
+                      <ion-avatar slot="start" class="imagemOne">
+                        <ion-img [src]="agendamento.profissionalInfo.foto"></ion-img>
+                      </ion-avatar>
+                      <ion-col>
+                        <ion-row>
+                          <ion-label class="ion-text-wrap"
+                            style="font-size: 12px; color: var(--cor-texto-escuro); opacity: 0.6;">
+                            {{ agendamento.profissionalInfo.nome }}
+                          </ion-label>
+                        </ion-row>
+                        <ion-row>
+                          <ion-label style="font-size: 15px; color: var(--cor-texto-escuro); ">
+                            {{ agendamento.profissionalInfo.servicoNome }}
+                          </ion-label>
+                        </ion-row>
+                      </ion-col>
+                    </ion-item>
+                  </ng-template>
+                  <ng-template #NaoTemFoto>
+                    <ion-item lines="none" class="ion-item-style cardHorario">
+                      <ion-avatar slot="start" class="imagemOne">
+                        <ion-img [src]="
+                            'https://oneproducao.blob.core.windows.net/one2/Imagens/Sem_FotoPerfil.png'
+                          " style="transform: scale(1)"></ion-img>
+                      </ion-avatar>
+                      <ion-col>
+                        <ion-row>
+                          <ion-label class="ion-text-wrap"
+                            style="font-size: 12px; color: var(--cor-texto-escuro); opacity: 0.6;">
+                            {{ agendamento.profissionalInfo.nome }}
+                          </ion-label>
+                        </ion-row>
+                        <ion-row>
+                          <ion-label style="font-size: 15px; color: var(--cor-texto-escuro); opacity: 0.6">
+                            {{ agendamento.profissionalInfo.servicoNome }}
+                          </ion-label>
+                        </ion-row>
+                      </ion-col>
+                    </ion-item>
+                  </ng-template>
+                </ion-col>
+                <ion-col size="4" size-xs="5" class="appointmentColSecondRow ion-no-padding" style="text-align: center">
+                  <ion-label mode="md" class="labelHorario">{{ agendamento.agendamento.horarioInicio?.substr(0, 5) }} -
+                    {{
+                    agendamento.agendamento.horarioFim?.substr(0, 5)
+                    }}</ion-label>
+                </ion-col>
+                <ion-col size="1" class="appointmentColSecondRow" style="
+                    text-align: center;
+                    align-items: center;
+                    display: inline-flex;
+                  ">
+                  <ion-icon name="close-circle-outline" (click)="removerAgendamento(i)"
+                    style="color: red; transform: scale(1.5)"></ion-icon>
+                </ion-col>
+              </ion-row>
+            </ion-card>
+          </ng-container>
+        </div>
+      </ion-list>
+    </ng-container>
+  </div>
+</ion-content>
+<ion-footer class="backgroundFooterApp">
+  <ion-row class="global-footer-row">
+    <ion-col *ngIf="segment != 'calendario' && segment != 'selecionaProfissional'" size="6" class="global-footer-col"
+      style="height: 50px; padding-right: 5px">
+      <ion-button type="cancel" (click)="returnPage()" expand="block" class="back global-footer-btn">
+        <ng-container *ngIf="segment == 'servicos' && lastSegment!= 'selecionaProfissional' ">{{ "AGENDA.MODALS.NOVOAGENDAMENTO.CANCELAR" | translate }}
+        </ng-container>
+        <ng-container *ngIf="segment != 'servicos' || lastSegment == 'selecionaProfissional' ">{{ "AGENDA.MODALS.NOVOAGENDAMENTO.VOLTAR" | translate }}
+        </ng-container>
+      </ion-button>
+    </ion-col>
+    <ion-col *ngIf="segment!= 'selecionaProfissional'" class="ion-no-padding" style="height: 50px; padding-left: 5px">
+      <ion-button type="submit" [disabled]="
+          segment == 'servicos'
+            ? marcados
+            : listNovosAgendamentos?.length != listHorariosExib?.length
+            ? true
+            : false
+        " (click)="onSubmit()" expand="block" class="global-footer-btn backgroundButtonApp"
+        style="color: var(--cor-texto-botaoAgendar); --background: var(--cor-fundo-botaoAgendar);">
+        <ng-container *ngIf="segment == 'check'">{{
+          "AGENDA.MODALS.NOVOAGENDAMENTO.AGENDAR" | translate
+          }}</ng-container>
+        <ng-container *ngIf="segment != 'check'">{{
+          "AGENDA.MODALS.NOVOAGENDAMENTO.PROXIMO" | translate
+          }}</ng-container>
+      </ion-button>
+    </ion-col>
+  </ion-row>
+</ion-footer>

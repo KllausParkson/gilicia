@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "one-beleza-209df": {
+      "hosting": {
+        "app": [
+          "one-beleza-209df"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "one-beleza-209df"
+  }
+}

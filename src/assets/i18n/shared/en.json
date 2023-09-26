@@ -1,0 +1,121 @@
+{
+	"AGENDA": {
+		"MODALS": {
+			"INFOSEMPRESAMODAL": {
+				"SOBRE": "Info",
+				"TELEFONE": "Telephone"
+			}
+		}
+	},
+	"SHARED": {
+		"AVALIAR": {
+			"COMENTE": "Comment",
+			"HEADER": "Evaluate the services provided by",
+			"SAVE": "To evaluate",
+			"TITLE": "Evaluate collaborator"
+		},
+		"BUSCANAORETORNOURESULTADO": "The search returned no results",
+		"MENU": {
+			"AGENDA": "Schedule",
+			"AVALIACOES": "Ratings",
+			"CLIENTES": "Customers",
+			"COMPARTILHAR": "Share App",
+			"ESCOLHERESTABELECIMENTO": "Change establishment",
+			"FATURAMENTO": "Productivity",
+			"FINANCEIRO": "Financial",
+			"HISTORICO": "Financial",
+			"LOGOUT": {
+				"CANCEL": "Not",
+				"HEADER": "Leave One",
+				"MESSAGE": "Do you want to leave?",
+				"OUT": "Yes"
+			},
+			"LUCRATIVIDADE": "Profitability",
+			"LUCRATIVIDADE GERAL": "Overall Profitability",
+			"MENUCLASSICO": {
+				"HISTORICOCLIENTE": "Customer History"
+			},
+			"OPCOES": "Options",
+			"PERFIL": "Profile",
+			"PRODUTOS": "Products",
+			"RECEITASAPURADAS": "Calculated Revenue",
+			"RECEITASESTIMADAS": "Estimated earnings",
+			"RELATAR": "Report a problem",
+			"RELATORIOS": "Reports",
+			"RESUMOCHATBOT": "Chatbot Summary",
+			"SAIR": "Leave",
+			"SEMAVALIACOES": "No ratings",
+			"SERVICOS": "Services",
+			"TROCARPERFIL": "Change profile"
+		},
+		"MODALEDITAR": {
+			"ALTERARSENHA": "Change password",
+			"ANIVERSARIO": "birthday",
+			"CANCELAR": "Cancel",
+			"CELULAR": "Cell phone",
+			"CLIQUEAQUI": "Click here",
+			"CONFIRMAR": "Confirm new password",
+			"CONTAEXCLUIDASUCESSO": "Account successfully deleted!",
+			"CPF": "CPF",
+			"CURRICULO": "About your work",
+			"EDITAR": "Edit password",
+			"EMAIL": "Email",
+			"ERROEXCLUIRCONTA": "Error deleting account!",
+			"EXCLUIRCONTA": "Delete account",
+			"MODALEDITAR": {
+				"EDITAR": "Edit password",
+				"SALVARSENHA": "Save password"
+			},
+			"NAOPREENCHER": "If you do not want to change the password, leave the fields above blank.",
+			"NOME": "Name",
+			"REMOVERFOTOCANCELAR": "Cancel",
+			"REMOVERFOTOHEADER": "Do you want to remove this photo?",
+			"REMOVERFOTOMESSAGE": "The removal will be saved automatically.",
+			"REMOVERFOTOOK": "Remove",
+			"REQUIREDFIELDS": "Required fields",
+			"SALVAR": "To save",
+			"SALVARSENHA": "Save password",
+			"SENHA": "Enter the new password",
+			"SENHAATUAL": "Enter your current password",
+			"SENHAINCOMPATIVEL": "Passwords do not match!",
+			"SENHAINCORRETA": "Incorrect current password!",
+			"SENHAPADRAO": "You have the default password.",
+			"SUCESSO": "Success!",
+			"TEXTALTERAR": "Do you want to change your password?",
+			"TEXTOEXCLUIRCONTA": "Deleting your account will be permanent and this action is irreversible. Do you want to delete your account?",
+			"TITLE": "Edit profile",
+			"TITLEATUALIZARDADOS": "Update data"
+		},
+		"NOTIFICACAO": {
+			"AGENDEAGORA": "schedule right now.",
+			"APAGAR": "Delete",
+			"AVALIAR": "Evaluate professional",
+			"CANCELAR": "Cancel",
+			"FECHAR": "Close",
+			"INSERIR": "Insert in the calendar",
+			"LIMPAR": "Clear",
+			"REMOVER": "Remove from calendar",
+			"SEMNOTIFICACOES": "You don't have any notifications for now. Contact the establishment or",
+			"TITLE": "Notification"
+		},
+		"RELATAR": {
+			"ANEXAR": "Select photos that illustrate the described bug: (Select one at a time)",
+			"ASSUNTO": "Describe the type of your Report Ex: Bug/Error, Missing information, suggestion...",
+			"ENVIAR": "Submit",
+			"ENVIARFOTO": "Send picture",
+			"FOTOSENVIADAS": "Number of photos:",
+			"NENHUMANEXO": "No photo selected!",
+			"NOTIFICACAO": "Give details about the problem, step by step how it happened. If necessary, contact us through the website.",
+			"RESUMO": "Describe for us a little of what happened",
+			"TELEFONECONTATO": "Contact Phone",
+			"TITLE": "Report a problem",
+			"TOAST": {
+				"ADDFOTOERRO": "Error adding photo!",
+				"ADDFOTOSUCESS": "Photo successfully added!",
+				"ADICIONANDO": "Adding photo...",
+				"ERRO": "Error!",
+				"SUCESSO": "Success!"
+			}
+		}
+	}
+}

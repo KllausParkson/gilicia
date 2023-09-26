@@ -1,0 +1,32 @@
+<ion-header mode="md" size="6">
+  <ion-toolbar class="ion-text-center">
+    <ion-title style="color: var(--cor-texto-barraTopo)"
+      >{{ "LOGIN.TERMOS" | translate }}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-grid
+    mode="md"
+    appCustomScroll
+    class="texto"
+    #appScrollElement="appCustomScroll"
+    #scroll
+  >
+    <div [innerHTML]="termCondition"></div>
+  </ion-grid>
+</ion-content>
+<ion-footer>
+  <ion-row class="ion-justify-content-center">
+    <ion-button
+      class="botão"
+      style="background-color: var(--ion-color-primary)"
+      [disabled]="appScrollElement.disableBtn"
+      (click)="closeModal()"
+    >
+      <span style="font-size: 3vw">{{
+        "LOGIN.MODALS.TERMOSECONDICAO.CONCORDO" | translate
+      }}</span>
+    </ion-button>
+  </ion-row></ion-footer
+>

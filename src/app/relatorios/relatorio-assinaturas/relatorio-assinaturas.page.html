@@ -1,0 +1,103 @@
+<ion-row>
+  <ion-col size="12">
+    <app-data-toolbar
+      [startDate]="dataFim"
+      [endDate]="dataInicio"
+      (dateEmmiter)="emitirData($event)"
+    ></app-data-toolbar>
+  </ion-col>
+</ion-row>
+
+<ion-row *ngIf="this.perfilGestor">
+  <div style="width: 100%">
+    <ion-card class="backgroundCard colorTextApp" style="margin-top: 10px">
+      <!--List com todos colaboradores -->
+      <ion-list>
+        <ion-item lines="none">
+          <!-- Precisa tradução -->
+          <ion-select
+            placeholder="Todos Colaboradores"
+            (ionChange)="filtrarColaborador($event)"
+          >
+            <ion-select-option value="Todos"
+              >Todos Colaboradores</ion-select-option
+            >
+            <ion-select-option
+              *ngFor="let item of this.dropdownColaboradores"
+              value="{{item}}"
+              >{{item}}</ion-select-option
+            >
+          </ion-select>
+        </ion-item>
+      </ion-list>
+    </ion-card>
+
+    <ion-card class="backgroundCard colorTextApp" *ngFor="let item of this.arrayColaboradores">
+      <ion-card-header>
+        <ion-card-title>{{ item.nomeColaborador }}</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content style="padding: 0px">
+        <div *ngFor="let subitem of item.servicos">
+          <ion-item lines="none">
+            <ion-text style="font-size: 16px; font-weight: bold" slot="start">
+              {{ subitem.nomeServico | titlecase }}</ion-text
+            >
+            <ion-text style="font-size: 12px; font-weight: bold" slot="end">
+              TOTAL: {{subitem.atendidos.length }}
+            </ion-text>
+          </ion-item>
+
+          <ion-list>
+            <ion-item *ngFor="let innerSubitem of subitem.atendidos">
+              <ion-label style="font-size: 16px">
+                {{ innerSubitem.nomeCliente.length > 20 ?
+                (innerSubitem.nomeCliente | slice:0:20)+"..." :
+                innerSubitem.nomeCliente }}
+              </ion-label>
+              <ion-text slot="end">
+                {{ innerSubitem.dataficha | date:"dd/MM" }}
+              </ion-text>
+            </ion-item>
+          </ion-list>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-row>
+
+<ion-row *ngIf="!this.perfilGestor">
+  <div style="width: 100%">
+    <ion-card class="backgroundCard colorTextApp" *ngFor="let item of this.arrayColaboradores">
+      <ion-card-header>
+        <ion-card-title>{{ item.nomeColaborador }}</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content style="padding: 0px" >
+        <div *ngFor="let subitem of item.servicos">
+          <ion-item lines="none">
+            <ion-text style="font-size: 16px; font-weight: bold" slot="start">
+              {{ subitem.nomeServico | titlecase }}</ion-text
+            >
+            <ion-text style="font-size: 12px; font-weight: bold" slot="end">
+              TOTAL: {{subitem.atendidos.length }}
+            </ion-text>
+          </ion-item>
+
+          <ion-list>
+            <ion-item *ngFor="let innerSubitem of subitem.atendidos">
+              <ion-label style="font-size: 16px">
+                {{ innerSubitem.nomeCliente.length > 20 ?
+                (innerSubitem.nomeCliente | slice:0:20)+"..." :
+                innerSubitem.nomeCliente }}
+              </ion-label>
+              <ion-text slot="end">
+                {{ innerSubitem.dataficha | date:"dd/MM" }}
+              </ion-text>
+            </ion-item>
+          </ion-list>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-row>

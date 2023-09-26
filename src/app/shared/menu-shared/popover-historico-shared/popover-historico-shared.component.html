@@ -1,0 +1,49 @@
+<ion-list class="backgroundItemFooter">
+
+  <ion-item class="ion-activatable ripple-parent backgroundItemFooter" button mode="md"
+            [ngStyle]="{'color': active == 'comissao' ? 'var(--cor-textoSelecionado-menushared)' : 'var(--cor-texto-menushared)'}"
+            *ngIf="comissaoPermissao && parametrosLight.comissao" (click)="onClick('comissao')">
+    <ion-ripple-effect></ion-ripple-effect>
+    <ion-icon [ngStyle]="{'color': active == 'comissao' ? 'var(--cor-textoSelecionado-menushared)' : 'var(--cor-texto-menushared)'}"
+              name="calculator-outline"></ion-icon>
+    <ion-label>{{ 'FINANCEIRO.RELATORIO.COMISSAO' | translate }}</ion-label>
+  </ion-item>
+
+  <ion-item class="ion-activatable ripple-parent backgroundItemFooter" button mode="md"
+            [ngStyle]="{'color': active == 'faturamento' ? 'var(--cor-textoSelecionado-menushared)' : 'var(--cor-texto-menushared)'}"
+            *ngIf="parametrosLight.produtividade" (click)="onClick('faturamento')">
+    <ion-ripple-effect></ion-ripple-effect>
+    <ion-icon [ngStyle]="{'color': active == 'faturamento' ? 'var(--cor-textoSelecionado-menushared)' : 'var(--cor-texto-menushared)'}"
+               name="bar-chart-outline"></ion-icon>
+    <ion-label>{{ 'FINANCEIRO.RELATORIO.FATURAMENTO' | translate }}</ion-label>
+  </ion-item>
+
+  <ion-item class="ion-activatable ripple-parent backgroundItemFooter" button mode="md"
+            [ngStyle]="{'color': active == 'produtividade' ? 'var(--cor-textoSelecionado-menushared)' : 'var(--cor-texto-menushared)'}"
+            *ngIf="produtividadePermissao && parametrosLight.produtividade" (click)="onClick('produtividade')">
+    <ion-ripple-effect></ion-ripple-effect>
+    <ion-icon [ngStyle]="{'color': active == 'produtividade' ? 'var(--cor-textoSelecionado-menushared)' : 'var(--cor-texto-menushared)'}"
+               name="cellular-outline"></ion-icon>
+    <ion-label>{{ 'FINANCEIRO.RELATORIO.PRODUTIVIDADE' | translate }}</ion-label>
+  </ion-item>
+
+  <ion-item class="ion-activatable ripple-parent backgroundItemFooter" lines="none" button mode="md"
+            [ngStyle]="{'color': active == 'historico-cliente' ? 'var(--cor-textoSelecionado-menushared)' : 'var(--cor-texto-menushared)'}"
+            *ngIf="historicoClientePermissao" (click)="onClick('historico-cliente')">
+    <ion-ripple-effect></ion-ripple-effect>
+    <ion-icon [ngStyle]="{'color': active == 'historico-cliente' ? 'var(--cor-textoSelecionado-menushared)' : 'var(--cor-texto-menushared)'}"
+               name="person-outline"></ion-icon>
+    <ion-label>{{ 'FINANCEIRO.RELATORIO.HISTORICO-CLIENTE' | translate }}</ion-label>
+  </ion-item>
+
+  <ion-item class="ion-activatable ripple-parent backgroundItemFooter" button mode="md"
+  *ngIf="temAssinatura"
+  [ngStyle]="{'color': active == 'avaliacoes' ? 'var(--cor-textoSelecionado-menushared)' : 'var(--cor-texto-menushared)'}" lines="none"
+    (click)="onClickAssinaturas('assinaturas')" >
+    <ion-ripple-effect></ion-ripple-effect>
+    <ion-icon name="diamond-outline"></ion-icon>
+    <!-- Precisa de Tradução! -->
+    <ion-label>Assinaturas</ion-label>
+  </ion-item>
+
+</ion-list>

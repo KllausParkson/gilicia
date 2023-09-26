@@ -1,0 +1,33 @@
+.input-btn-actual-password {
+  display: flex;
+  align-items: flex-end;
+
+  .input-password {
+    border: 0.5px solid #c1c1c1;
+    border-right: none;
+    border-radius: 10px 0 0 10px;
+    display: flex;
+    align-items: center;
+  }
+
+  ion-button::part(native) {
+    border: 0.5px solid var(--cor-fundo-botaoAgendar);
+    border-left: none;
+    border-radius: 0 10px 10px 0;
+    padding: 18px !important;
+    height: 38px;
+    width: 65px !important;
+  }
+}
+
+.input {
+  border: 0.5px solid #c1c1c1;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+ion-toolbar {
+  --background: var(--cor-fundo-barraTopo);
+}

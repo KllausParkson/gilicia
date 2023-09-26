@@ -1,0 +1,272 @@
+<ion-header>
+  <ng-container>
+    <ion-toolbar>
+      <ion-title style="color: var(--cor-texto-barraTopo)">{{
+        "AGENDA.MODALS.OPCOESAGENDAMENTO.OUTROSAGENDAMENTOS" | translate
+      }}</ion-title>
+      <ion-buttons slot="primary">
+        <ion-button (click)="closeModal()">
+          <ion-icon
+            name="close"
+            slot="icon-only"
+            style="transform: scale(1.5); color: var(--cor-texto-barraTopo)"
+          ></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ng-container>
+</ion-header>
+
+<ion-content
+  class="safeArea"
+  #card
+  [ngStyle]="{
+    'background-color': '#D3D3D3',
+    'box-shadow': '0 0 black',
+    height: '100%',
+    'margin-inline': 'unset',
+    margin: 'unset'
+  }"
+>
+  <ion-refresher slot="fixed">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <ion-grid
+    [ngStyle]="{ 'min-width': gridWidth }"
+    style="height: 70%; max-width: 1024px"
+  >
+    <ion-row
+      style="
+        padding-bottom: 9px;
+        justify-content: center;
+        padding-top: 20px;
+        display: flex;
+        align-items: center;
+      "
+    >
+      <div
+        *ngIf="agendamentos === undefined || agendamentos?.length === 0"
+        class="aviso"
+      >
+        <ion-icon
+          style="margin-right: 4px; transform: scale(1.2)"
+          name="alert-circle-outline"
+        ></ion-icon>
+      </div>
+    </ion-row>
+    <ng-container *ngFor="let agendamento of agendamentos; index as i">
+      <div
+        style="
+          background-color: white;
+          margin-bottom: 10px;
+          border-radius: 10px;
+        "
+      >
+        <ion-row>
+          <ion-col
+            size="12"
+            [ngStyle]="{
+              'border-left': setBorderStatus(agendamento.status),
+              'padding-left': '3px'
+            }"
+            style="overflow: hidden; border-radius: 10px"
+          >
+            <ion-row>
+              <ion-col
+                size="7"
+                class="appointmentColFirstRow"
+                style="color: black"
+              >
+                <span>{{ agendamento.dataAg }} -</span>
+                <span [ngSwitch]="agendamento.diaSemana">
+                  <label *ngSwitchCase="'0'">
+                    {{ "AGENDA.DOMINGO" | translate }}</label
+                  >
+                  <label *ngSwitchCase="'1'">
+                    {{ "AGENDA.SEGUNDA" | translate }}</label
+                  >
+                  <label *ngSwitchCase="'2'">
+                    {{ "AGENDA.TERCA" | translate }}</label
+                  >
+                  <label *ngSwitchCase="'3'">
+                    {{ "AGENDA.QUARTA" | translate }}</label
+                  >
+                  <label *ngSwitchCase="'4'">
+                    {{ "AGENDA.QUINTA" | translate }}</label
+                  >
+                  <label *ngSwitchCase="'5'">
+                    {{ "AGENDA.SEXTA" | translate }}</label
+                  >
+                  <label *ngSwitchCase="'6'">
+                    {{ "AGENDA.SABADO" | translate }}</label
+                  >
+                </span>
+                <ion-row style="height: 82px">
+                  <ng-template
+                    [ngIf]="agendamento?.fotoColaborador != null"
+                    [ngIfElse]="NaoTemFoto"
+                  >
+                    <ion-item lines="none" text-wrap>
+                      <ion-avatar slot="start" class="imagemOne">
+                        <ion-img [src]="agendamento.fotoColaborador"></ion-img>
+                      </ion-avatar>
+                      <ion-label
+                        class="ion-text-wrap"
+                        style="font-size: 14px; color: #969696"
+                        >{{ "AGENDA.APPOINTMENT.PROFESSIONAL" | translate }}
+                        <br /><span class="nomeColab">{{
+                          agendamento.nomeColaborador
+                            ?.toLowerCase()
+                            .split(" ")[0]
+                        }}</span
+                        ><span
+                          class="nomeColab"
+                          *ngIf="temSegundonome(agendamento.nomeColaborador)"
+                        >
+                          {{
+                            agendamento.nomeColaborador
+                              ?.toLowerCase()
+                              .split(" ")[1]
+                          }}</span
+                        >
+                      </ion-label>
+                    </ion-item>
+                  </ng-template>
+                  <ng-template #NaoTemFoto>
+                    <ion-item lines="none">
+                      <ion-avatar slot="start" class="imagemOne">
+                        <ion-img
+                          [src]="
+                            'https://oneproducao.blob.core.windows.net/one2/Imagens/Sem_FotoPerfil.png'
+                          "
+                          style="transform: scale(1)"
+                        ></ion-img>
+                      </ion-avatar>
+                      <ion-label
+                        class="ion-text-wrap"
+                        style="font-size: 14px; color: #969696"
+                        >{{ "AGENDA.APPOINTMENT.PROFESSIONAL" | translate }}
+                        <br /><span class="nomeColab">{{
+                          agendamento.nomeColaborador
+                            ?.toLowerCase()
+                            .split(" ")[0]
+                        }}</span
+                        ><span
+                          class="nomeColab"
+                          *ngIf="temSegundonome(agendamento.nomeColaborador)"
+                        >
+                          {{
+                            agendamento.nomeColaborador
+                              ?.toLowerCase()
+                              .split(" ")[1]
+                          }}</span
+                        >
+                      </ion-label>
+                    </ion-item>
+                  </ng-template>
+                </ion-row>
+                <ion-row
+                  style="padding-top: 4px; padding-bottom: 4px; font-size: 15px"
+                  >{{ agendamento.horarioInicio?.substr(0, 5) }}
+                  <span
+                    >&nbsp;às {{ agendamento.horarioFim?.substr(0, 5) }}</span
+                  >
+                </ion-row>
+              </ion-col>
+              <ion-col size="5" style="color: #969696; overflow: hidden">
+                <ion-row
+                  [ngSwitch]="agendamento?.status"
+                  [ngStyle]="{ 'background-color': corStatus }"
+                  style="
+                    text-align: center;
+                    font-size: 14px;
+                    color: white;
+                    border-radius: 25px;
+                    width: 104.53px;
+                  "
+                >
+                  <label *ngSwitchCase="'A'" style="padding-left: 19%">
+                    {{ "AGENDA.AGENDADO" | translate }}</label
+                  >
+                  <label *ngSwitchCase="'P'" style="padding-left: 19%">
+                    {{ "AGENDA.PRESENTE" | translate }}</label
+                  >
+                  <label *ngSwitchCase="'E'" style="padding-left: 19%">
+                    {{ "AGENDA.EXECUTADO" | translate }}</label
+                  >
+                  <label *ngSwitchCase="'C'" style="padding-left: 17%">
+                    {{ "AGENDA.CONFIRMADO" | translate }}</label
+                  >
+                  <label *ngSwitchCase="'R'" style="padding-left: 17%">
+                    {{ "AGENDA.REGISTRADO" | translate }}</label
+                  >
+                  <label *ngSwitchCase="'M'" style="padding-left: 17%">
+                    {{ "AGENDA.MOBILIDADE" | translate }}</label
+                  >
+                  <label *ngSwitchCase="'N'" style="padding-left: 6%">
+                    {{ "AGENDA.NAOREGISTRADO" | translate }}</label
+                  >
+                  <label *ngSwitchCase="'X'" style="padding-left: 13%">
+                    {{ "AGENDA.ATENDIMENTO" | translate }}</label
+                  >
+                </ion-row>
+                <ion-row style="padding-top: 14px; font-size: 14px">
+                  <span class="ion-text-wrap" style="color: #969696">{{
+                    "AGENDA.APPOINTMENT.SERVICE" | translate
+                  }}</span>
+                </ion-row>
+                <ion-row style="height: 38px">
+                  <span
+                    style="
+                      padding-top: 3%;
+                      color: black;
+                      font-size: 15px;
+                      text-transform: capitalize;
+                    "
+                    >{{ agendamento.descricaoServico.toLowerCase() }}</span
+                  >
+                </ion-row>
+                <ion-row
+                  *ngIf="
+                    agendamento.status !== 'E' && agendamento.status !== 'R'
+                  "
+                  style="height: 30%"
+                >
+                  <ion-col
+                    size="12"
+                    style="height: 88%; top: 10px; right: 15px"
+                  >
+                  </ion-col>
+                </ion-row>
+              </ion-col>
+            </ion-row>
+          </ion-col>
+        </ion-row>
+      </div>
+
+      <ion-row
+        *ngIf="i === agendamentos?.length - 1"
+        style="height: 125px"
+      ></ion-row>
+    </ng-container>
+  </ion-grid>
+</ion-content>
+
+<ion-footer>
+  <ng-container>
+    <ion-row class="global-footer-row">
+      <ng-container>
+        <ion-col size="12" class="global-footer-col-right">
+          <ion-button
+            type="submit"
+            (click)="closeModal()"
+            expand="block"
+            class="global-footer-btn"
+          >
+            {{ "AGENDA.MODALS.OUTROSAGENDAMENTOS.FECHAR" | translate }}
+          </ion-button>
+        </ion-col>
+      </ng-container>
+    </ion-row>
+  </ng-container>
+</ion-footer>

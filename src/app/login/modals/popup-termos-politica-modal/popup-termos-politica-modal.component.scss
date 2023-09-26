@@ -1,0 +1,50 @@
+ion-content {
+  ion-grid {
+    background-color: #ffffff;
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 40px;
+  }
+}
+ion-content::part(background) {
+  background-color: #ffffff;
+}
+
+.textConfig {
+  font-size: 12;
+}
+.modal-header {
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 40px;
+}
+
+.modal-body {
+  max-height: none;
+  position: absolute;
+  top: 40px;
+  bottom: 60px;
+  width: 100%;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.botao {
+  color: var(--cor-texto-claro);
+  width: 83%;
+  border-radius: 9px;
+  font-size: 12px;
+  text-transform: initial;
+}
+
+.politica {
+  font-size: 12px;
+  font-weight: bolder;
+  cursor: pointer;
+  color: var(--cor-texto-escuro);
+  padding-bottom: 8px;
+}

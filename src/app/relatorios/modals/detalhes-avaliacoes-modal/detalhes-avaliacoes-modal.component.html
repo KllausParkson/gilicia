@@ -1,0 +1,95 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title
+      class="ion-text-center"
+      style="color: var(--cor-texto-barraTopo)"
+      >{{ "RELATORIOS.AVALAIACOES.DETALHES" | translate }}</ion-title
+    >
+    <ion-buttons (click)="closeModal()" slot="end">
+      <ion-icon
+        name="close"
+        slot="icon-only"
+        style="
+          transform: scale(1.5);
+          margin: 4px;
+          color: var(--cor-texto-barraTopo);
+        "
+      ></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="backgroundContentApp colorTextApp">
+  <ion-grid style="height: auto">
+    <ion-card class="backgroundCard"
+      style="
+        border-radius: 8px;
+        margin: 15px;
+        background-color: #fff;
+        padding: 30px 40px;
+      "
+    >
+      <ion-row class="ion-justify-content-center">
+        <ion-col class="title ion-text-center" size="12">
+          {{ title }}
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="ion-text-center" size="12">
+          <div class="stars">
+            <ion-icon id="modal-star1" name=""></ion-icon>
+            <ion-icon id="modal-star2" name=""></ion-icon>
+            <ion-icon id="modal-star3" name=""></ion-icon>
+            <ion-icon id="modal-star4" name=""></ion-icon>
+            <ion-icon id="modal-star5" name=""></ion-icon>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="nota" size="4">
+          {{ detalhes.numAvaliacoes }}
+          <ion-label>{{ "RELATORIOS.TITLE.AVALIACOES" | translate }}</ion-label>
+        </ion-col>
+        <ion-col class="nota" size="4">
+          {{ detalhes.mediaGeral.toFixed(2) }}
+          <ion-label>{{ "RELATORIOS.AVALIACOES.MEDIA" | translate }}</ion-label>
+        </ion-col>
+        <ion-col class="nota" size="4">
+          {{ detalhes.melhorNota }}
+          <ion-label>{{
+            "RELATORIOS.AVALIACOES.MELHORNOTA" | translate
+          }}</ion-label>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+  </ion-grid>
+
+  <ion-grid style="height: auto">
+    <ion-row class="comentarios">
+      <ion-col size="12">
+        <ion-card class="backgroundCard colorTextApp"
+          *ngFor="let comentario of detalhes.comentarios; index as index"
+        >
+          <ion-card-header>
+            <ion-label class="card-header">{{
+              comentario.clienteNome
+            }}</ion-label>
+            <div class="modal-stars">
+              <ion-icon id="{{ index }}star1" name=""></ion-icon>
+              <ion-icon id="{{ index }}star2" name=""></ion-icon>
+              <ion-icon id="{{ index }}star3" name=""></ion-icon>
+              <ion-icon id="{{ index }}star4" name=""></ion-icon>
+              <ion-icon id="{{ index }}star5" name=""></ion-icon>
+              {{ setStars(comentario.nota, index) }}
+            </div>
+          </ion-card-header>
+          <ion-card-content>
+            <p>{{ comentario.texto }}</p>
+            <div class="card-footer">
+              {{ comentario.data | date: "dd/MM/yyyy" }}
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

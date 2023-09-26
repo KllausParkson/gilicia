@@ -1,0 +1,155 @@
+<ion-content
+  scrollY="false"
+  style="
+    background-image: var(--background-app);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  "
+>
+<ion-row style="align-content: center; height: 100%;">
+  <div
+  style="
+    width: 100vw;
+    height: var(--tamanho-logo);
+    background-image: var(--estabelecimento-logo);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  "
+></div>
+
+<ion-card
+  #card
+  [ngStyle]="{
+    'background-color': 'transparent',
+    'box-shadow': '0 0 black'
+  }"
+>
+  <ion-grid style="height: 70%; max-width: 440px">
+    <ion-row class="ion-text-align-center" style="color: var(--cor-fontes-login)">
+      <ion-col class="texto" size="12">{{
+        "LOGIN.ESCOLHERPERFIL.TEXT" | translate
+      }}</ion-col>
+    </ion-row>
+
+    <ion-col size-sm="12" size-xs="12">
+      <ion-row class="ion-justify-content-center buttons-container">
+        <ion-button
+          class="buttons"
+          *ngIf="perfis?.perfilCliente == true"
+          (click)="agendaCliente()"
+        >
+          <ion-col
+            size="2"
+            class="ion-no-padding ion-no-margin icons-buttons"
+          >
+            <ion-icon
+              name="person"
+              style="transform: scale(2.3); color: var(--cor-texto-escuro)"
+            ></ion-icon>
+          </ion-col>
+          <ion-col
+            size="8"
+            class="ion-no-padding ion-no-margin buttons-label"
+            style="padding-right: 130px; font-size: 15px"
+          >
+            <span>{{
+              "LOGIN.ESCOLHERPERFIL.BUTTON.CLIENTE" | translate
+            }}</span>
+          </ion-col>
+          <ion-col size="2">
+            <ion-icon
+              name="chevron-forward-outline"
+              style="transform: scale(2.3)"
+            ></ion-icon>
+          </ion-col>
+        </ion-button>
+
+        <ion-button
+          class="buttons"
+          *ngIf="perfis.perfilColaborador == true"
+          (click)="agendaProfissional()"
+        >
+          <ion-col
+            size="2"
+            class="ion-no-padding ion-no-margin icons-buttons"
+            style="font-size: 15px"
+          >
+            <ion-icon
+              name="cut"
+              style="transform: scale(2); color: var(--cor-texto-escuro)"
+            ></ion-icon>
+          </ion-col>
+          <ion-col
+            size="8"
+            class="ion-no-padding ion-no-margin buttons-label"
+            style="padding-right: 90px; font-size: 15px"
+          >
+            <span>{{
+              "LOGIN.ESCOLHERPERFIL.BUTTON.COLABORADOR" | translate
+            }}</span>
+          </ion-col>
+          <ion-col size="2">
+            <ion-icon
+              name="chevron-forward-outline"
+              style="transform: scale(2.3)"
+            ></ion-icon>
+          </ion-col>
+        </ion-button>
+
+        <ion-button
+          class="buttons"
+          *ngIf="perfis.perfilGerente == true"
+          (click)="agendaGestor()"
+        >
+          <ion-col
+            size="2"
+            class="ion-no-padding ion-no-margin icons-buttons"
+            style="font-size: 15px"
+          >
+            <ion-icon
+              name="storefront-outline"
+              style="transform: scale(2); color: var(--cor-texto-escuro)"
+            ></ion-icon>
+          </ion-col>
+          <ion-col
+            size="8"
+            class="ion-no-padding ion-no-margin buttons-label"
+            style="padding-right: 130px; font-size: 15px"
+          >
+            <span>{{
+              "LOGIN.ESCOLHERPERFIL.BUTTON.GERENTE" | translate
+            }}</span>
+          </ion-col>
+          <ion-col size="2">
+            <ion-icon
+              name="chevron-forward-outline"
+              style="transform: scale(2.3)"
+            ></ion-icon>
+          </ion-col>
+        </ion-button>
+      </ion-row>
+    </ion-col>
+    <ion-row class="texto" style="color: var(--cor-fontes-login)">
+      <ion-col  size="12">
+        <!--          {{'LOGIN.ESCOLHERPERFIL.SITETEXT' | translate }}-->
+        <span>{{ "LOGIN.ESCOLHERPERFIL.ACESSE" | translate }}&nbsp;</span>
+        <a
+          href="https://www.onebeleza.com.br"
+          style="color: var(--cor-fontes-login); font-weight: 900"
+        >
+          {{ "LOGIN.ESCOLHERPERFIL.SITE" | translate }}
+        </a>
+        <span
+          >&nbsp;{{
+            "LOGIN.ESCOLHERPERFIL.MAISINFORMACOES" | translate
+          }}</span
+        >
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-card>
+</ion-row>
+  
+</ion-content>

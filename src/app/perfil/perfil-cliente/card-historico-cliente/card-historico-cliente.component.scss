@@ -1,0 +1,21 @@
+.card {
+    min-height: 75px;
+    background-color: #fff;
+    margin: 12px 8px;
+
+    .card-title {
+        font-size: 0.9rem;
+        border-bottom: 1px solid;
+    }
+    .nome {
+        white-space: nowrap;
+    }
+
+    .bold{
+        font-weight: 550;
+    }
+
+    // .currency {
+    //     padding-top: 10px;
+    // }
+}

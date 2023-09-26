@@ -1,0 +1,95 @@
+<ion-header
+  class="ion-no-border"
+  style="background-color: var(--background-color-geral)"
+>
+  <ion-toolbar>
+    <ion-buttons left slot="start">
+      <ion-button (click)="onClickInfosEmpresa()">
+        <ion-icon
+          name="information-circle-outline"
+          class="button button-icon pull-left"
+          style="color: var(--cor-texto-barraTopo)"
+        ></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <app-notification-shared></app-notification-shared>
+    </ion-buttons>
+    <ion-title
+      class="title ion-text-center"
+      style="
+        font-size: 15px;
+        font-weight: bold;
+        padding-left: 20px;
+        padding-right: 10px;
+        color: var(--cor-texto-barraTopo);
+      "
+      >{{ nomeEmpresaFilial }}</ion-title
+    >
+    <!-- <ion-title small class="title ion-text-center" style="font-size: 12px; font-weight: 200; padding-left: 20px; padding-right: 10px;">{{ tipoLogin }} | {{ nomeUsuario }}</ion-title> -->
+    <ion-title
+      small
+      class="title ion-text-center"
+      style="
+        font-size: 12px;
+        font-weight: 200;
+        padding-left: 20px;
+        padding-right: 10px;
+        color: var(--cor-texto-barraTopo);
+      "
+      
+    >
+      <span [ngSwitch]="tipoLogin">
+        <label
+          *ngSwitchCase="'Gestor'"
+          
+        >
+          {{ 'PERFIL.GESTOR' | translate }}
+        </label>
+        <!-- {{ 'AGENDA.PERFIS.GESTOR' | translate }} -->
+        <label
+          *ngSwitchCase="'Colaborador'"
+          
+        >
+          {{ 'PERFIL.PROFISSIONAL' | translate }}
+        </label>
+        <!-- {{ 'AGENDA.PERFIS.PROFISSIONAL' | translate }} -->
+        <label
+          *ngSwitchCase="'Cliente'"
+          
+        >
+          {{ 'PERFIL.CLIENTE' | translate }}</label
+        >
+        <label
+          *ngSwitchCase="'Auxiliar'"
+          
+        >
+          {{ 'PERFIL.AUXILIAR' | translate }}</label
+        >
+      </span>
+      | {{ nomeUsuario }}
+    </ion-title>
+  </ion-toolbar>
+  <ion-row
+    style=" height: 55px; background: var(--cor-barra-titulos); align-content: center;"
+  >
+  <ion-col>
+    <ion-title
+    class="title ion-text-center"
+    style="
+      font-weight: bold;
+      font-size: 18px;
+      color: var(--cor-texto-barra-titulos);
+    "
+    >{{ 'PERFIL.TITLE' | translate }}</ion-title
+  >
+  
+  </ion-col>
+      
+  </ion-row>
+</ion-header>
+
+<ion-content scroll-y="false">
+  <router-outlet></router-outlet>
+  <app-locale-shared style="visibility: hidden"></app-locale-shared>
+</ion-content>

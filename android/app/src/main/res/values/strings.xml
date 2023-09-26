@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Ienzo Barbearia</string>
+    <string name="title_activity_main">Ienzo Barbearia</string>
+    <string name="package_name">ienzo.app</string>
+    <string name="custom_url_scheme">ienzo.app</string>
+    <string name="fb_login_protocol_scheme">fb747843898684506</string>
+    <string name="facebook_app_id">747843898684506</string>
+    <string name="facebook_client_token">a070dc9f8df64115c86f6a086f70d204</string>
+
+    <!-- Comentar e descomentar de acordo com o grupo de app que ira publicar -->
+
+    <!-- One Beleza -->
+    <!-- <string name="server_client_id">918229014460-lpv27fge0ufr5du2gucptbm5bqm8f3mu.apps.googleusercontent.com</string> -->
+
+    <!-- One Beleza 2 -->
+    <!-- <string name="server_client_id">860956903664-ma8t12bhl6oe9nrgveo3iuen7keahug5.apps.googleusercontent.com</string> -->
+
+    <!-- One Beleza 3 -->
+   <!--  <string name="server_client_id">814006119129-m1mkt3rov0r9jb9enbvbtvu3mmr4ucaq.apps.googleusercontent.com</string> -->
+    
+    <!-- One Beleza 4 -->
+    <!-- <string name="server_client_id">551381740901-cq897mrrlcfq8egr7lm8pnin0alq4kbi.apps.googleusercontent.com</string> -->
+
+    <!-- One Beleza 5 -->
+    <!-- <string name="server_client_id">867609856872-ecilu589g2b8vomfctk6b3fkj6508nhq.apps.googleusercontent.com</string> -->
+
+    <!-- One Beleza 6 -->
+    <!-- <string name="server_client_id">761977824287-huofs4sdr99e31alldaqlgu0rm1oj7l4.apps.googleusercontent.com</string> -->
+
+    <!-- One Beleza 7 -->
+    <string name="server_client_id">901887666763-t3986hgo3cfnf5eddie8l58pc034u13h.apps.googleusercontent.com</string>
+</resources>

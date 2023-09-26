@@ -1,0 +1,483 @@
+<ion-content
+  id="calendarioExtendido"
+  scrollY="false"
+  class="vertical-align-content"
+  style="height: 150px"
+>
+  <!-- <ion-card #card style="justify-content: center;">
+    <ion-row>
+      <input matInput placeholder="Ex. Pizza" value="Sushi">
+    </ion-row>
+  </ion-card> -->
+
+  <ion-card #card style="flex-wrap: wrap; width: 100%">
+    <!--<ion-row style="justify-content: center; width: 100%; padding-top: 30px;">
+
+      <ion-col size-xs="7" size="7" style="display: flex; align-items: center; justify-content: center;; border-radius: 10px; padding: 0px; min-width: 249px;">
+        <ion-icon name="arrow-back" (click)="previousMonth()" style="transform: scale(1.5); padding-right: 10px; line-height: 20px; color: var(--ion-color-primary);"></ion-icon>
+        <input matInput placeholder="Ex. Pizza" value="{{ monthsList[monthSelected].name }}" style="border: none; text-align: center; font-weight: bold; color: var(--ion-color-primary);" readonly disabled>
+        <ion-icon name="arrow-forward" (click)="nextMonth()" style="transform: scale(1.5); line-height: 20px; padding-left: 10px; color: var(--ion-color-primary);"></ion-icon>
+      </ion-col>
+
+    </ion-row>-->
+
+    <ion-row
+      style="
+        width: 100%;
+        font-size: 15px;
+        padding-top: 5px;
+        font-weight: bold;
+        justify-content: space-between;
+        text-align: right;
+        padding-bottom: 1px;
+      "
+    >
+      <ion-col
+        size="4"
+        style="
+          left: -3px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 10px;
+          padding: 0px;
+        "
+      >
+        <ion-icon
+          name="chevron-back-outline"
+          (click)="previousMonth()"
+          style="
+            transform: scale(1.5);
+            padding-right: 4px;
+            line-height: 20px;
+            color: var(--cor-calendario-principal);
+          "
+        ></ion-icon>
+        <input
+          matInput
+          value="{{ monthsList[monthSelected]?.name }}"
+          style="
+            width: 60%;
+            border: none;
+            text-align: center;
+            font-weight: bold;
+            color: var(--cor-calendario-secundaria);
+            pointer-events: none;
+            background-color: transparent;
+          "
+          readonly
+        />
+        <ion-icon
+          name="chevron-forward-outline"
+          (click)="nextMonth()"
+          style="
+            transform: scale(1.5);
+            line-height: 20px;
+            padding-left: 4px;
+            color: var(--cor-calendario-principal);
+          "
+        ></ion-icon>
+      </ion-col>
+      <ion-col
+        size="2"
+        style="display: flex; flex-direction: column; justify-content: center"
+      >
+        <ion-text
+          style="color: var(--cor-calendario-secundaria); text-align: center"
+        >
+          {{ year }}</ion-text
+        >
+      </ion-col>
+      <ion-col
+        size="4"
+        style="display: flex; flex-direction: column; justify-content: center"
+      >
+        <ion-button
+          fill="outline"
+          (click)="voltarParaHoje()"
+          style="
+            --border-width: 1px;
+            text-transform: none;
+            margin: 0;
+            text-align: center;
+            font-size: 15px;
+            font-weight: bold;
+            color: var(--cor-calendario-secundaria);
+            --border-color: var(--cor-calendario-principal);
+          "
+          [ngStyle]="{ 'padding-inline': iOS == true ? 'unset' : '' }"
+          >{{ "AGENDA.CALENDARIO.HOJE" | translate }}</ion-button
+        >
+      </ion-col>
+
+      <ion-col *ngIf="this.user != 'cliente'" size="2" style="display: flex; justify-content: center">
+        <ion-button
+          class="title ion-text-rigth"
+          (click)="expandirCalendario()"
+          style="
+            --border-width: 1px;
+            text-transform: none;
+            margin: 0;
+            text-align: center;
+            font-size: 15px;
+            font-weight: bold;
+            --baackground: var(--cor-botao-expandirCalendario);
+          "
+          id="btnCalendario"
+          [ngStyle]="{ 'padding-inline': iOS == true ? 'unset' : '' }"
+          ><ion-icon
+            name="calendar-outline"
+            style="color: var(--cor-icone-expandirCalendario)"
+          ></ion-icon
+        ></ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row
+      style="
+        width: 100%;
+        padding-top: 0px;
+        border-bottom: 1px dashed var(--cor-calendario-secundaria); ;
+      "
+    >
+      <ion-col id="setaEsquerda" size="0.75"
+        ><ion-icon
+          name="chevron-back-outline"
+          (click)="previousWeek()"
+          style="transform: scale(1.5); color: var(--cor-calendario-principal)"
+        ></ion-icon
+      ></ion-col>
+      <ion-col
+        size="1.5"
+        *ngFor="let day of daysCorrectLang"
+        style="
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 10px;
+        "
+        >{{ day?.text?.substr(0, 1) }}</ion-col
+      >
+      <ion-col
+        id="setaDireita"
+        size="0.75"
+        style="text-align: right; padding-right: 5px"
+        ><ion-icon
+          name="chevron-forward-outline"
+          (click)="nextWeek()"
+          style="transform: scale(1.5); color: var(--cor-calendario-principal)"
+        ></ion-icon
+      ></ion-col>
+    </ion-row>
+    <ion-col id="calendarioMinimizado" style="visibility: inherit">
+      <ion-slides 
+        #SwipedTabsSlider
+        (ionSlideDrag)="animateIndicator($event)"
+        (ionSlideWillChange)="updateIndicatorPosition()"
+        (ionSlideDidChange)="updateIndicatorPosition()"
+        (pan)="updateIndicatorPosition()"
+        [pager]="false"
+        [options]="slideOpts"
+        style="bottom: 10px; top: 0px;"
+        slidesPerColumnFill="row"
+      >
+        <ng-container  *ngFor="let days of monthsList[monthSelected]?.days">
+          <ion-slide  >
+            <ng-container>
+              <ion-card
+                style="
+                  width: 100%;
+                  box-shadow: none;
+                  padding-top: 0px;
+                  background: transparent;
+                "
+              >
+                <ion-card-content
+                  style="
+                    padding-left: 0;
+                    padding-right: 0;
+                    padding-top: 0;
+                    padding-bottom: 0;
+                  "
+                >
+                  <ion-row style="height: 100%">
+                    <!--1,5 de espaçamento-->
+                    <ion-col size="0.75"></ion-col>
+                    <ion-col
+                      id="col"
+                      size="1.5"
+                      class="daySelection"
+                      *ngFor="let day of days; index as i"
+                      (click)="selectedDay($event, i, day)"
+                      style="
+                        height: 42.25px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        z-index: 1;
+                      "
+                      [ngClass]="{ today: day?.today ? true : false }"
+                      [ngStyle]="{
+                        color: day?.today
+                          ? 'var(--cor-calendario-principal)'
+                          : day?.belongsTo == false
+                          ? 'var(--cor-calendario-secundaria)'
+                          : 'var(--cor-calendario-secundaria)',
+                        'font-weight':
+                          day?.belongsTo == true ? 'bold' : 'unset',
+                        'font-size': innerWidth <= 320 ? '10px' : 'unset',
+                        'text-decoration':
+                          day?.trocarMes == true ? 'unset':                           
+                          this.user != 'cliente' ? 'unset':
+                          day?.belongsTo == false || day?.belongsToPeriod == false 
+                            ? 'line-through'
+                            : 'unset'
+                      }"
+                    >
+                      <ion-row>
+                        <ion-col size="12" class="coluna-dias">
+                          <ng-container *ngIf="day != 0">
+                            {{ day?.day }}
+                          </ng-container>
+                        </ion-col>
+                        <!-- <ng-container [ngSwitch]= day?.day> -->
+                        <ion-col
+                          *ngIf="
+                            this.quantidadeAgendamentos[
+                              day?.day - 1
+                            ]?.dia?.substring(8, 10) == day?.day &&
+                              day?.belongsToPeriod == true;
+                            else semAgendamentos
+                          "
+                          size="12"
+                          class="colIconAgendamentos"
+                        >
+                          <ion-icon
+                            *ngIf="
+                              this.quantidadeAgendamentos[day?.day - 1]
+                                ?.quantidadeAgendamentos > 0 &&
+                              day?.belongsToPeriod == true
+                            "
+                            name="ellipse"
+                            class="iconAgendamentos"
+                          ></ion-icon>
+                          <ion-icon
+                            *ngIf="
+                              this.quantidadeAgendamentos[day?.day - 1]
+                                ?.quantidadeAgendamentos > 1 &&
+                              day?.belongsToPeriod == true
+                            "
+                            name="ellipse"
+                            class="iconAgendamentos"
+                          ></ion-icon>
+                          <ion-icon
+                            *ngIf="
+                              this.quantidadeAgendamentos[day?.day - 1]
+                                ?.quantidadeAgendamentos > 2 &&
+                              day?.belongsToPeriod == true
+                            "
+                            name="ellipse"
+                            class="iconAgendamentos"
+                          ></ion-icon>
+                          <ion-icon
+                            *ngIf="
+                              this.quantidadeBloqueios[day?.day - 1]
+                                ?.quantidadeAgendamentos > 0 &&
+                              day?.belongsToPeriod == true
+                            "
+                            name="ellipse"
+                            class="iconAgendamentos"
+                          ></ion-icon>
+                          <ion-icon
+                            *ngIf="
+                              this.quantidadeAgendamentos[day?.day - 1]
+                                ?.quantidadeAgendamentos == 0 &&
+                              this.quantidadeBloqueios[day?.day - 1]
+                                ?.quantidadeAgendamentos == 0 &&
+                              day?.belongsToPeriod == true
+                            "
+                            name="ellipse"
+                            
+                            style="
+                                transform: scale(0.5);
+                                color: 'transparent';
+                              "
+                          ></ion-icon>
+                        </ion-col>
+                        <ng-template #semAgendamentos>
+                          <ion-col size="12" class="colIconAgendamentos">
+                            <ion-icon
+                              name="ellipse"
+                              style="
+                                transform: scale(0.5);
+                                color: 'transparent';
+                              "
+                            ></ion-icon>
+                          </ion-col>
+                        </ng-template>
+                        <!-- <ion-col *ngSwitchDefault size="12" class="colIconAgendamentos">
+                        <ion-icon name="ellipse" style="transform: scale(0.5); color: #ffffff00;"></ion-icon>
+                      </ion-col> -->
+                        <!-- </ng-container> -->
+                      </ion-row>
+                      <!-- <ng-container *ngIf="day != 0" >
+                      {{ day?.day }}
+                  </ng-container>  -->
+                    </ion-col>
+                    <ion-col size="0.75"></ion-col>
+                  </ion-row>
+                </ion-card-content>
+              </ion-card>
+            </ng-container>
+          </ion-slide>
+        </ng-container>
+      </ion-slides>
+    </ion-col>
+
+    <ion-col *ngIf="openCalendar">
+      <ion-slides 
+        #SwipedTabsSlider2
+        (ionSlideDrag)="animateIndicator($event)"
+        (ionSlideWillChange)="updateIndicatorPosition()"
+        (ionSlideDidChange)="updateIndicatorPosition()"
+        (pan)="updateIndicatorPosition()"
+        [pager]="false"
+        [options]="slideOptsExtend"
+        style="bottom: 10px; top: 0px;"
+        slidesPerColumnFill="row"
+      >
+        <ng-container *ngFor="let days of monthsList[monthSelected]?.days">
+          <ion-slide id="calendarioE">
+            <ng-container>
+              <ion-card
+                style="
+                  width: 100%;
+                  box-shadow: none;
+                  padding-top: 0px;
+                  background: transparent;
+                "
+              >
+                <ion-card-content
+                  style="
+                    padding-left: 0;
+                    padding-right: 0;
+                    padding-top: 0;
+                    padding-bottom: 0;
+                  "
+                >
+                  <ion-row style="height: 100%">
+                    <!--1,5 de espaçamento-->
+                    <ion-col size="0.75"></ion-col>
+                    <ion-col
+                      id="col"
+                      size="1.5"
+                      class="daySelection"
+                      *ngFor="let day of days; index as i"
+                      (click)="selectedDay($event, i, day)"
+                      style="
+                        height: 42.25px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        z-index: 1;
+                      "
+                      [ngClass]="{ today: day?.today ? true : false }"
+                      [ngStyle]="{
+                        color: day?.today
+                          ? 'var(--ion-color-secondary)'
+                          : day?.belongsTo == false
+                          ? 'var(--cor-calendario-secundaria)'
+                          : 'var(--cor-calendario-secundaria)',
+                        'font-weight':
+                          day?.belongsTo == true ? 'bold' : 'unset',
+                        'font-size': innerWidth <= 320 ? '10px' : 'unset',
+                        'text-decoration':
+                          (day?.belongsTo == false && user == 'cliente') ||
+                          day?.belongsToPeriod == false
+                            ? 'line-through'
+                            : 'unset'
+                      }"
+                    >
+                      <ion-row>
+                        <ion-col size="12" class="coluna-dias">
+                          <ng-container *ngIf="day != 0">
+                            {{ day?.day }}
+                          </ng-container>
+                        </ion-col>
+                        <!-- <ng-container [ngSwitch]= day?.day> -->
+                        <ion-col
+                          *ngIf="
+                            this.quantidadeAgendamentos[
+                              day?.day - 1
+                            ]?.dia?.substring(8, 10) == day?.day &&
+                              day?.belongsToPeriod == true;
+                            else semAgendamentos
+                          "
+                          size="12"
+                          class="colIconAgendamentos"
+                        >
+                          <ion-icon
+                            *ngIf="
+                              this.quantidadeAgendamentos[day?.day - 1]
+                                ?.quantidadeAgendamentos > 0 &&
+                              day?.belongsToPeriod == true
+                            "
+                            name="ellipse"
+                            class="iconAgendamentos"
+                          ></ion-icon>
+                          <ion-icon
+                            *ngIf="
+                              this.quantidadeAgendamentos[day?.day - 1]
+                                ?.quantidadeAgendamentos > 1 &&
+                              day?.belongsToPeriod == true
+                            "
+                            name="ellipse"
+                            class="iconAgendamentos"
+                          ></ion-icon>
+                          <ion-icon
+                            *ngIf="
+                              this.quantidadeAgendamentos[day?.day - 1]
+                                ?.quantidadeAgendamentos > 2 &&
+                              day?.belongsToPeriod == true
+                            "
+                            name="ellipse"
+                            class="iconAgendamentos"
+                          ></ion-icon>
+                          <ion-icon
+                            *ngIf="
+                              this.quantidadeBloqueios[day?.day - 1]
+                                ?.quantidadeAgendamentos > 0 &&
+                              day?.belongsToPeriod == true
+                            "
+                            name="ellipse"
+                            class="iconAgendamentos"
+                          ></ion-icon>
+                        </ion-col>
+                        <ng-template #semAgendamentos>
+                          <ion-col size="12" class="colIconAgendamentos">
+                            <ion-icon
+                              name="ellipse"
+                              style="transform: scale(0.5); color: #e31c1c00"
+                            ></ion-icon>
+                          </ion-col>
+                        </ng-template>
+                        <!-- <ion-col *ngSwitchDefault size="12" class="colIconAgendamentos">
+                        <ion-icon name="ellipse" style="transform: scale(0.5); color: #ffffff00;"></ion-icon>
+                      </ion-col> -->
+                        <!-- </ng-container> -->
+                      </ion-row>
+                      <!-- <ng-container *ngIf="day != 0" >
+                      {{ day?.day }}
+                  </ng-container>  -->
+                    </ion-col>
+                    <ion-col size="0.75"></ion-col>
+                  </ion-row>
+                </ion-card-content>
+              </ion-card>
+            </ng-container>
+          </ion-slide>
+        </ng-container>
+      </ion-slides>
+    </ion-col>
+  </ion-card>
+</ion-content>

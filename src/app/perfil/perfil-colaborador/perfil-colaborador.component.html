@@ -1,0 +1,290 @@
+<ion-content
+  style="height: calc(env(safe-area-inset-top) + 90%)"
+  scrollY="false"
+>
+  <ion-grid style="overflow-y: scroll;" class="window-custom">
+    <ion-row class="ion-justify-content-center">
+      <ion-col
+        class="img ion-justify-content-center"
+        size-xl="2.3"
+        size-lg="4"
+        size-md="5"
+        size-sm="8"
+        size="10"
+      >
+        <div class="gradient"></div>
+        <ion-img
+          [src]="colaborador?.foto ? colaborador.foto : semFoto"
+        ></ion-img>
+        <ion-label class="nome">{{ nomeMostrado }}</ion-label>
+        <ion-label class="profissao">{{
+          colaborador?.descricaoProfissao
+        }}</ion-label>
+        <div class="avaliacao" (click)="onClickAvaliacao()">
+          <ion-label>{{
+            "PERFIL.COLABORADOR.AVALIACOES" | translate
+          }}</ion-label>
+          <div class="stars">
+            <ion-icon id="star1" name=""></ion-icon>
+            <ion-icon id="star2" name=""></ion-icon>
+            <ion-icon id="star3" name=""></ion-icon>
+            <ion-icon id="star4" name=""></ion-icon>
+            <ion-icon id="star5" name=""></ion-icon>
+            <ion-label>{{ avaliacoes?.media | number: "1.1-1" }}</ion-label>
+          </div>
+          <ion-label class="detalhes">{{
+            "PERFIL.COLABORADOR.DETALHES" | translate
+          }}</ion-label>
+        </div>
+        <ion-fab-button style="--background: var(--cor-fundo-botaoAgendar)" (click)="onClickEditarColaborador()">
+          <ion-icon
+            name="pencil-sharp"
+            style="transform: scale(0.8); color: var(--cor-texto-botaoAgendar)"
+          ></ion-icon>
+        </ion-fab-button>
+      </ion-col>
+    </ion-row>
+    <ion-row
+      class="descricao ion-padding-top ion-justify-content-center"
+      *ngIf="colaborador"
+    >
+      <ion-col
+        size-xl="3"
+        size-lg="3"
+        size-md="4"
+        size-sm="7"
+        size-xs="10"
+        size="9"
+      >
+      </ion-col>
+      
+    </ion-row>
+    
+    <ion-row class="descricao  ion-justify-content-center" *ngIf="appidExclusivo == '1'" style="text-align: start; place-self: center; align-items: center;">
+      <ion-col
+        size-xl="3"
+        size-lg="3"
+        size-md="4"
+        size-sm="7"
+        size-xs="10"
+        size="9"
+      >
+      <ion-row size="auto" style="place-self: center; align-items: center;">
+        <ion-text class="bold" style="font-weight: bold; color: var(--ion-color-primary);">
+          Modo Escuro
+        </ion-text>
+        <ion-toggle mode="md" [checked]="flagTema" (ionChange)="modoEscuro($event)"></ion-toggle>
+        
+      </ion-row>
+      
+      </ion-col>
+      
+
+
+    </ion-row>
+    <ion-row class="descricao ion-justify-content-center">
+      <ion-col
+        size-xl="3"
+        size-lg="3"
+        size-md="4"
+        size-sm="7"
+        size-xs="10"
+        size="9"
+      >
+        <ion-label class="info">{{
+          "PERFIL.COLABORADOR.INFO" | translate
+        }}</ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row class="descricao ion-justify-content-center" *ngIf="colaborador">
+      <ion-col
+        class="atributo"
+        size-xl="1"
+        size-lg="1"
+        size-md="1"
+        size-sm="1"
+        size="1"
+      >
+        <ion-icon
+          style="
+            transform: scale(1.4);
+            color: var(--cor-texto-geral);
+            padding-left: 0;
+          "
+          name="mail-outline"
+        ></ion-icon>
+      </ion-col>
+      <ion-col
+        size-xl="3"
+        size-lg="3"
+        size-md="4"
+        size-sm="7"
+        size-xs="8"
+        size="9"
+      >
+        <ion-label class="email">{{ colaborador.email }}</ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row class="descricao ion-justify-content-center" *ngIf="colaborador">
+      <ion-col
+        class="atributo"
+        size-xl="1"
+        size-lg="1"
+        size-md="1"
+        size-sm="1"
+        size="1"
+      >
+        <ion-icon
+          style="
+            transform: scale(1.4);
+            color: var(--cor-texto-geral);
+            padding-left: 0;
+          "
+          name="call-outline"
+        ></ion-icon>
+      </ion-col>
+
+      <ion-col
+        size-xl="3"
+        size-lg="3"
+        size-md="4"
+        size-sm="7"
+        size-xs="8"
+        size="9"
+      >
+        <ion-label class="celular">{{ colaborador.celular }}</ion-label>
+      </ion-col>
+    </ion-row>
+
+    <ion-row
+      class="descricao ion-justify-content-center"
+      style="margin-top: 3%"
+    >
+      <ion-col
+        size-xl="3"
+        size-lg="3"
+        size-md="4"
+        size-sm="7"
+        size-xs="10"
+        size="9"
+      >
+        <ion-label class="info">{{
+          "PERFIL.MODALEDITAR.CURRICULO" | translate
+        }}</ion-label>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="descricao ion-justify-content-center" *ngIf="colaborador">
+      <ion-col
+        class="atributo"
+        size-xl="1"
+        size-lg="1"
+        size-md="1"
+        size-sm="1"
+        size="1"
+      >
+        <ion-icon
+          style="
+            transform: scale(1.4);
+            color: var(--cor-texto-geral);
+            padding-left: 0;
+          "
+          name="document-text-outline"
+        ></ion-icon>
+      </ion-col>
+
+      <ion-col
+        size-xl="3"
+        size-lg="3"
+        size-md="4"
+        size-sm="7"
+        size-xs="8"
+        size="9"
+      >
+        <ion-row>
+          <ion-label
+            *ngIf="
+              colaborador?.curriculo !== null &&
+              colaborador?.curriculo !== undefined &&
+              colaborador?.curriculo?.length > 0
+            "
+            class="curriculo vertical-align"
+          >
+            {{ colaborador?.curriculo }}</ion-label
+          >
+          <ion-label
+            *ngIf="
+              colaborador?.curriculo !== null &&
+              colaborador?.curriculo !== undefined &&
+              colaborador?.curriculo?.length == 0
+            "
+            class="sem-curriculo"
+            style="font-weight: lighter"
+          >
+            [ Coloque aqui informações que vão motivar o cliente a te escolher.
+            ]
+          </ion-label>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+
+    <ion-row
+      *ngIf="
+        colaborador?.instagram !== null &&
+        colaborador?.instagram !== undefined &&
+        colaborador?.instagram !== ''
+      "
+      class="descricao ion-justify-content-center"
+      style="margin-top: 3%"
+    >
+      <ion-col
+        size-xl="3"
+        size-lg="3"
+        size-md="4"
+        size-sm="7"
+        size-xs="10"
+        size="9"
+      >
+        <ion-label class="info">Instagram</ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row
+      class="descricao ion-justify-content-center"
+      *ngIf="colaborador"
+      style="margin-bottom: 5%"
+    >
+      <ion-col
+        class="atributo"
+        size-xl="1"
+        size-lg="1"
+        size-md="1"
+        size-sm="1"
+        size="1"
+      >
+        <ion-icon
+          style="transform: scale(1.4); color: var(--cor-texto-geral)"
+          name="logo-instagram"
+        ></ion-icon>
+      </ion-col>
+      <ion-col
+        size-xl="3"
+        size-lg="3"
+        size-md="4"
+        size-sm="7"
+        size-xs="8"
+        size="9"
+      >
+        <ion-label>
+          <a
+          class="colorTextApp"
+            style="text-decoration: none;"
+            href="https://www.instagram.com/{{ colaborador.instagram }}"
+          >
+            @{{ colaborador.instagram }}
+          </a>
+        </ion-label>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+<app-menu></app-menu>

@@ -1,0 +1,159 @@
+{
+	"AGENDA": {
+		"MODALS": {
+			"INFOSEMPRESAMODAL": {
+				"SOBRE": "Sobre",
+				"TELEFONE": "Telefone"
+			}
+		}
+	},
+	"LOGIN": {
+		"ESCOLHERESTABELECIMENTOBARBEARIA": "Barbearia",
+		"ESCOLHERESTABELECIMENTOESTETICA": "Estética",
+		"ESCOLHERESTABELECIMENTOSALAO": "Salão",
+		"ESCOLHERESTABELECIMENTOTATUAGEM": "Tatuagem",
+		"MODALESTABELECIMENTO": {
+			"TITLE": "Escolher Estabelecimento"
+		},
+		"NAOTEMBARBEARIASACESSADAS": "Não existem barbearias acessadas anteriormente!",
+		"NAOTEMBARBEARIASPROXIMAS": "Não existem barbearias próximas a você!",
+		"NAOTEMCLINICASACESSADAS": "Nenhuma clinica de estética foi acessada anteriormente!",
+		"NAOTEMCLINICASPROXIMAS": "Não existem clinicas de estética próximas você!",
+		"NAOTEMEMPRESASACESSADAS": "Não existem empresas acessadas anteriormente!",
+		"NAOTEMEMPRESASPROXIMAS": "Não existem empresas próximas a você!",
+		"NAOTEMESTUDIOSACESSADOS": "Nenhum estúdio de tatuagem foi acessado anteriormente!",
+		"NAOTEMESTUDIOSPROXIMOS": "Não existem estúdios de tatuagem próximos a você!",
+		"NAOTEMSALOESACESSADOS": "Não existem salões de beleza acessados anteriormente!",
+		"NAOTEMSALOESPROXIMOS": "Não existem salões de beleza próximos a você!",
+		"PESQUISARESTABELECIMENTO": "Pesquisar estabelecimento",
+		"PROXIMOSAVOCE": "Próximos a você",
+		"REMOVAL": {
+			"ALERT": {
+				"ACCEPT": "Ok",
+				"CANCEL": "Cancelar",
+				"HEADER": "Confirmar remoção",
+				"MESSAGE": "Deseja confirmar a remoção da empresa da lista?"
+			}
+		},
+		"ULTIMOSACESSOS": "Últimos acessos"
+	},
+	"PERFIL": {
+		"ALERTSENHA": {
+			"CANCEL": "Cancelar",
+			"HEADER": "Senha",
+			"MESSAGE": "Digite sua senha para poder continuar com o login.",
+			"OK": "Ok"
+		},
+		"ASSINATURA": "Assinaturas",
+		"AUXILIAR": "Auxiliar",
+		"BUSCANAORETORNOURESULTADO": "A busca não retornou resultados",
+		"CARDHISTORICO": {
+			"PRODUTOS": "Produtos",
+			"SERVICOS": "Serviços",
+			"SUBTOTAL": "Subtotal",
+			"TOTAL": "Total"
+		},
+		"CARREGAR": "Carregar mais...",
+		"CLIENTE": "Cliente",
+		"COLABORADOR": {
+			"AVALIACOES": "Avaliações do profissional",
+			"BIO": "Biografia",
+			"BUTTONFILTRAR": "Filtrar",
+			"DETALHES": "Detalhes",
+			"EDITAR": "Editar Colaborador",
+			"INFO": "Informações para contato",
+			"MEDIA": "Média",
+			"MELHORNOTA": "Melhor nota",
+			"TITLE": "Avaliações"
+		},
+		"DATA": {
+			"TODAY": "Hoje"
+		},
+		"DESCONTOPLANO": "Desconto no plano",
+		"EDITAR": {
+			"COLABORADOR": "Editar perfil"
+		},
+		"ESCOLHERESTABELECIMENTO": "Escolher outro estabelecimento",
+		"GANHE": "Ganhe 1",
+		"GANHEACADA": "a cada",
+		"GESTOR": "Gestor",
+		"HISTORICO": "Histórico",
+		"MINIMO": "Mínimo para uso",
+		"MODALCONFIRMARESTABELECIMENTO": {
+			"CANCELAR": "Não",
+			"CONFIRMAR": "Sim",
+			"MENSAGEM": "Deseja alternar para o estabelecimento selecionado?",
+			"TITLE": "Confirmar troca"
+		},
+		"MODALEDITAR": {
+			"ALTERARSENHA": "Alterar senha",
+			"ANIVERSARIO": "Data de aniversário",
+			"CANCELAR": "Cancelar",
+			"CELULAR": "Celular",
+			"CLIQUEAQUI": "Clique Aqui",
+			"CONFIRMAR": "Confirme a nova senha",
+			"CONTAEXCLUIDASUCESSO": "Conta Excluída com sucesso!",
+			"CURRICULO": "Sobre seu trabalho",
+			"EDITAR": "Editar senha",
+			"EMAIL": "E-mail",
+			"ERROEXCLUIRCONTA": "Erro ao excluir conta!",
+			"EXCLUIRCONTA": "Excluir Conta",
+			"MODALEDITAR": {
+				"EDITAR": "Editar Senha",
+				"SALVARSENHA": "Salvar senha"
+			},
+			"NAOPREENCHER": "Caso não queira trocar a senha deixe os campos acima em branco",
+			"NOME": "Nome",
+			"REMOVERFOTOCANCELAR": "Cancelar",
+			"REMOVERFOTOHEADER": "Deseja remover essa foto?",
+			"REMOVERFOTOMESSAGE": "A remoção será salva automaticamente.",
+			"REMOVERFOTOOK": "Remover",
+			"REQUIREDFIELDS": "Campos obrigatórios",
+			"SALVAR": "Salvar",
+			"SALVARSENHA": "Salvar senha",
+			"SENHA": "Insira a nova senha",
+			"SENHAATUAL": "Insira sua senha atual",
+			"SENHAINCOMPATIVEL": "As senhas não conferem!",
+			"SENHAINCORRETA": "Senha atual incorreta!",
+			"SENHAPADRAO": "Você possui a senha padrão.",
+			"SUCESSO": "Sucesso!",
+			"TEXTALTERAR": "Deseja alterar sua senha?",
+			"TEXTOEXCLUIRCONTA": "A exclusão de sua conta será permanente e essa ação é irreversível. Deseja excluir sua conta?",
+			"TITLE": "Editar perfil"
+		},
+		"MODALFILTRAGEM": {
+			"ATE": "Até",
+			"BUTTON": {
+				"CANCELAR": "Cancelar",
+				"FILTRAR": "Filtrar"
+			},
+			"COMENTARIOS": "Somente com comentários",
+			"DESDE": "Desde",
+			"NOTA": "Nota"
+		},
+		"MODALONEPOINTS": {
+			"BUTTON": {
+				"FECHAR": "Fechar"
+			},
+			"DIA": "dias.",
+			"FIDELIDADETITLE": "Fidelidade",
+			"IMPORTANTE": "IMPORTANTE:",
+			"PONTOEXPIRA": "O ponto de bônus do primeiro serviço expira em",
+			"REGRAS": "Os serviços integrantes da premiação podem variar a quantidade necessária, o prazo de validade e a forma de pagamento. Informe-se na recepção sobre as regras.",
+			"SEMPARTICIPACAO": "Você não está participando de nenhuma fidelidade no momento.",
+			"SERVICO": "Serviço",
+			"SERVICOS": "Serviços",
+			"TITLE": "Vantagens"
+		},
+		"NAOTEMANIVERSARIO": "Não possui data de nascimento",
+		"NAOTEMCELULAR": "Não possui celular",
+		"NAOTEMHISTORICO": "Não tem histórico",
+		"PONTOS": "pontos",
+		"PONTOSRESGATE": "pontos para poder resgatar.",
+		"PONTUACAO": "Pontuação",
+		"PROFISSIONAL": "Profissional",
+		"SUCESSO": "Sucesso!",
+		"TITLE": "Perfil",
+		"VANTAGENS": "Vantagens"
+	}
+}

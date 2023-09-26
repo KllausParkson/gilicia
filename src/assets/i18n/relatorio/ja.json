@@ -1,0 +1,85 @@
+{
+	"AGENDA": {
+		"MODALS": {
+			"INFOSEMPRESAMODAL": {
+				"SOBRE": "約",
+				"TELEFONE": "電話番号"
+			}
+		}
+	},
+	"RELATORIOS": {
+		"AVALAIACOES": {
+			"DETALHES": "詳細を見る"
+		},
+		"AVALIACOES": {
+			"COLABORADOR": "貢献者の評価",
+			"EMPRESA": "会社のレビュー",
+			"MEDIA": "平均",
+			"MELHORNOTA": "最高のグレード"
+		},
+		"BUSCANAORETORNOURESULTADO": "検索は結果を返しませんでした",
+		"EXTRATOCHATBOT": {
+			"ABRIRCARDS": "すべての抽出物を開く",
+			"BALANCOPERIODO": "調査日数のバランス",
+			"DATA": "日付",
+			"MENSAGENSPERIODO": "期間中のメッセージの総数",
+			"SEMDADOS": "この期間に動きはありません",
+			"TAXAADESAO": "会費",
+			"TITLE": "チャットボット抽出",
+			"VALOR": "値"
+		},
+		"PRODUTOS": {
+			"MESSAGE": "この期間の製品はありません",
+			"OUTROS": "その他",
+			"VALORTOTAL": "量"
+		},
+		"RECEITASAPURADAS": {
+			"TICKETMEDIO": "平均チケット",
+			"TOTAL": "獲得した総収入",
+			"TOTALCREDANT": "事前クレジットからの総収入",
+			"TOTALFICHAS": "総チップ",
+			"TOTALORCAMENTOS": "総予算収入",
+			"TOTALOUTROS": "その他の総収入",
+			"TOTALPRODUTOS": "製品の総収益",
+			"TOTALSERVICOS": "総サービス収入"
+		},
+		"RECEITASESTIMADAS": {
+			"TOTAL": "推定総収入"
+		},
+		"RELATORIOCLIENTE": {
+			"BUTTONSEGMENT": {
+				"GERAL": "一般",
+				"PRODUTOS": "製品",
+				"SERVICOS": "サービス"
+			}
+		},
+		"RESUMOCHATBOT": {
+			"AGENDAMENTOS": "スケジュール",
+			"CONFIRMACOES": "確認",
+			"INTERACOESBOT": "ボットの相互作用",
+			"INTERACOESUSER": "ユーザーインタラクション",
+			"MENSAGENSTROCADAS": "交換されたメッセージ",
+			"RESUMODODIA": "その日のまとめ",
+			"SALDORESTANTE": "保たれているバランス",
+			"TOTALGASTO": "総支出",
+			"VISUALIZAREXTRATO": "完全な抜粋を表示"
+		},
+		"SERVICOS": {
+			"MESSAGE": "この期間のサービスはありません",
+			"OUTROS": "その他",
+			"VALORTOTAL": "量"
+		},
+		"TITLE": {
+			"AVALIACOES": "評価",
+			"CLIENTES": "顧客",
+			"FATURAMENTO": "生産性ランキング",
+			"LUCRATIVIDADEGERAL": "全体的な収益性",
+			"PRODUTOS": "トップ10製品",
+			"RANKINGLUCRATIVIDADE": "収益性のランク付け",
+			"RECEITASAPURADAS": "獲得した収入",
+			"RECEITASESTIMADAS": "推定収益",
+			"RESUMOCHATBOT": "チャットボットの概要",
+			"SERVICOS": "トップ10サービス"
+		}
+	}
+}

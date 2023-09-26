@@ -1,0 +1,58 @@
+.title {
+  font-size: 18px;
+  font-weight: 500;
+  color: #707984;
+}
+
+.stars {
+  font-size: 32px;
+  font-weight: 700;
+  padding: 5px;
+
+  ion-icon {
+    color: var(--ion-color-warning);
+  }
+}
+
+.nota {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  color: var(--ion-color-primary);
+  font-size: 14px;
+  font-weight: 700;
+
+  ion-label {
+    text-align: center;
+  }
+}
+
+ion-card-header {
+  display: flex;
+  justify-content: space-between;
+
+  .card-header {
+    color: var(--ion-color-primary);
+  }
+
+  .modal-stars {
+    font-size: 14px;
+    font-weight: 700;
+    ion-icon {
+      color: var(--ion-color-warning);
+    }
+  }
+}
+
+.comentarios {
+  overflow-y: auto;
+}
+
+ion-title {
+  padding-left: 60px !important;
+}
+
+ion-toolbar {
+  --background: var(--cor-fundo-barraTopo);
+}

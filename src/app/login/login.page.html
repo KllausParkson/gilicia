@@ -1,0 +1,463 @@
+<!-- Componente de Splashscreen personalizado -->
+<ion-content
+  *ngIf="!SplashControle"
+  scrollY="false"
+  style="position: absolute; z-index: 1"
+>
+  <div id="Splash" style="opacity: 1; transition: opacity 1s">
+    <app-splashscreen></app-splashscreen>
+  </div>
+</ion-content>
+
+<ion-content id="bg" scrollY="false">
+  <router-outlet (activate)="escolherPerfil()"></router-outlet>
+  <div
+    *ngIf="mudarTela==0"
+    style="
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-image: var(--background-app);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      justify-content: space-around;
+      outline: var(--bordaNoLogin);
+      outline-offset: -15px;
+    "
+  >
+    <!-- SE CARD ESTIVER NA FASE 1 (FORMA DE LOGIN) O TOPO DA PÁGINA CONTEM -->
+    <ion-row mode="md" *ngIf="!mostrarEmailOneLogin" style="width: 100%">
+      <!-- Saiba Mais -->
+      <ion-col style="height: 100%; display: flex; align-items: center">
+        <ion-button
+          fill="clear"
+          style="color: var(--cor-fontes-login); font-weight: bold; margin-left: 20px"
+          (click)="onClickSaibaMais()"
+        >
+          <ion-icon slot="start" name="information-circle-outline"></ion-icon>
+          {{'LOGIN.SAIBAMAIS.TEXT'| translate}}
+        </ion-button>
+      </ion-col>
+      <!-- Escolher Idioma -->
+      <ion-col style="height: 100%; display: flex; justify-content: flex-end">
+        <ion-card
+          style="padding: 8px; width: fit-content; box-shadow: none !important"
+          [ngStyle]="{'background-color' : 'var(--ion-color-background)'}"
+        >
+          <ion-row> <app-locale-shared></app-locale-shared> </ion-row
+        ></ion-card>
+      </ion-col>
+    </ion-row>
+
+    <!-- SE CARD ESTIVER NA FASE 2 (EMAIL E SENHA) O TOPO DA PÁGINA CONTEM -->
+    <ion-row
+      mode="md"
+      *ngIf="mostrarEmailOneLogin"
+      style="width: 100%; margin-top: 20px"
+    >
+      <!-- Botão Voltar-->
+      <ion-col
+        size="6"
+        style="
+          height: 100%;
+          display: flex;
+          align-items: center;
+          
+        "
+      >
+        <ion-button style="color: var(--cor-fontes-login); font-weight: bold;" id="botaoVoltar" (click)="mostrarLoginOne()">
+          <ion-icon name="arrow-back"></ion-icon>
+          {{'LOGIN.VOLTAR' | translate}}
+        </ion-button>
+      </ion-col>
+
+      <!-- Login Anonimo -->
+      <ion-col
+        size="5.7" 
+        style="
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: right;
+          
+        "
+      >
+        <ion-button style="color: var(--cor-fontes-login); font-weight: bold;"
+          class="loginVisitante"
+          id="botaoVoltar"
+          (click)="loginVisitante()"
+        >
+          {{'LOGIN.VISITANTE' | translate}}
+        </ion-button>
+      </ion-col>
+    </ion-row>
+
+    <!-- Logo da Empresa -->
+    <ion-row style="justify-content: center">
+      <span *ngIf="!mostrarEmailOneLogin" class="Logo"> </span>
+      <span *ngIf="mostrarEmailOneLogin" class="LogoLogin"> </span>
+    </ion-row>
+
+    <!-- Card de Login -->
+    <ion-card
+      id="CardPrincipal"
+      style="box-shadow: none"
+      #card
+      [ngStyle]="{'background-color' : 'var(--ion-color-background)', 'max-width.px' : 350, 'max-height.px' : valueMobilidade ? 400 : 300 }"
+    >
+      <!-- CARD FASE 1: Formas de login -->
+
+      <ion-grid
+        *ngIf="!mostrarEmailOneLogin"
+        style="
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        "
+      >
+        <ion-row style="height: 100%; place-content: center">
+          <ion-col
+            size="11"
+            style="
+              height: 100%;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+            "
+          >
+            <ion-row mdoe="ios">
+              <!--Login com cadastro One Beleza-->
+              <ion-col>
+                <ion-button
+                  mode="ios"
+                  (click)="mostrarLoginOne()"
+                  type="button"
+                  data-keyboard="false"
+                  data-backdrop="static"
+                  expand="block"
+                  fill="clear"
+                  style="
+                    border-radius: 10px;
+                    background-color: var(--cor-fundo-botaoLogin);
+                    color: var(--cor-texto-botaoLogin);
+                  "
+                >
+                  <span
+                    slot="start"
+                    style="
+                      background-image: var(--icone-botaoLogin);
+                      width: 30px;
+                      height: 25px;
+                      background-repeat: no-repeat;
+                      background-size: contain;
+                      opacity: 0.8;
+                      margin-right: 5px;
+                    "
+                  >
+                  </span>
+                  <ion-text
+                    style="
+                      font-size: 16px;
+                      font-weight: bold;
+                      color: var(--cor-texto-botaoLogin);
+                    "
+                  >
+                    {{nomeAppLogin}}
+                  </ion-text>
+                </ion-button>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col size="4">
+                <!-- Login via facebook -->
+                <ion-button
+                  mode="ios"
+                  class="BotoesLoginAlternativos"
+                  type="button"
+                  color="facebook"
+                  data-backdrop="static"
+                  (click)="loginFacebook()"
+                  expand="block"
+                >
+                  <ion-icon
+                    name="logo-facebook"
+                    style="width: 32.5px; height: 32.5px"
+                  ></ion-icon>
+                </ion-button>
+              </ion-col>
+
+              <ion-col size="4">
+                <!-- Login via Google -->
+                <ion-button
+                  mode="ios"
+                  class="BotoesLoginAlternativos"
+                  type="button"
+                  color="google"
+                  data-backdrop="static"
+                  expand="block"
+                  (click)="loginGoogle()"
+                >
+                  <span
+                    class="logoGoogle"
+                    style="width: 32.5px; height: 32.5px"
+                  ></span>
+                  <!-- <ion-icon
+                    name="logo-google"
+                    style="width: 32.5px; height: 32.5px"
+                  ></ion-icon> -->
+                </ion-button>
+              </ion-col>
+
+              <ion-col size="4">
+                <!-- Entrar Apple -->
+                <ion-button
+                  mode="ios"
+                  class="BotoesLoginAlternativos"
+                  type="button"
+                  color="dark"
+                  data-backdrop="static"
+                  (click)="loginApple()"
+                  expand="block"
+                >
+                  <ion-icon
+                    name="logo-apple"
+                    style="width: 32.5px; height: 32.5px"
+                  ></ion-icon>
+                </ion-button>
+              </ion-col>
+            </ion-row>
+          </ion-col>
+        </ion-row>
+
+        <ion-row
+          mode="md"
+          style="display: flex; justify-content: center; margin-top: 10px"
+        >
+          <ion-button
+            (click)="onClickLoginAuxiliar()"
+            fill="clear"
+            style="color: var(--cor-fontes-login); font-weight: bold;font-size: 12px"
+          >
+            <ion-col
+              style="
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                align-items: center;
+              "
+            >
+              <ion-row style="margin-bottom: 6px">
+                <ion-text>{{'LOGIN.AUXILIARSERVICO' | translate}}</ion-text>
+              </ion-row>
+              <ion-row>
+                <ion-text><u>{{'LOGIN.CLIQUEAQUI' | translate}}</u></ion-text>
+              </ion-row>
+            </ion-col>
+          </ion-button>
+        </ion-row>
+      </ion-grid>
+
+      <ion-footer class="ion-no-border"> </ion-footer>
+
+      <!-- CARD FASE 2: Login Com One Beleza -->
+
+      <ion-grid
+        *ngIf="mostrarEmailOneLogin"
+        style="
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        "
+      >
+        <ion-row>
+          <ion-col>
+            <form
+              *ngIf="loginForm"
+              [formGroup]="loginForm"
+              (ngSubmit)="login()"
+            >
+              <ion-row>
+                <ion-col>
+                  <ion-input
+                    id="email"
+                    formControlName="email"
+                    class="LoginInput"
+                    type="email"
+                    placeholder="E-mail"
+                  ></ion-input>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col>
+                  <ion-input
+                    id="senha"
+                    formControlName="senha"
+                    type="password"
+                    class="LoginInput"
+                    placeholder="Senha"
+                  ></ion-input>
+
+                  <ion-row style="width: 100%; justify-content: flex-end">
+                    <ion-text
+                      (click)="onClickEsqueciSenha()"
+                      style="
+                        margin-top: 10px;
+                        color: var(--cor-fontes-login);
+                        margin-right: 10px;
+                        font-weight: bold;
+                      "
+                      >{{'LOGIN.ESQUECISENHA' | translate}}</ion-text
+                    >
+                  </ion-row>
+                </ion-col>
+              </ion-row>
+
+              <ion-row style="margin-top: 20px" mode="ios">
+                <ion-col mode="ios">
+                  
+                  <ng-container >
+                    <div class="login-buttons">
+                      <!-- Apenas altera a string do app principal e do app exlcusivo -->
+                      <ion-button
+                        *ngIf="empresaMobilidade == null || empresaMobilidade == undefined; else EntrarDireto"
+                        type="button"
+                        (click)="login()"
+                        id="modal"
+                        data-keyboard="false"
+                        data-backdrop="static"
+                        fill="clear"
+                        style="
+                          font-weight: bold;
+                          border-radius: 10px;
+                          background-color: var(--cor-fundo-botaoLogin);
+                          color: var(--cor-texto-botaoLogin);
+                        "
+                        disabled="{{!loginForm.valid}}"
+                        expand="block"
+                      >
+                        {{'LOGIN.LOGIN' | translate | uppercase}}
+                      </ion-button>
+                      <ng-template #EntrarDireto>
+                        <ion-button
+                          id="modal"
+                          
+                          data-keyboard="false"
+                          data-backdrop="static"
+                          fill="clear"
+                          style="font-weight: bold; border-radius: 10px; background-color: var(--cor-fundo-botaoLogin); color: var(--cor-texto-botaoLogin); font-size:  inherit;"
+                          disabled="{{!loginForm.valid}}"
+                          expand="block"
+                          (click)="onClickEntrarDireto()"
+                        >
+                        <ion-text style="white-space: normal">
+                          {{ getNomeEmpresa() | uppercase }}
+                        </ion-text>
+                        
+                        </ion-button>
+                        <ion-button
+                          type="button"
+                          (click)="login()"
+                          id="modal"
+                          data-keyboard="false"
+                          data-backdrop="static"
+                          fill="clear"
+                          style="font-weight: bold; border-radius: 10px; background-color: var(--cor-fundo-botaoLogin); color: var(--cor-texto-botaoLogin); font-size: inherit;"
+                          disabled="{{!loginForm.valid}}"
+                          expand="block"
+                        >
+                        <ion-text style="white-space: normal">
+                          {{'LOGIN.ESCOLHERESTABELECIMENTO' | translate | uppercase}}
+                        </ion-text>
+                        
+                        </ion-button>
+                      </ng-template>
+                    </div>
+                  </ng-container>
+                </ion-col>
+              </ion-row>
+            </form>
+          </ion-col>
+        </ion-row>
+        <ion-row *ngIf="valueMobilidade">
+          <ion-col size="4">
+            <!-- Login via facebook -->
+            <ion-button
+              mode="ios"
+              class="BotoesLoginAlternativos"
+              type="button"
+              color="facebook"
+              data-backdrop="static"
+              (click)="loginFacebook()"
+              expand="block"
+            >
+              <ion-icon
+                name="logo-facebook"
+                style="width: 32.5px; height: 32.5px"
+              ></ion-icon>
+            </ion-button>
+          </ion-col>
+
+          <ion-col size="4">
+            <!-- Login via Google -->
+            <ion-button
+              mode="ios"
+              class="BotoesLoginAlternativos"
+              type="button"
+              color="google"
+              data-backdrop="static"
+              expand="block"
+              (click)="loginGoogle()"
+            >
+              <span
+                class="logoGoogle"
+                style="width: 32.5px; height: 32.5px"
+              ></span>
+              <!-- <ion-icon
+                name="logo-google"
+                style="width: 32.5px; height: 32.5px"
+              ></ion-icon> -->
+            </ion-button>
+          </ion-col>
+
+          <ion-col size="4">
+            <!-- Entrar Apple -->
+            <ion-button
+              mode="ios"
+              class="BotoesLoginAlternativos"
+              type="button"
+              color="dark"
+              data-backdrop="static"
+              (click)="loginApple()"
+              expand="block"
+            >
+              <ion-icon
+                name="logo-apple"
+                style="width: 32.5px; height: 32.5px"
+              ></ion-icon>
+            </ion-button>
+          </ion-col>
+        </ion-row>
+        <ion-row
+          mode="md"
+          style="display: flex; justify-content: center; margin-top: 10px"
+        >
+          <ion-button
+            (click)="onClickCadastrar()"
+            fill="clear"
+            style="color: var(--cor-fontes-login); font-weight: bold; font-size: 12px"
+          >
+            <ion-text>{{'LOGIN.FAZERCADASTRO' | translate}}</ion-text>
+            <ion-text style="margin-left: 5px"
+              ><u>{{'LOGIN.CLIQUEAQUI' | translate}}</u></ion-text
+            >
+          </ion-button>
+        </ion-row>
+      </ion-grid>
+    </ion-card>
+  </div>
+</ion-content>

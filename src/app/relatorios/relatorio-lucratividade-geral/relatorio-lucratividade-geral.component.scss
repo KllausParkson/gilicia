@@ -1,0 +1,45 @@
+ion-grid {
+  height: 95%;
+  overflow-y: auto;
+}
+
+.date {
+  height: 125px;
+  position: sticky;
+}
+
+.list {
+  //overflow-y: auto;
+}
+
+.index {
+  padding-right: 10px;
+  font-weight: bold;
+}
+
+ion-card {
+  display: block;
+  border-radius: 8px;
+
+  .label-font-size {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .index {
+    font-size: 14px;
+  }
+
+  ion-card {
+    padding: 0;
+
+    .label-font-size {
+      font-size: 14px;
+    }
+  }
+
+  ion-card-content {
+    padding: 10px;
+  }
+}

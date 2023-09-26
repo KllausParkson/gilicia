@@ -1,0 +1,150 @@
+<ion-grid mode="md" style="height: auto">
+  <ion-row class="k-form-field ion-justify-content-center" style="margin-top: env(safe-area-inset-top) !important;">
+    <ion-col size-md="1" size-xs="1"> </ion-col>
+    <ion-col size-md="9" size-xs="9">
+      <kendo-floatinglabel
+        text="*{{ 'FINANCEIRO.HISTORICO-CLIENTE.CLIENTE' | translate }}"
+      >
+        <kendo-combobox
+          #box_cliente
+          class="pesquisarProfissional"
+          [data]="listClientes"
+          [filterable]="true"
+          (filterChange)="pesquisaClientes($event)"
+          (valueChange)="getHistoricoCliente($event)"
+          [textField]="'nomeCliente'"
+          [valueField]="'clienteId'"
+          [loading]="pesquisaClienteLoader"
+          [allowCustom]="true"
+          [valueNormalizer]="valueNormalizer"
+        >
+          <ng-template kendoComboBoxItemTemplate let-dataItem>
+            <ion-row>
+              <ion-col>
+                <ion-row>
+                  {{
+                    "FINANCEIRO.HISTORICO-CLIENTE.INFOCLIENTE.NAME" | translate
+                  }}
+                  {{ dataItem.nomeCliente }}
+                </ion-row>
+                <!--<ion-row>
+                        {{'AGENDA.MODALS.NOVOAGENDAMENTOPROFISSIONAL.INFOCLIENTE.EMAIL' | translate }}: {{dataItem.email}}
+                      </ion-row>
+                      <ion-row>
+                        {{'AGENDA.MODALS.NOVOAGENDAMENTOPROFISSIONAL.INFOCLIENTE.PHONE' | translate }}: {{dataItem.celular}}
+                      </ion-row>-->
+              </ion-col>
+            </ion-row>
+          </ng-template>
+          <ng-template kendoComboBoxNoDataTemplate>
+            <ion-row>
+              {{ "HISTORICO-CLIENTE.BUSCANAORETORNOURESULTADO" | translate }}
+            </ion-row>
+          </ng-template>
+        </kendo-combobox>
+      </kendo-floatinglabel>
+    </ion-col>
+    <ion-col size-md="1" size-xs="1"> </ion-col>
+  </ion-row>
+</ion-grid>
+
+<ion-grid class="bottom">
+  <ion-segment mode="md" [(ngModel)]="segment" value="historico">
+    <ion-segment-button value="historico">
+      <ion-label style="color: var(--cor-texto-geral)">{{
+        "HISTORICO-CLIENTE.HISTORICO" | translate
+      }}</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="observacao">
+      <ion-label style="color: var(--cor-texto-geral)">
+      {{"FINANCEIRO.HISTORICO-CLIENTE.HISTORICOOBSERVACAO.OBSSEGMENT" | translate}}
+      </ion-label>
+    </ion-segment-button>
+  </ion-segment>
+  <ion-row class="lista ion-justify-content-center">
+    <ion-col size-xl="6" size-lg="6" size-md="4">
+      <div [ngSwitch]="segment">
+        <div *ngSwitchCase="'historico'">
+          <app-card-historico-cliente
+            *ngFor="let h of historico"
+            [data]="h.data"
+            [produtos]="h.produtos"
+            [servicos]="h.servicos"
+            [valorTotal]="h.valorTotal"
+          >
+          </app-card-historico-cliente>
+
+          <div *ngIf="historico?.length == 0" class="historico-vazio">
+            <ion-icon
+              style="margin-right: 2px"
+              name="alert-circle-outline"
+            ></ion-icon>
+            <ion-label>{{
+              "HISTORICO-CLIENTE.NAOTEMHISTORICO" | translate
+            }}</ion-label>
+          </div>
+          <ion-col size="2"></ion-col>
+          <div *ngIf="historico?.length > 0">
+            <ion-col size="10">
+              <ion-row
+                class="ion-justify-content-center"
+                *ngIf="!acabouHistorico"
+              >
+                <ion-button
+                  class="button"
+                  (click)="loadData($event)"
+                  color="primary"
+                  type="button"
+                >
+                  {{ "HISTORICO-CLIENTE.CARREGAR" | translate }}
+                </ion-button>
+              </ion-row>
+            </ion-col>
+          </div>
+          <br /><br /><br />
+        </div>
+
+        <div *ngSwitchCase="'observacao'">
+          <app-historico-observacao-cliente
+            *ngFor="let h of historicoObs"
+            [data]="h.data"
+            [horario]="h.horarioInicio"
+            [nomeProf]="h.nomeProfissional"
+            [nomeServ]="h.nomeServico"
+            [observacao]="h.observacao"
+          >
+          </app-historico-observacao-cliente>
+
+          <div *ngIf="historicoObs?.length == 0" class="historico-vazio">
+            <ion-icon
+              style="margin-right: 2px"
+              name="alert-circle-outline"
+            ></ion-icon>
+            <ion-label>{{
+              "HISTORICO-CLIENTE.NAOTEMHISTORICO" | translate
+            }}</ion-label>
+          </div>
+          <ion-col size="2"></ion-col>
+          <div *ngIf="historicoObs?.length > 0">
+            <ion-col size="10">
+              <ion-row
+                class="ion-justify-content-center"
+                *ngIf="!acabouHistoricoObs"
+              >
+                <ion-button
+                  class="button"
+                  (click)="loadDataObs($event)"
+                  color="primary"
+                  type="button"
+                >
+                  {{ "HISTORICO-CLIENTE.CARREGAR" | translate }}
+                </ion-button>
+              </ion-row>
+            </ion-col>
+          </div>
+          <br /><br /><br />
+        </div>
+      </div>
+    </ion-col>
+  </ion-row>
+</ion-grid>

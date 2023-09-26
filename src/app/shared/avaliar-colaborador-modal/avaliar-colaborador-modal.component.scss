@@ -1,0 +1,29 @@
+.avaliacao {
+  color: var(--ion-color-warning);
+  .stars {
+    font-size: 32px;
+    font-weight: 700;
+    padding-top: 5px;
+
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+.comentario {
+  border: solid 2px var(--ion-color-dark-tint);
+  border-radius: 5px;
+}
+
+.comente {
+  color: var(--ion-color-primary);
+  font-weight: bold;
+}
+
+.title {
+  font-size: 18px;
+}
+
+ion-toolbar {
+  --background: var(--cor-fundo-barraTopo);
+}

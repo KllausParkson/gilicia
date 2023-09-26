@@ -1,0 +1,27 @@
+<ion-list class="backgroundItemFooter">
+  <ion-item class="ion-activatable ripple-parent backgroundItemFooter" *ngIf="validaPerfil && !autoatendimento" (click)="onClickTrocarPerfil()" button mode="md">
+    <ion-ripple-effect></ion-ripple-effect>
+    <ion-icon name="people-outline"></ion-icon>
+    <ion-label>{{'SHARED.MENU.TROCARPERFIL' | translate}}</ion-label>
+  </ion-item>
+  <ion-item *ngIf="!autoatendimento && temFilial" class="ion-activatable ripple-parent backgroundItemFooter" (click)="abrirModalEscolherEstabelecimento()" button mode="md">
+    <ion-ripple-effect></ion-ripple-effect>
+    <ion-icon name="home-outline"></ion-icon>
+    <ion-label>{{'SHARED.MENU.ESCOLHERESTABELECIMENTO' | translate}}</ion-label>
+  </ion-item>
+  <!-- <ion-item *ngIf="!autoatendimento" class="ion-activatable ripple-parent" (click)="onClickCompartilhar()" button mode="md">
+    <ion-ripple-effect></ion-ripple-effect>
+    <ion-icon name="share-social-outline"></ion-icon>
+    <ion-label>{{'SHARED.MENU.COMPARTILHAR' | translate}}</ion-label>
+  </ion-item> -->
+  <ion-item *ngIf="!autoatendimento" class="ion-activatable ripple-parent backgroundItemFooter" (click)="relatarBug()" button mode="md">
+    <ion-ripple-effect></ion-ripple-effect>
+    <ion-icon name="bug-outline"></ion-icon>
+    <ion-label>{{'SHARED.MENU.RELATAR'|translate}}</ion-label>
+  </ion-item>
+  <ion-item class="ion-activatable ripple-parent backgroundItemFooter" lines="none" (click)="logOut()" button mode="md">
+    <ion-ripple-effect></ion-ripple-effect>
+    <ion-icon name="log-out-outline"></ion-icon>
+    <ion-label>{{'SHARED.MENU.SAIR' | translate}}</ion-label>
+  </ion-item>
+</ion-list>

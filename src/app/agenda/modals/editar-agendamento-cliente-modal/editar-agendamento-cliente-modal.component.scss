@@ -1,0 +1,13 @@
+::ng-deep .k-floating-label-container.k-state-focused > .k-label {
+  transform: translate(8px, 20px) translate(-1px, calc(-1.085em - 4px))
+    translate(-5px, -10%) scale(0.9);
+}
+
+kendo-combobox {
+  border: none;
+}
+
+ion-toolbar {
+  --background: var(--cor-fundo-barraTopo);
+  padding-top: 0 !important;
+}

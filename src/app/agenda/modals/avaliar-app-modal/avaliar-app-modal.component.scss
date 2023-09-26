@@ -1,0 +1,17 @@
+#mercado::part(native){
+    background-color: var(--ion-color-secondary);
+}
+
+#fechar::part(native){
+    background-color: var(--ion-color-primary);
+}
+
+.stars {
+    font-size: 26px;
+    font-weight: 700;
+    padding: 5px;
+
+    ion-icon {
+        color: var(--ion-color-warning);
+    }
+}

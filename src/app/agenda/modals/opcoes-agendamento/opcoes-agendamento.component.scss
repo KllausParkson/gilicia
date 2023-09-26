@@ -1,0 +1,97 @@
+.titulo {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-size: 21px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #20201f;
+}
+
+.texto {
+  width: 342px;
+  height: 29px;
+  font-size: 18px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #979797;
+}
+
+.data {
+  display: flex;
+  justify-content: center;
+}
+
+.dados {
+  padding-left: 23px;
+  padding-top: 0;
+  font-size: 14px;
+}
+
+.dados0 {
+  padding-left: 23px;
+  padding-top: 0;
+  padding-bottom: 0;
+  font-size: 14px;
+}
+
+/*.btn0{
+    border: solid 2px;
+    border-color: var(--ion-color-primary);
+    border-radius: 3px;
+}*/
+
+.distancia {
+  padding-top: 85px;
+}
+
+/*.desmarcarButton::part(native){
+    box-shadow: none;
+}
+
+.bloqueioButton::part(native){
+  box-shadow: none;
+}*/
+
+.scroll-content {
+  margin-bottom: 0 !important;
+}
+
+ion-toolbar {
+  --background: transparent;
+  --ion-color-base: transparent !important;
+  --border-top: 0px !important;
+}
+
+.my-custom-class {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.btn-opcoes-agendamento {
+  color: var(--cor-fundo-botaoAgendar);
+  border: 1px solid var(--cor-fundo-botaoAgendar);
+  border-radius: 5px;
+  --box-shadow: none;
+}
+
+.btn0 {
+  color: var(--cor-fundo-botaoAgendar);
+  background-color: transparent;
+  border: 1px solid var(--cor-fundo-botaoAgendar);
+  border-radius: 5px;
+  --box-shadow: none;
+  margin: 0;
+}
+
+
+@media screen and (max-width: 320px) and (max-height: 568px) {
+  ion-button {
+    font-size: 14px;
+  }
+}

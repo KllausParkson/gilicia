@@ -1,0 +1,30 @@
+{
+	"appId": "ienzo.app",
+	"appName": "Ienzo Barbearia",
+	"server": {
+		"cleartext": true,
+		"url": "https://oneapp.azurewebsites.net/Ienzo"
+	},
+	"plugins": {
+		"PushNotifications": {
+			"presentationOptions": [
+				"badge",
+				"sound",
+				"alert"
+			]
+		},
+		"SplashScreen": {
+			"launchShowDuration": 40000,
+			"launchAutoHide": true,
+			"showSpinner": true
+		},
+		"GoogleAuth": {
+			"scopes": [
+				"profile",
+				"email"
+			],
+			"serverClientId": "814006119129-m1mkt3rov0r9jb9enbvbtvu3mmr4ucaq.apps.googleusercontent.com",
+			"forceCodeForRefreshToken": true
+		}
+	}
+}

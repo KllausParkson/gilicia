@@ -1,0 +1,57 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-row class="ion-justify-content-center">
+        <span class="ion-justify-content-center ion-text-center titulo"
+        style="
+        align-items: center;
+        color: var(--cor-texto-barraTopo);
+        "
+        >
+        {{"AGENDA.MODALS.SERVICOASSINATURA.MARCADO"|translate}}
+    </span>
+        </ion-row>
+        <ion-buttons slot="primary">
+          <ion-button>
+            <ion-icon
+              name="close"
+              slot="icon-only"textarea
+              style="transform: scale(1.5); color: var(--cor-texto-barraTopo)"
+            ></ion-icon>
+          </ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+  </ion-header>
+  <ion-content class="cabecalho backgroundContentApp">
+    <div style="padding: 10px;">
+        <span> {{"AGENDA.MODALS.SERVICOASSINATURA.TEXTOPRIPARTE"|translate}}
+        </span>
+        <span style="color: var(--ion-color-primary); font-weight: bolder;">
+          {{servNome}}
+      </span>
+      <span>
+        {{"AGENDA.MODALS.SERVICOASSINATURA.TEXTOSEGPARTE"|translate}}
+      </span>
+        <span style="color: var(--ion-color-primary); font-weight: bolder;">
+              {{proximoAg}} <br> <br>
+        </span> 
+        <span> {{"AGENDA.MODALS.SERVICOASSINATURA.TEXTOTERPARTE"|translate}}
+        </span>
+        <span style="color: var(--ion-color-primary); font-weight: bolder;">
+            {{servNome}}
+        </span>
+            <span>{{"AGENDA.MODALS.SERVICOASSINATURA.TEXTOQUARPARTE"|translate}}</span>
+    </div>
+  </ion-content>
+  <ion-footer class="backgroundFooterApp" style=" display: flex; justify-content: center;">
+    <ion-row style="margin: 20px">
+      <ion-col class="ion-no-padding" size="12">
+        <ion-button (click)="remarcar()">
+            remarcar
+        </ion-button>
+        <ion-button (click)="cancelar()">
+            cancelar
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-footer>
+  

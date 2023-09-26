@@ -1,0 +1,85 @@
+{
+	"AGENDA": {
+		"MODALS": {
+			"INFOSEMPRESAMODAL": {
+				"SOBRE": "Info",
+				"TELEFONE": "Teléfono"
+			}
+		}
+	},
+	"RELATORIOS": {
+		"AVALAIACOES": {
+			"DETALHES": "Detalles"
+		},
+		"AVALIACOES": {
+			"COLABORADOR": "Reseñas de colaboradores",
+			"EMPRESA": "Reseñas de la empresa",
+			"MEDIA": "Media",
+			"MELHORNOTA": "Mejor grado"
+		},
+		"BUSCANAORETORNOURESULTADO": "La búsqueda no arrojó resultados",
+		"EXTRATOCHATBOT": {
+			"ABRIRCARDS": "Abrir todos los extractos",
+			"BALANCOPERIODO": "Saldo entre los días encuestados",
+			"DATA": "Fecha",
+			"MENSAGENSPERIODO": "Número total de mensajes para el período",
+			"SEMDADOS": "No hay movimientos en este periodo",
+			"TAXAADESAO": "Cuota de socio",
+			"TITLE": "Extracto de chatbot",
+			"VALOR": "Valor"
+		},
+		"PRODUTOS": {
+			"MESSAGE": "No hay productos para este período.",
+			"OUTROS": "Otro",
+			"VALORTOTAL": "Valor total"
+		},
+		"RECEITASAPURADAS": {
+			"TICKETMEDIO": "Boleto promedio",
+			"TOTAL": "Ingresos totales calculados",
+			"TOTALCREDANT": "Ingreso total por crédito anticipado",
+			"TOTALFICHAS": "Tokens totales",
+			"TOTALORCAMENTOS": "Ingresos presupuestarios totales",
+			"TOTALOUTROS": "Otros ingresos totales",
+			"TOTALPRODUTOS": "Ingresos totales del producto",
+			"TOTALSERVICOS": "Ingresos totales por servicios"
+		},
+		"RECEITASESTIMADAS": {
+			"TOTAL": "Ingresos totales estimados"
+		},
+		"RELATORIOCLIENTE": {
+			"BUTTONSEGMENT": {
+				"GERAL": "General",
+				"PRODUTOS": "Productos",
+				"SERVICOS": "Mantenimiento"
+			}
+		},
+		"RESUMOCHATBOT": {
+			"AGENDAMENTOS": "Horarios",
+			"CONFIRMACOES": "confirmaciones",
+			"INTERACOESBOT": "Interacciones de bots",
+			"INTERACOESUSER": "Interacciones del usuario",
+			"MENSAGENSTROCADAS": "Mensajes intercambiados",
+			"RESUMODODIA": "Resumen del día",
+			"SALDORESTANTE": "Balance restante",
+			"TOTALGASTO": "Total gastado",
+			"VISUALIZAREXTRATO": "Ver extracto completo"
+		},
+		"SERVICOS": {
+			"MESSAGE": "No tienes servicios durante este período",
+			"OUTROS": "Otro",
+			"VALORTOTAL": "Valor total"
+		},
+		"TITLE": {
+			"AVALIACOES": "Opiniones",
+			"CLIENTES": "Clientes",
+			"FATURAMENTO": "Clasificación de productividad",
+			"LUCRATIVIDADEGERAL": "Rentabilidad Global",
+			"PRODUTOS": "Los 10 mejores productos",
+			"RANKINGLUCRATIVIDADE": "Ranking de Rentabilidad",
+			"RECEITASAPURADAS": "Ingresos Calculados",
+			"RECEITASESTIMADAS": "Ganancias Estimadas",
+			"RESUMOCHATBOT": "Resumen del chatbot",
+			"SERVICOS": "Los 10 mejores servicios"
+		}
+	}
+}

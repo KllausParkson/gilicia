@@ -1,0 +1,751 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import "~@ionic/angular/css/display.css";
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+// Logo do loading service
+.imgLogoLoading {
+  background-image: var(--icone-Loading);
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  animation-duration: 1s;
+  animation-name: loadingLogo;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes loadingLogo {
+  from {
+    width: 50px;
+    height: 50px;
+  }
+  to {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+.custom-loading {
+  --background: none;
+
+  .loading-wrapper {
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+  }
+}
+
+.cadastroRapido {
+  .modal-wrapper {
+    height: 50% !important;
+    width: 25% !important;
+    min-width: 350px !important;
+    min-height: 530px !important;
+    border-radius: 5px;
+  }
+}
+
+.infosEmpresa {
+  .modal-wrapper {
+    height: 84% !important;
+    width: 70% !important;
+    min-width: 350px !important;
+    //min-height: 560px !important;
+    //max-height: 560px !important;
+    border-radius: 5px;
+    position: absolute;
+    top: 8%;
+  }
+}
+
+.obsBloqueio {
+  .modal-wrapper {
+    height: 280px;
+    width: 340px;
+    border-radius: 5px;
+  }
+}
+
+.recuperarSenha {
+  .modal-wrapper {
+    height: 45% !important;
+    width: 25% !important;
+    min-width: 300px !important;
+    min-height: 360px !important;
+    border-radius: 5px;
+  }
+}
+
+.loginAuxiliar {
+  .modal-wrapper {
+    height: 46% !important;
+    width: 25% !important;
+    min-width: 300px !important;
+    min-height: 340px !important;
+    border-radius: 5px;
+  }
+}
+
+.aviso {
+  font-size: 14px;
+  color: #8a8a8a;
+  display: flex;
+  padding-left: 10px;
+}
+
+.confirmarnovoAgendamento {
+  .modal-wrapper {
+    height: 40% !important;
+    width: 25% !important;
+    min-width: 350px !important;
+    min-height: 261px !important;
+    border-radius: 5px;
+  }
+}
+
+.maisOpcoesModal {
+  .modal-wrapper {
+    width: 25% !important;
+    min-width: 350px !important;
+    height: 70% !important;
+    border-radius: 5px;
+  }
+}
+
+.confirmaEstabelecimento {
+  .modal-wrapper {
+    height: 50% !important;
+    width: 25% !important;
+    min-width: 350px !important;
+    min-height: 445px !important;
+    border-radius: 5px;
+  }
+}
+
+.editarAgendamentoNoCliente {
+  .modal-wrapper {
+    height: 50% !important;
+    width: 25% !important;
+    min-width: 350px !important;
+    min-height: 445px !important;
+    border-radius: 5px;
+  }
+}
+
+.editarPerfilCliente {
+  .modal-wrapper {
+    height: 55% !important;
+    width: 25% !important;
+    min-width: 350px !important;
+    min-height: 500px !important;
+    border-radius: 5px;
+  }
+}
+
+.editarSenhaColaborador {
+  .modal-wrapper {
+    height: 40% !important;
+    width: 25% !important;
+    min-width: 350px !important;
+    min-height: 340px !important;
+    border-radius: 5px;
+  }
+}
+
+.modalCadastroRapido {
+  .modal-wrapper {
+    height: 70% !important;
+    width: 30% !important;
+    min-width: 350px !important;
+    min-height: 475px !important;
+    border-radius: 5px;
+  }
+}
+
+.modalVantagens {
+  .modal-wrapper {
+    height: 70% !important;
+    width: 30% !important;
+    min-width: 350px !important;
+    min-height: 475px !important;
+    border-radius: 5px;
+  }
+}
+
+.maisOpcoesHorarioLivreModal {
+  .modal-wrapper {
+    height: 50% !important;
+    width: 90% !important;
+    min-width: 280px !important;
+    max-width: 380px !important;
+    min-height: 325px !important;
+    max-height: 440px !important;
+    border-radius: 5px;
+    // Remover bottom e position faz o modal surgir no meio da tela de novo
+    //bottom: 1%;
+    //position: absolute;
+  }
+}
+
+.avaliacoesModal {
+  .modal-wrapper {
+    width: 30%;
+    min-width: 350px !important;
+    height: 70% !important;
+    min-height: 550px !important;
+    border-radius: 5px;
+  }
+}
+
+.filtroModal {
+  .modal-wrapper {
+    height: 43% !important;
+    width: 25% !important;
+    //"min-width" e "min-height" menores comprometem o calendario do kendo
+    min-width: 280px !important;
+    min-height: 280px !important;
+    border-radius: 5px;
+  }
+}
+
+.saibaMaisModal {
+  .modal-wrapper {
+    height: 80% !important;
+    width: 80% !important;
+    min-width: 280px !important;
+    min-height: 280px !important;
+    max-width: 490px;
+    max-height: 475px;
+    border-radius: 5px;
+  }
+}
+
+.relatarBugModal {
+  .modal-wrapper {
+    height: 80% !important;
+    width: 80% !important;
+    min-width: 280px !important;
+    min-height: 280px !important;
+    max-width: 490px;
+    max-height: 775px;
+    border-radius: 5px;
+  }
+}
+.diasRetorno{
+  .modal-wrapper {
+    height: 50% !important;
+    width: 30% !important;
+    min-width: 280px !important;
+    min-height: 280px !important;
+    max-width: 490px;
+    max-height: 775px;
+    border-radius: 5px;
+    --box-shadow: 0 28px 48px rgba(0, 0, 0, 0.4);
+  }
+}
+.servicoJaMarcado{
+  .modal-wrapper {
+    height: 40% !important;
+    width: 30% !important;
+    min-width: 300px !important;
+    min-height: 300px !important;
+    max-width: 490px;
+    max-height: 775px;
+    border-radius: 5px;
+    --box-shadow: 0 28px 48px rgba(0, 0, 0, 0.4);
+  }
+}
+.curriculo{
+  .modal-wrapper {
+    height: 70% !important;
+    width: 90% !important;
+    min-width: 300px !important;
+    min-height: 300px !important;
+    max-width: 490px;
+    max-height: 775px;
+    border-radius: 5px;
+    --box-shadow: 0 28px 48px rgba(0, 0, 0, 0.4);
+  }
+}
+
+.celular{
+  .modal-wrapper {
+    height: 50% !important;
+    width: 85% !important;
+    min-width: 280px !important;
+    min-height: 280px !important;
+    max-width: 490px;
+    max-height: 775px;
+    border-radius: 5px;
+    --box-shadow: 0 28px 48px rgba(0, 0, 0, 0.4);
+  }
+}
+
+.inadimplencia{
+  .modal-wrapper {
+    height: 38% !important;
+    width: 30% !important;
+    min-width: 280px !important;
+    min-height: 230px !important;
+    max-width: 490px;
+    max-height: 775px;
+    border-radius: 5px;
+    --box-shadow: 0 28px 48px rgba(0, 0, 0, 0.4);
+  }
+}
+
+.atualizarCelularModal {
+  .modal-wrapper {
+    height: 300px !important;
+    width: 300px !important;
+    border-radius: 5px;
+  }
+}
+
+.calendarioCompleto {
+  .modal-wrapper {
+    height: 445px !important;
+    width: 340px !important;
+    min-width: 280px !important;
+    min-height: 280px !important;
+    max-width: 490px;
+    max-height: 775px;
+    border-radius: 5px;
+  }
+}
+
+.popupTermosPoliticaModal {
+  .modal-wrapper {
+    height: 20%;
+    width: 25% !important;
+    min-width: 280px;
+    min-height: 150px;
+    max-width: 300px;
+    max-height: 280px;
+    border-radius: 5px;
+  }
+}
+
+.servicoPesquisadoModal {
+  .modal-wrapper {
+    height: 40% !important;
+    width: 25% !important;
+    min-width: 350px !important;
+    min-height: 290px !important;
+    border-radius: 5px;
+  }
+}
+
+.validation-errors > .error-message {
+  color: var(--ion-color-danger);
+  text-align: center;
+  justify-content: center;
+  width: calc(100% - 10px);
+  line-height: 12px;
+  font-size: 12px;
+  position: absolute;
+  padding-top: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: 0.5s;
+  z-index: 1000;
+}
+
+.validation-errors > .error-message:hover {
+  transition: 0.25s;
+  border: 1px solid var(--ion-color-danger);
+  color: var(--ion-color-danger) !important;
+  background: white;
+  border-radius: 10px;
+  white-space: normal;
+  padding: 5px;
+  font-size: 13px;
+  line-height: 13px;
+  margin-top: 2px;
+  z-index: 1001;
+}
+
+ion-footer {
+  ion-toolbar {
+    height: 100% !important;
+  }
+}
+
+.validation-errors {
+  height: 10px;
+  transition: 0.25s;
+}
+
+.validation-errors:empty {
+  height: 0px;
+  transition: 0.35s;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 10px;
+  background-color: #f5f5f5;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: #f5f5f5;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
+  background-color: var(--ion-color-primary);
+}
+
+ion-toast {
+  top: env(safe-area-inset-top);
+}
+
+custom-scrollbar {
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 10px;
+    background-color: #f5f5f5;
+  }
+
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    background-color: #f5f5f5;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
+    background-color: var(--ion-color-primary);
+  }
+}
+
+ion-grid {
+  margin-bottom: env(safe-area-inset-bottom);
+  height: 100%;
+}
+
+//Correção bug Kendo-Floating-Label
+::ng-deep .k-floating-label-container.k-state-focused > .k-label {
+  transform: translate(8px, 20px) translate(-1px, calc(-1.085em - 4px))
+    translate(-5px, -10%) scale(0.9);
+}
+
+// Define a altura do menu popover (aparece ao clicar sobre os botões do menu de navegação) para todos os popover
+.pop-over-class .popover-content {
+  bottom: 55px !important;
+  top: auto !important;
+}
+
+// Oculta a seta do pop-over no ios
+.popover-bottom.sc-ion-popover-ios-h .popover-arrow.sc-ion-popover-ios {
+  display: none;
+  bottom: calc(env(safe-area-inset-bottom) + 50px) !important;
+}
+
+.popover-content.sc-ion-popover-ios {
+  width: auto;
+}
+
+// Classe para capitalizar textos
+.global-txt-cap {
+  text-transform: lowercase;
+  display: inline-block;
+  overflow-wrap: anywhere; // Quebra palavra muito grande
+}
+
+// Pseudo-classe auxiliar para capitalizar textos
+.global-txt-cap::first-letter,
+.global-txt-cap::first-line {
+  text-transform: capitalize;
+}
+
+// Classes globais para os relatórios do gestor ------------------------------------------------------------------------
+
+.global-card-relatorios {
+  display: flex;
+  align-items: center;
+  min-height: 35px;
+  margin: 10px;
+
+  .status {
+    min-height: 35px;
+    width: 7px;
+    margin: 0;
+    align-self: stretch;
+  }
+
+  .descricao {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px;
+  }
+}
+
+.global-btn {
+  color: black;
+  border: 1px solid var(--ion-color-primary);
+  border-radius: 5px;
+  --box-shadow: none;
+}
+
+.global-ripple-color {
+  ion-menu ion-content ion-list ion-item {
+    // Não é possível mudar a cor do ripple sem esse --color-activated
+    --color-activated: var(--ion-color-primary);
+    --ripple-color: var(--ion-color-primary);
+  }
+}
+
+.global-list-relatorios {
+  border-radius: 8px;
+}
+
+.global-bold-primary {
+  font-weight: bold;
+  color: var(--ion-color-primary) !important;
+}
+
+// Classe Global para o botão de voltar
+ion-button.global-back-btn::part(native) {
+  background-color: transparent !important;
+  color: var(--cor-fundo-botaoAgendar);
+  box-shadow: none;
+  border: 1px solid var(--cor-fundo-botaoAgendar);
+}
+
+.global-back-btn {
+  margin: 0 !important;
+  height: 50px !important;
+}
+
+.global-footer-row {
+  margin: 10px !important;
+}
+
+.global-footer-btn {
+  margin: 0;
+  height: 50px;
+}
+
+.global-footer-col {
+  padding: 0;
+}
+
+.global-footer-col-left {
+  padding: 0;
+  padding-right: 5px;
+}
+
+.global-footer-col-right {
+  padding: 0;
+  padding-left: 5px;
+}
+
+// Media Queries para Modais
+
+@media screen and (max-width: 350px) {
+  ion-title {
+    font-size: 17px;
+  }
+
+  .maisOpcoesModal .modal-wrapper {
+    min-width: 300px !important;
+    min-height: 425px !important;
+  }
+
+  .loginAuxiliar .modal-wrapper {
+    min-width: 300px !important;
+    min-height: 340px !important;
+  }
+
+  .modalCadastroRapido .modal-wrapper {
+    height: 85% !important;
+    width: 25% !important;
+    min-width: 300px !important;
+    min-height: 425px !important;
+  }
+
+  .modalVantagens .modal-wrapper {
+    height: 85% !important;
+    width: 25% !important;
+    min-width: 300px !important;
+    min-height: 425px !important;
+  }
+
+  .confirmaEstabelecimento .modal-wrapper {
+    min-width: 300px !important;
+    min-height: 425px !important;
+  }
+
+  .editarAgendamentoNoCliente .modal-wrapper {
+    min-width: 300px !important;
+    min-height: 425px !important;
+  }
+
+  .editarPerfilCliente .modal-wrapper {
+    min-width: 300px !important;
+    min-height: 450px !important;
+  }
+
+  .editarSenhaColaborador .modal-wrapper {
+    min-width: 300px !important;
+    min-height: 330px !important;
+  }
+
+  .maisOpcoesHorarioLivreModal .modal-wrapper {
+    width: 90% !important;
+    min-width: 280px !important;
+    height: 75% !important;
+  }
+
+  .agendar-bloquear-btn {
+    padding: 0 !important;
+  }
+
+  .confirmarnovoAgendamento {
+    .modal-wrapper {
+      min-width: 290px !important;
+    }
+  }
+}
+
+@media screen and (min-width: 400px) and (min-height: 800px) {
+  .maisOpcoesModal {
+    .modal-wrapper {
+      max-height: 70%;
+      min-height: 300px !important;
+    }
+  }
+
+  .maisOpcoesHorarioLivreModal .modal-wrapper {
+    height: 45% !important;
+    width: 84% !important;
+    min-width: 280px !important;
+    max-width: 400px !important;
+    min-height: 390px !important;
+    max-height: 410px !important;
+  }
+}
+
+.cancelButton {
+  background-color: var(--ion-color-primary) !important;
+  color: white !important;
+  border-radius: 7px !important;
+}
+.confirmButton {
+  //background-color: white !important;
+  //color: white !important;
+  border-radius: 7px !important;
+}
+
+.k-icon {
+  color: rgb(177, 177, 177);
+}
+
+.input-password{
+  border: 0.5px solid var(--ion-color-primary);
+  background-color: var(--cor-caixa-login);
+  border-right: none;
+  border-radius: 10px 0px 0px 10px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.backgroundApp{
+  background: var(--background-color-geral) !important;
+  background-color: var(--background-color-geral) !important;
+}
+.backgroundMenuApp{
+  background: var(--background-color-geral-2) !important;
+  background-color: var(--background-color-geral-2) !important;
+}
+.backgroundFooterApp{
+  background: var(--cor-fundo-menushared) !important;
+  background-color: var(--cor-fundo-menushared) !important;
+}
+.colorTextApp{
+  color: var(--cor-texto-escuro) !important;
+}
+.backgroundItemApp{
+  --ion-item-background: var(--background-color-geral) !important;
+}
+.backgroundItemApp2{
+  --ion-item-background: var(--background-color-geral-2) !important; 
+}
+.backgroundItemFooter{
+  --ion-item-background: var(--cor-fundo-menushared) !important; 
+}
+.backgroundContentApp{
+  --ion-background-color: var(--background-color-geral)!important;
+  background: var(--background-color-geral)!important;
+}
+
+.backgroundAlertApp{
+  --background: var(--background-color-geral)!important;
+}
+
+.alert-title.sc-ion-alert-md{
+  color: var(--cor-texto-escuro) !important;
+}
+
+.backgroundButtonApp{
+  color: var(--cor-texto-botaoAgendar) !important;
+  --background: var(--cor-fundo-botaoAgendar) !important;
+}
+
+.backgroundCard{
+  background: var(--cor-cards-geral)!important;
+  background-color: var(--cor-cards-geral) !important;
+}
+
+.backgroundCardItem{
+  --ion-item-background: var(--cor-cards-geral) !important;
+  color: var(--cor-texto-escuro) !important;
+}
+
+ion-checkbox {
+  --background: rgb(212, 212, 212);
+  
+}
+
+.alert-wrapper {
+  background: var(--background-color-geral)!important;
+  color: var(--cor-texto-escuro) !important;
+}
+
+.alert-message.sc-ion-alert-ios, .alert-input-group.sc-ion-alert-ios {
+  color: var(--cor-texto-escuro) !important;
+}
+
+.alert-title.sc-ion-alert-ios {
+  color: var(--cor-texto-escuro) !important;
+}

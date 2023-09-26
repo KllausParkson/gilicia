@@ -1,0 +1,121 @@
+{
+	"AGENDA": {
+		"MODALS": {
+			"INFOSEMPRESAMODAL": {
+				"SOBRE": "Info",
+				"TELEFONE": "Teléfono"
+			}
+		}
+	},
+	"SHARED": {
+		"AVALIAR": {
+			"COMENTE": "Comentario",
+			"HEADER": "Evaluar los servicios prestados por",
+			"SAVE": "Para evaluar",
+			"TITLE": "Evaluar colaborador"
+		},
+		"BUSCANAORETORNOURESULTADO": "La búsqueda no arrojó resultados",
+		"MENU": {
+			"AGENDA": "Horario",
+			"AVALIACOES": "Opiniones",
+			"CLIENTES": "Clientes",
+			"COMPARTILHAR": "Compartir aplicación",
+			"ESCOLHERESTABELECIMENTO": "Cambiar establecimiento",
+			"FATURAMENTO": "Productividad",
+			"FINANCEIRO": "Financiero",
+			"HISTORICO": "Financiero",
+			"LOGOUT": {
+				"CANCEL": "No",
+				"HEADER": "Dejar One",
+				"MESSAGE": "¿Quieres irte?",
+				"OUT": "Sí"
+			},
+			"LUCRATIVIDADE": "Rentabilidad",
+			"LUCRATIVIDADE GERAL": "Rentabilidad global",
+			"MENUCLASSICO": {
+				"HISTORICOCLIENTE": "Historial del cliente"
+			},
+			"OPCOES": "Opciones",
+			"PERFIL": "Perfil",
+			"PRODUTOS": "Productos",
+			"RECEITASAPURADAS": "Ingresos calculados",
+			"RECEITASESTIMADAS": "Ganancias estimadas",
+			"RELATAR": "Informar de un problema",
+			"RELATORIOS": "Informes",
+			"RESUMOCHATBOT": "Resumen del chatbot",
+			"SAIR": "Dejar",
+			"SEMAVALIACOES": "No hay votos",
+			"SERVICOS": "Servicios",
+			"TROCARPERFIL": "Cambiar el perfil"
+		},
+		"MODALEDITAR": {
+			"ALTERARSENHA": "Cambiar contraseña",
+			"ANIVERSARIO": "Fecha de cumpleaños",
+			"CANCELAR": "Cancelar",
+			"CELULAR": "celular",
+			"CLIQUEAQUI": "Clic aquí",
+			"CONFIRMAR": "Confirme la nueva contraseña",
+			"CONTAEXCLUIDASUCESSO": "¡Cuenta eliminada con éxito!",
+			"CPF": "CPF",
+			"CURRICULO": "Sobre tu trabajo",
+			"EDITAR": "Editar contraseña",
+			"EMAIL": "E-mail",
+			"ERROEXCLUIRCONTA": "¡Error al eliminar la cuenta!",
+			"EXCLUIRCONTA": "Eliminar cuenta",
+			"MODALEDITAR": {
+				"EDITAR": "Editar contraseña",
+				"SALVARSENHA": "Guardar contraseña"
+			},
+			"NAOPREENCHER": "Si no desea cambiar la contraseña, deje los campos de arriba en blanco.",
+			"NOME": "Nombre",
+			"REMOVERFOTOCANCELAR": "Cancelar",
+			"REMOVERFOTOHEADER": "¿Quieres eliminar esta foto?",
+			"REMOVERFOTOMESSAGE": "La eliminación se guardará automáticamente.",
+			"REMOVERFOTOOK": "Eliminar",
+			"REQUIREDFIELDS": "Campos obligatorios",
+			"SALVAR": "Guardar",
+			"SALVARSENHA": "Guardar contraseña",
+			"SENHA": "Ingrese la nueva contraseña",
+			"SENHAATUAL": "Introduce tu contraseña actual",
+			"SENHAINCOMPATIVEL": "¡Las contraseñas no coinciden!",
+			"SENHAINCORRETA": "¡Contraseña actual incorrecta!",
+			"SENHAPADRAO": "Tienes la contraseña predeterminada.",
+			"SUCESSO": "Éxito!",
+			"TEXTALTERAR": "¿Quieres cambiar tu contraseña?",
+			"TEXTOEXCLUIRCONTA": "La eliminación de su cuenta será permanente y esta acción es irreversible. ¿Quieres eliminar tu cuenta?",
+			"TITLE": "Editar Perfil",
+			"TITLEATUALIZARDADOS": "Actualizar datos"
+		},
+		"NOTIFICACAO": {
+			"AGENDEAGORA": "horario ahora mismo.",
+			"APAGAR": "Eliminar",
+			"AVALIAR": "Evaluar profesional",
+			"CANCELAR": "Cancelar",
+			"FECHAR": "Cerca",
+			"INSERIR": "Insertar en el calendario",
+			"LIMPAR": "Limpio",
+			"REMOVER": "Quitar del calendario",
+			"SEMNOTIFICACOES": "No tienes ninguna notificación por ahora. Póngase en contacto con el establecimiento o",
+			"TITLE": "Notificación"
+		},
+		"RELATAR": {
+			"ANEXAR": "Seleccione fotos que ilustren el error descrito: (Seleccione una a la vez)",
+			"ASSUNTO": "Describa el tipo de su informe Ej: error / error, información faltante, sugerencia ...",
+			"ENVIAR": "Enviar",
+			"ENVIARFOTO": "Enviar foto",
+			"FOTOSENVIADAS": "Número de Fotos:",
+			"NENHUMANEXO": "¡Ninguna foto seleccionada!",
+			"NOTIFICACAO": "Proporcione detalles sobre el problema, paso a paso cómo sucedió. Si es necesario, contáctenos a través del sitio web.",
+			"RESUMO": "Describenos un poco de lo que pasó",
+			"TELEFONECONTATO": "Telefono para contacto",
+			"TITLE": "Informar de un problema",
+			"TOAST": {
+				"ADDFOTOERRO": "¡Error al agregar la foto!",
+				"ADDFOTOSUCESS": "¡Foto añadida con éxito!",
+				"ADICIONANDO": "Agregando foto...",
+				"ERRO": "Error!",
+				"SUCESSO": "Éxito!"
+			}
+		}
+	}
+}

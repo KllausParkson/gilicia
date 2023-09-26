@@ -1,0 +1,53 @@
+<ion-content class="backgroundContentApp colorTextApp">
+  <ion-row
+    class="ion-justify-content-center ion-text-center titulo"
+    style="
+      display: flex;
+      align-items: center;
+      color: var(--cor-texto-barraTopo);
+      background-color: var(--cor-fundo-barraTopo);
+    "
+  >
+    <ion-icon
+      name="checkbox-outline"
+      style="
+        transform: scale(1.5);
+        padding-right: 3%;
+        color: var(--cor-texto-barraTopo);
+      "
+    ></ion-icon>
+    {{ "AGENDA.MODALS.CONFIRMACAOAGENDAMENTO.TITLE" | translate }}
+  </ion-row>
+
+  <!--  <ion-row class="ion-justify-content-center ion-text-center">-->
+  <!--    <ion-col size-sm="8" size-lg="8" size-md="8" size-xs="8" style="padding-top: 30px;" class="receitaValor">-->
+  <!--      <span class="O-valor-de">{{ 'CPCR.MODAL.CONFIRMACAO.VALOR' | translate }}</span> -->
+  <!--      {{returnLolcaleSymbol()}} {{ detalhesReceita.valor?.toFixed(2) }} -->
+  <!--    </ion-col>-->
+  <!--  </ion-row>-->
+  <ion-row
+    class="ion-justify-content-center ion-text-center colorTextApp"
+    style="height: 73%"
+  >
+    <ion-col class="texto">
+      {{ "AGENDA.MODALS.CONFIRMACAOAGENDAMENTO.TEXT" | translate }}
+    </ion-col>
+  </ion-row>
+</ion-content>
+<ion-footer class="ion-no-border backgroundFooterApp">
+  <ion-row class="ion-justify-content-center" style="margin: 20px">
+    <ion-col size="12" class="ion-no-padding">
+      <ion-button
+        class="backgroundButtonApp"
+        expand="block"
+        type="submit"
+        (click)="close()"
+        style="margin: 0; height: 50px"
+      >
+        {{
+          "AGENDA.MODALS.CONFIRMACAOAGENDAMENTO.VOLTARPARAAGENDA" | translate
+        }}
+      </ion-button>
+    </ion-col>
+  </ion-row>
+</ion-footer>

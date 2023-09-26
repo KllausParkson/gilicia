@@ -1,0 +1,33 @@
+.segment {
+    background-color: var(--ion-color-primary);
+}
+
+ion-card{
+    height: 45px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #00000087;
+    padding: 12px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.colaborador {
+    overflow-y: auto;
+}
+
+ion-grid {
+    max-width: 720px;
+}
+
+.row-nota {
+    display: flex;
+    justify-content: flex-end;
+}
+
+@media (max-width: 380px) {
+    ion-segment-button {
+        font-size: 12px;
+    }
+}

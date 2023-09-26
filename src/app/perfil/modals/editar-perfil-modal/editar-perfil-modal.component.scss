@@ -1,0 +1,60 @@
+.linha {
+  justify-content: center;
+}
+.show {
+  display: flex;
+  align-items: flex-end;
+
+  .input-password {
+    border-right: none;
+    border-radius: 10px 0px 0px 10px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  ion-button::part(native) {
+    border: 0.5px solid var(--cor-fundo-botaoAgendar) !important;
+    color: var(--cor-texto-escuro);
+    background-color: transparent !important;
+    border-left: none !important;
+    border-radius: 0px 10px 10px 0px !important;
+    padding: 18px !important;
+    //right: 5px !important;
+    top: 2px !important;
+    width: 65px !important;
+  }
+}
+.text-descriçao {
+  color: var(--cor-texto-escuro);
+  font-size: initial;
+}
+.text-senha {
+  color: var(--ion-color-primary);
+  cursor: pointer;
+  font-weight: bolder;
+  text-decoration: underline;
+}
+.k-textbox-container,
+.k-floating-label-container {
+  color: var(--ion-color-primary) !important;
+}
+
+
+ion-content{
+  --ion-background-color: var(--background-color-geral)!important;
+}
+
+
+
+.icon-senha {
+  color: var(--ion-color-primary);
+  transform: scale(1.5);
+  margin-top: 9%;
+  margin-left: 1%;
+  margin-right: 2%;
+}
+
+ion-toolbar {
+  --background: var(--cor-fundo-barraTopo);
+}

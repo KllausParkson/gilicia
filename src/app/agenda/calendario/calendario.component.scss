@@ -1,0 +1,55 @@
+ion-card {
+  width: 90%;
+  max-width: 440px;
+  max-height: 800px;
+  margin: 0px auto 0 auto;
+}
+
+ion-slide{
+  margin-top: 0px !important;
+}
+ion-button#btnCalendario {
+  --background: var(--cor-botao-expandirCalendario) !important;
+}
+
+.vertical-align-content > * {
+  display: flex !important;
+  align-content: center !important;
+  align-items: center !important;
+}
+
+ion-content::part(background) {
+  background: transparent;
+}
+
+ion-content{
+  --ion-background-color: var(--cor-cards-geral)!important;
+}
+
+input:disabled {
+  background-color: white;
+}
+.iconAgendamentos {
+  transform: scale(0.35);
+  margin-right: -5px;
+  margin-left: -5px;
+}
+.colIconAgendamentos {
+  height: 15px;
+  width: 40px !important;
+}
+@media screen and (max-width: 321px) and (max-height: 569px) {
+  .iconAgendamentos {
+    transform: scale(0.4) !important;
+    margin-right: -7.5px !important;
+    margin-left: -7.5px !important;
+  }
+}
+.coluna-dias {
+  height: 15px;
+}
+@media screen and (max-width: 321px) and (max-height: 569px) {
+  .coluna-dias {
+    width: 8px !important;
+  }
+}

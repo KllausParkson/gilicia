@@ -1,0 +1,146 @@
+#select_est {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+ion-content::part(background) {
+  background-color: var(--background-color-geral);
+}
+
+ion-row > .column {
+  display: flex;
+  flex-direction: column;
+
+  .bold {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--cor-texto-geral);
+  }
+
+  .small {
+    font-size: 14px;
+    color: var(--cor-texto-geral);
+  }
+
+  .smaller {
+    font-size: 11px;
+    color: var(--cor-texto-geral);
+  }
+
+  .secondary {
+    color: var(--ion-color-secondary);
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  ion-label {
+    margin-bottom: 4px;
+  }
+}
+
+.fab-btn {
+  padding-left: 4em;
+}
+
+.empresas {
+  border-top: 0.5px solid #c1c1c1;
+  height: 190px;
+
+  .list {
+    height: 196px;
+    display: flex;
+    width: 300px;
+    height: 85%;
+    //overflow-x: auto;
+    overflow-y: hidden;
+
+    .itens {
+      margin: 5px;
+      max-height: 130px;
+      min-width: 160px;
+      max-width: 162px;
+      padding: 0.3rem;
+
+      .img-wrapper {
+        height: 75%;
+        margin: auto 0;
+      }
+      img {
+        object-fit: contain;
+        height: 100%;
+        width: 100%;
+      }
+      p {
+        text-align: center;
+        font-size: 12px;
+      }
+    }
+  }
+
+  // ion-item::part('iten-inner') {
+
+  // }
+
+  .empresaSelecionada {
+    border: 2px solid var(--ion-color-primary);
+    border-radius: 8px;
+
+    img {
+      border-radius: 4px;
+    }
+  }
+}
+
+.lista {
+  max-height: 105%;
+  //overflow-y: scroll;
+}
+
+.top {
+  position: -webkit-sticky;
+  position: stick;
+  top: 0;
+  background-color: var(--background-color-geral);
+}
+
+.historico-vazio {
+  font-size: 14px;
+  color: var(--cor-texto-geral);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bottom {
+  height: calc(100% - 400px);
+  padding: 0;
+  div {
+    max-height: 100%;
+  }
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  width: 85%;
+  align-self: center;
+  color: var(--cor-texto-geral) ion-button {
+    position: absolute;
+    bottom: 0;
+  }
+}
+
+ion-content {
+  // overwrite inline styles
+  --offset-bottom: auto !important;
+  --overflow: hidden;
+  overflow: auto;
+  &::-webkit-scrollbar {
+    display: hide;
+  }
+}

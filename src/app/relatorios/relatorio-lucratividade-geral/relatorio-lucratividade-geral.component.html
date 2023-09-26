@@ -1,0 +1,29 @@
+<ion-grid>
+  <ion-row>
+    <ion-col size="12">
+      <app-data-toolbar
+              [startDate]="startDate"
+              [endDate]="endDate"
+              (dateEmmiter)="receiveDate($event)"
+      ></app-data-toolbar>
+    </ion-col>
+  </ion-row>
+  <ion-row class="list" [ngStyle]="{'max-height': divContentHeight}" size="12" *ngIf="lucratividadeGeral?.length > 0">
+    <ion-col>
+      <ion-card class="global-card-relatorios backgroundCard colorTextApp" *ngFor="let profissional of lucratividadeGeral; index as i">
+        <ion-card-content>
+          <ion-row>
+            <ion-col size="8" size-xs="7">
+              <span class="index label-font-size global-bold-primary">{{i + 1}}.</span>
+              <span class="label-font-size">{{profissional.nomeProfissional}}</span>
+            </ion-col>
+            <ion-col size="4" size-xs="5" class="ion-text-end label-font-size global-bold-primary"
+                     style="display: flex; align-items: center; overflow-wrap: anywhere; justify-content: flex-end;">
+              {{profissional.valor | currencyGlobal}}
+            </ion-col>
+          </ion-row>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-grid>

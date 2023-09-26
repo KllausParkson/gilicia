@@ -1,0 +1,108 @@
+<ion-grid>
+
+  <ion-row class="ion-justify-content-center calendar-container backgroundCard colorTextApp" style="text-align: center;" #dateToolbar>
+    <ion-col class="ion-no-padding ion-no-margin date-label" style="font-size: 12px;">
+      <ion-icon name="calendar" class="icon-calendar" style="transform: scale(2); padding-right: 3px"></ion-icon>
+      <span>{{'RELATORIOS.RESUMOCHATBOT.RESUMODODIA' | translate}}: </span>
+      <span style="margin: 0;">{{dataString | date:"shortDate" }}</span>
+    </ion-col>
+  </ion-row>
+
+  <ion-row class="ion-justify-content-center calendar-container backgroundCard colorTextApp" style="text-align: center;">
+    <ion-col class="ion-no-padding ion-no-margin date-label" style="font-size: 12px;">
+      <ion-icon name="card-outline" class="icon-calendar" style="transform: scale(2); padding-right: 3px"></ion-icon>
+      <span>{{'RELATORIOS.RESUMOCHATBOT.SALDORESTANTE' | translate}}: </span>
+      <span style="margin: 0;">{{ whatsappCobranca?.saldo | currencyGlobal }}</span>
+    </ion-col>
+  </ion-row>
+
+  <ion-row class="list" [ngStyle]="{'max-height': divContentHeight}" size="12">
+    <ion-col>
+      <ion-card class="global-card-relatorios backgroundCard colorTextApp">
+        <ion-card-content>
+          <ion-row>
+            <ion-col size="8" size-xs="7">
+              <span class="label-font-size">{{'RELATORIOS.RESUMOCHATBOT.TOTALGASTO' | translate}}: </span>
+            </ion-col>
+            <ion-col size="4" size-xs="5" class="ion-text-end label-font-size global-bold-primary"
+              style="display: flex; align-items: center; overflow-wrap: anywhere; justify-content: flex-end;">
+              {{ totalGasto | currencyGlobal }}
+            </ion-col>
+          </ion-row>
+        </ion-card-content>
+
+        <ion-card-content>
+          <ion-row>
+            <ion-col size="8" size-xs="7">
+              <span class="label-font-size">{{'RELATORIOS.RESUMOCHATBOT.MENSAGENSTROCADAS' | translate}}: </span>
+            </ion-col>
+            <ion-col size="4" size-xs="5" class="ion-text-end label-font-size global-bold-primary"
+              style="display: flex; align-items: center; overflow-wrap: anywhere; justify-content: flex-end;">
+              {{ totalMensagens}}
+            </ion-col>
+          </ion-row>
+        </ion-card-content>
+
+        <ion-card-content>
+          <ion-row>
+            <ion-col size="8" size-xs="7">
+              <span class="label-font-size">{{'RELATORIOS.RESUMOCHATBOT.INTERACOESBOT' | translate}}: </span>
+            </ion-col>
+            <ion-col size="4" size-xs="5" class="ion-text-end label-font-size global-bold-primary"
+              style="display: flex; align-items: center; overflow-wrap: anywhere; justify-content: flex-end;">
+              {{ totalInteracoesBot }}
+            </ion-col>
+          </ion-row>
+        </ion-card-content>
+
+        <ion-card-content>
+          <ion-row>
+            <ion-col size="8" size-xs="7">
+              <span class="label-font-size">{{'RELATORIOS.RESUMOCHATBOT.INTERACOESUSER' | translate}}: </span>
+            </ion-col>
+            <ion-col size="4" size-xs="5" class="ion-text-end label-font-size global-bold-primary"
+              style="display: flex; align-items: center; overflow-wrap: anywhere; justify-content: flex-end;">
+              {{ totalInteracoesUser }}
+            </ion-col>
+          </ion-row>
+        </ion-card-content>
+
+        <ion-card-content>
+          <ion-row>
+            <ion-col size="8" size-xs="7">
+              <span class="label-font-size">{{'RELATORIOS.RESUMOCHATBOT.AGENDAMENTOS' | translate}}:</span>
+            </ion-col>
+            <ion-col size="4" size-xs="5" class="ion-text-end label-font-size global-bold-primary"
+              style="display: flex; align-items: center; overflow-wrap: anywhere; justify-content: flex-end;">
+              {{ totalAgendamentos }}
+            </ion-col>
+          </ion-row>
+        </ion-card-content>
+
+        <ion-card-content>
+          <ion-row>
+            <ion-col size="8" size-xs="7">
+              <span class="label-font-size">{{'RELATORIOS.RESUMOCHATBOT.CONFIRMACOES' | translate}}:</span>
+            </ion-col>
+            <ion-col size="4" size-xs="5" class="ion-text-end label-font-size global-bold-primary"
+              style="display: flex; align-items: center; overflow-wrap: anywhere; justify-content: flex-end;">
+              {{ totalConfirmacoes }}
+            </ion-col>
+          </ion-row>
+        </ion-card-content>
+
+
+      </ion-card>
+    </ion-col>
+  </ion-row>
+
+  <ion-row class="buttons ">
+    <!-- Botão que abre o módulo de extrato -->
+    <ion-col style="text-align-last: center;">
+      <ion-button class="backgroundButtonApp" (click)="modalExtrato()">
+        {{'RELATORIOS.RESUMOCHATBOT.VISUALIZAREXTRATO' | translate}}
+      </ion-button>
+    </ion-col>
+  </ion-row>
+
+</ion-grid>

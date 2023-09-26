@@ -1,0 +1,159 @@
+{
+	"AGENDA": {
+		"MODALS": {
+			"INFOSEMPRESAMODAL": {
+				"SOBRE": "Info",
+				"TELEFONE": "Teléfono"
+			}
+		}
+	},
+	"LOGIN": {
+		"ESCOLHERESTABELECIMENTOBARBEARIA": "Peluquería",
+		"ESCOLHERESTABELECIMENTOESTETICA": "Estética",
+		"ESCOLHERESTABELECIMENTOSALAO": "Sala",
+		"ESCOLHERESTABELECIMENTOTATUAGEM": "Tatuaje",
+		"MODALESTABELECIMENTO": {
+			"TITLE": "Elija establecimiento"
+		},
+		"NAOTEMBARBEARIASACESSADAS": "¡No hay peluquerías a las que se haya accedido previamente!",
+		"NAOTEMBARBEARIASPROXIMAS": "¡No hay peluquerías cerca de ti!",
+		"NAOTEMCLINICASACESSADAS": "¡No se ha accedido previamente a ninguna clínica de estética!",
+		"NAOTEMCLINICASPROXIMAS": "¡No hay clínicas de estética cerca de ti!",
+		"NAOTEMEMPRESASACESSADAS": "¡No hay empresas a las que se haya accedido previamente!",
+		"NAOTEMEMPRESASPROXIMAS": "¡No hay empresas cercanas a ti!",
+		"NAOTEMESTUDIOSACESSADOS": "¡No se ha accedido previamente a ningún estudio de tatuajes!",
+		"NAOTEMESTUDIOSPROXIMOS": "¡No hay salones de tatuajes cerca de ti!",
+		"NAOTEMSALOESACESSADOS": "¡No hay salones de belleza a los que se haya accedido previamente!",
+		"NAOTEMSALOESPROXIMOS": "¡No hay salones de belleza cerca de ti!",
+		"PESQUISARESTABELECIMENTO": "Establecimiento de búsqueda",
+		"PROXIMOSAVOCE": "Cerca de usted",
+		"REMOVAL": {
+			"ALERT": {
+				"ACCEPT": "Ok",
+				"CANCEL": "Cancelar",
+				"HEADER": "Confirmar eliminación",
+				"MESSAGE": "¿Quiere confirmar la eliminación de la empresa de la lista?"
+			}
+		},
+		"ULTIMOSACESSOS": "Últimos accesos"
+	},
+	"PERFIL": {
+		"ALERTSENHA": {
+			"CANCEL": "Cancelar",
+			"HEADER": "Contraseña",
+			"MESSAGE": "Ingrese su contraseña para continuar con el inicio de sesión.",
+			"OK": "Ok"
+		},
+		"ASSINATURA": "Suscripciones",
+		"AUXILIAR": "Ayuda",
+		"BUSCANAORETORNOURESULTADO": "La búsqueda no arrojó resultados",
+		"CARDHISTORICO": {
+			"PRODUTOS": "Productos",
+			"SERVICOS": "Servicios",
+			"SUBTOTAL": "Total parcial",
+			"TOTAL": "Total"
+		},
+		"CARREGAR": "Carga más ...",
+		"CLIENTE": "Cliente",
+		"COLABORADOR": {
+			"AVALIACOES": "Reseñas profesionales",
+			"BIO": "Biografía",
+			"BUTTONFILTRAR": "Filtro",
+			"DETALHES": "Detalles",
+			"EDITAR": "Editar colaborador",
+			"INFO": "Datos de contacto",
+			"MEDIA": "Media",
+			"MELHORNOTA": "Mejor grado",
+			"TITLE": "Opiniones"
+		},
+		"DATA": {
+			"TODAY": "Hoy"
+		},
+		"DESCONTOPLANO": "descuento en el plan",
+		"EDITAR": {
+			"COLABORADOR": "Editar perfil"
+		},
+		"ESCOLHERESTABELECIMENTO": "Elija otro establecimiento",
+		"GANHE": "Ganar 1",
+		"GANHEACADA": "cada",
+		"GESTOR": "Gerente",
+		"HISTORICO": "Historia",
+		"MINIMO": "Mínimo de uso",
+		"MODALCONFIRMARESTABELECIMENTO": {
+			"CANCELAR": "No",
+			"CONFIRMAR": "Sí",
+			"MENSAGEM": "¿Quieres cambiarte al establecimiento seleccionado?",
+			"TITLE": "Confirmar cambio"
+		},
+		"MODALEDITAR": {
+			"ALTERARSENHA": "Cambiar contraseña",
+			"ANIVERSARIO": "Fecha de cumpleaños",
+			"CANCELAR": "Cancelar",
+			"CELULAR": "celular",
+			"CLIQUEAQUI": "Clic aquí",
+			"CONFIRMAR": "Confirme la nueva contraseña",
+			"CONTAEXCLUIDASUCESSO": "¡Cuenta eliminada con éxito!",
+			"CURRICULO": "Sobre tu trabajo",
+			"EDITAR": "Editar contraseña",
+			"EMAIL": "E-mail",
+			"ERROEXCLUIRCONTA": "¡Error al eliminar la cuenta!",
+			"EXCLUIRCONTA": "Eliminar cuenta",
+			"MODALEDITAR": {
+				"EDITAR": "Editar contraseña",
+				"SALVARSENHA": "Guardar contraseña"
+			},
+			"NAOPREENCHER": "Si no desea cambiar la contraseña, deje los campos de arriba en blanco.",
+			"NOME": "Nombre",
+			"REMOVERFOTOCANCELAR": "Cancelar",
+			"REMOVERFOTOHEADER": "¿Quieres eliminar esta foto?",
+			"REMOVERFOTOMESSAGE": "La eliminación se guardará automáticamente.",
+			"REMOVERFOTOOK": "Eliminar",
+			"REQUIREDFIELDS": "Campos obligatorios",
+			"SALVAR": "Guardar",
+			"SALVARSENHA": "Guardar contraseña",
+			"SENHA": "Ingrese la nueva contraseña",
+			"SENHAATUAL": "Introduce tu contraseña actual",
+			"SENHAINCOMPATIVEL": "¡Las contraseñas no coinciden!",
+			"SENHAINCORRETA": "¡Contraseña actual incorrecta!",
+			"SENHAPADRAO": "Tienes la contraseña predeterminada.",
+			"SUCESSO": "Éxito!",
+			"TEXTALTERAR": "¿Quieres cambiar tu contraseña?",
+			"TEXTOEXCLUIRCONTA": "La eliminación de su cuenta será permanente y esta acción es irreversible. ¿Quieres eliminar tu cuenta?",
+			"TITLE": "Editar Perfil"
+		},
+		"MODALFILTRAGEM": {
+			"ATE": "Para",
+			"BUTTON": {
+				"CANCELAR": "Cancelar",
+				"FILTRAR": "Filtro"
+			},
+			"COMENTARIOS": "Solo con comentarios",
+			"DESDE": "Ya que",
+			"NOTA": "Avaliación"
+		},
+		"MODALONEPOINTS": {
+			"BUTTON": {
+				"FECHAR": "cerca"
+			},
+			"DIA": "dias.",
+			"FIDELIDADETITLE": "Lealtad",
+			"IMPORTANTE": "IMPORTANTE:",
+			"PONTOEXPIRA": "El primer punto de bonificación por servicio expira el",
+			"REGRAS": "Los servicios incluidos en el premio pueden variar el monto necesario, la fecha de vencimiento y la forma de pago. Consulta las normas en recepción.",
+			"SEMPARTICIPACAO": "No estás participando en ninguna lealtad en este momento.",
+			"SERVICO": "Servicio",
+			"SERVICOS": "Servicios",
+			"TITLE": "Ventajas"
+		},
+		"NAOTEMANIVERSARIO": "No tiene fecha de nacimiento",
+		"NAOTEMCELULAR": "Sin celular",
+		"NAOTEMHISTORICO": "No hay historia",
+		"PONTOS": "puntos",
+		"PONTOSRESGATE": "puntos para canjear.",
+		"PONTUACAO": "puntuación",
+		"PROFISSIONAL": "Profesional",
+		"SUCESSO": "Éxito!",
+		"TITLE": "Perfil",
+		"VANTAGENS": "Ventajas"
+	}
+}

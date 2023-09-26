@@ -1,0 +1,157 @@
+<ion-header mode="md">
+  <ion-toolbar>
+    <ion-title style="color: var(--cor-texto-barraTopo)"
+      >{{ "AGENDA.MODALNOVOBLOQUEIO.TITLE" | translate }}
+    </ion-title>
+    <ion-buttons slot="primary">
+      <ion-button (click)="closeModal()">
+        <ion-icon
+          name="close"
+          slot="icon-only"
+          style="transform: scale(1.5); color: var(--cor-texto-barraTopo)"
+        ></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="backgroundContentApp" scrollY="false">
+  <ion-row class="colorTextApp" style="justify-content: center">
+    <ion-col size="12" style="padding-top: 16px">
+      <span>{{
+        "AGENDA.MODALS.NOVOAGENDAMENTO.EXPLICACAOBLOQUEIO" | translate
+      }}</span>
+    </ion-col>
+  </ion-row>
+
+  <ion-row class="colorTextApp" style="justify-content: center; padding-bottom: 30px">
+    <ion-col size="10" style="padding-top: 16px">
+      <kendo-floatinglabel
+        text="{{
+          'AGENDA.MODALS.NOVOAGENDAMENTOPROFISSIONAL.OBSERVACAO' | translate
+        }}"
+      >
+        <textarea
+          kendoTextArea
+          maxlength="100"
+          [(ngModel)]="observacao"
+          class="observacao"
+        ></textarea>
+      </kendo-floatinglabel>
+    </ion-col>
+  </ion-row>
+  <ion-row
+    class="ion-justify-content-center colorTextApp"
+    style="padding: 10px;"
+    >{{
+      "AGENDA.MODALS.NOVOAGENDAMENTO.SELECIONARINTERVALOBLOQUEIO" | translate
+    }}</ion-row
+  >
+  <ion-row class="colorTextApp" style="padding-bottom: 10px">
+    <ion-col size="6" style="text-align: center">
+      {{ "AGENDA.MODALS.NOVOAGENDAMENTO.HORARIOINICIO" | translate }}</ion-col
+    >
+    <ion-col size="6" style="text-align: center">
+      {{ "AGENDA.MODALS.NOVOAGENDAMENTO.HORARIOTERMINO" | translate }}</ion-col
+    >
+  </ion-row>
+  <div  class="backgroundControl backgroundCard">
+    <ion-row
+      class="forecast_container"
+      style="
+        height: 100%;
+        overflow-x: hidden !important;
+        padding-left: 6px;
+        padding-top: 6px;
+      "
+      [ngStyle]="{ height: rowHeight }"
+    >
+      <!-- [ngStyle]="{'min-width': this.servicosMarcados?.length*200,'max-width': this.servicosMarcados?.length*200}" -->
+
+      <ng-container *ngIf="horariosBloqDisponiveis">
+        <ng-container
+          *ngFor="let coluna of horariosBloqDisponiveis; index as i"
+        >
+          <ion-col
+            class="ion-justify-content-center"
+            [ngStyle]="{
+              'max-width':
+                horariosBloqDisponiveis?.length <= 2 ? '98%' : '200px',
+              'max-height': divHeight
+            }"
+            style="
+              text-align: center;
+              min-width: 100px;
+              bottom: 5px;
+              right: 5px;
+              overflow-y: auto;
+            "
+          >
+            <div class="backgroundCard" style="display: grid">
+              <ng-container *ngFor="let horario of coluna; index as index">
+                <ion-button
+                  class="horario"
+                  style="width: 90%"
+                  [ngStyle]="{
+                    'padding-left':
+                      horariosBloqDisponiveis?.length == 1 ? '15%' : 'unset'
+                  }"
+                  [disabled]="horario.disabled"
+                  (click)="
+                    selecionaHorario(
+                      $event,
+                      horariosBloqDisponiveis[i],
+                      horario,
+                      index,
+                      i
+                    )
+                  "
+                  >{{ horario.horario?.substr(0, 5) }}</ion-button
+                >
+              </ng-container>
+            </div>
+          </ion-col>
+        </ng-container>
+      </ng-container>
+    </ion-row>
+  </div>
+</ion-content>
+<ion-footer class="backgroundFooterApp">
+  <ion-row>
+    <ion-col size="6" style="padding: 0; padding-bottom: 5px; height: 50px">
+      <ion-button
+        class="back global-back-btn "
+        type="cancel"
+        (click)="returnPage()"
+        expand="block"
+        style="height: 100%"
+      >
+        <ng-container>{{
+          "AGENDA.MODALS.NOVOAGENDAMENTO.CANCELAR" | translate
+        }}</ng-container>
+        <!-- *ngIf="segment == 'servicos'"-->
+        <!-- <ng-container *ngIf="segment != 'servicos'">{{'AGENDA.MODALS.NOVOAGENDAMENTO.VOLTAR' | translate}}</ng-container> -->
+      </ion-button>
+    </ion-col>
+    <ion-col size="6" style="padding: 0; padding-bottom: 5px; height: 50px">
+      <ion-button class="backgroundButtonApp"
+        type="submit"
+        [disabled]="
+          this.horarioSelecionado?.length != 2
+            ? true
+            : bloqueioButtonWaitingAPI == true
+            ? true
+            : false
+        "
+        (click)="criarBloqueio()"
+        expand="block"
+        style="height: 100%"
+      >
+        <ng-container>{{
+          "AGENDA.MODALS.NOVOAGENDAMENTO.AGENDAR" | translate
+        }}</ng-container>
+        <!-- *ngIf="segment == 'check'" -->
+        <!-- <ng-container *ngIf="segment != 'check'" >{{'AGENDA.MODALS.NOVOAGENDAMENTO.PROXIMO' | translate}}</ng-container> -->
+      </ion-button>
+    </ion-col>
+  </ion-row>
+</ion-footer>

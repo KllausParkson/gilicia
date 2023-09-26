@@ -1,0 +1,255 @@
+<ion-header mode="md">
+  <ion-toolbar>
+    <ion-title
+      class="ion-text-center"
+      style="color: var(--cor-texto-barraTopo)"
+      >{{ "AGENDA.MODALS.CADASTRORAPIDO.TITULO" | translate }}</ion-title
+    >
+    <ion-buttons slot="primary">
+      <ion-button (click)="closeModal()">
+        <ion-icon
+          name="close"
+          slot="icon-only"
+          style="transform: scale(1.5); color: var(--cor-texto-barraTopo)"
+        ></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="backgroundContentApp" scrollY="false">
+  <div>
+    <form [formGroup]="createCadastroRapidoForm">
+      <ion-row class="ion-justify-content-center">
+        <ion-col
+          size-md="10"
+          size-xs="12"
+          style="padding-left: 8%; padding-right: 8%"
+        >
+          <ion-row class="ion-justify-content-center">
+            <ion-col size-md="12">
+              <kendo-floatinglabel
+                text="*{{ 'AGENDA.MODALS.CADASTRORAPIDO.NOME' | translate }}"
+              >
+                <input
+                  type="text"
+                  formControlName="nomeCompleto"
+                  style="
+                    background-color: white;
+                    width: 100% !important;
+                    resize: none;
+                    border-radius: 10px;
+                    color: rgb(85, 84, 84);
+                    border-width: 1px;
+                    border-style: solid;
+                    border-color: #656565;
+                  "
+                />
+              </kendo-floatinglabel>
+              <div class="validation-errors">
+                <ng-container
+                  *ngFor="let validation of validation_messages.nomeCliente"
+                >
+                  <div
+                    class="error-message"
+                    *ngIf="
+                      createCadastroRapidoForm
+                        .get('nomeCompleto')
+                        .hasError(validation.type) &&
+                      (createCadastroRapidoForm.get('nomeCompleto').dirty ||
+                        createCadastroRapidoForm.get('nomeCompleto').touched)
+                    "
+                  >
+                    <ion-icon name="information-circle-outline"></ion-icon
+                    >{{ validation.message | translate }}
+                  </div>
+                </ng-container>
+              </div>
+            </ion-col>
+          </ion-row>
+
+          <ion-row class="ion-justify-content-center">
+            <ion-col size="10">
+              <kendo-floatinglabel
+                text="*{{ 'AGENDA.MODALS.CADASTRORAPIDO.CELULAR' | translate }}"
+              >
+                <input
+                  type="tel"
+                  maxlength="15"
+                  formControlName="celular"
+                  kendoTextBox
+                  (input)="setTelefoneMask($event)"
+                  maxlength="20"
+                  style="
+                    background-color: white;
+                    width: 100% !important;
+                    resize: none;
+                    border-radius: 10px;
+                    color: rgb(85, 84, 84);
+                    border-width: 1px;
+                    border-style: solid;
+                    border-color: #656565;
+                  "
+                />
+              </kendo-floatinglabel>
+              <div class="validation-errors">
+                <ng-container
+                  *ngFor="let validation of validation_messages.celular"
+                >
+                  <div
+                    class="error-message"
+                    *ngIf="
+                      (createCadastroRapidoForm
+                        .get('celular')
+                        .hasError(validation.type) &&
+                        (createCadastroRapidoForm.get('celular').dirty ||
+                          createCadastroRapidoForm.get('celular').touched)) ||
+                      createCadastroRapidoForm
+                        .get('celular')
+                        .hasError('minlength')
+                    "
+                  >
+                    <ion-icon name="information-circle-outline"></ion-icon>
+                    {{ validation.message | translate }}
+                  </div>
+                </ng-container>
+              </div>
+            </ion-col>
+            <ion-col size="2" style="height: 100%; justify-content: flex-end">
+              <ion-card
+                style="width: fit-content; margin-left: auto; box-shadow: none !important"
+                [ngStyle]="{'background-color' : 'var(--ion-color-background)'}"
+              >
+                <ion-row> 
+
+                  <kendo-dropdownlist
+                  #dropdownlist
+                  *ngIf="menuCountries"
+                  [data]="menuCountries"
+                  [textField]="'text'"
+                  [valueField]="'language'"
+                  [value]="selectedValue"
+                  (valueChange)="changeLanguage($event)"
+                  [valuePrimitive]="false"
+                  [popupSettings]="{ width: 75 }"
+                  style="width: 60px; border: 0; box-shadow: none"
+                >
+                  <ng-template class="dropDown" kendoDropDownListValueTemplate let-dataItem>
+                    <!-- <span class="{{dataItem.icon}} item-selected"></span>  -->
+                    <div class="item-selected">
+                      <div
+                        style="transform: scale(2)"
+                        class="{{ dataItem?.icon }} flag-icon"
+                      ></div>
+                    </div>
+                  </ng-template>
+
+                  <ng-template kendoDropDownListItemTemplate let-dataItem>
+                    <span class="{{ dataItem.icon }} icon-popup"></span>
+                    <span class="item-popup">{{ dataItem.text }}</span>
+                  </ng-template>
+                </kendo-dropdownlist>
+
+                  
+                  </ion-row
+              ></ion-card>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col style="padding-top: 20px">
+              <!-- <span class="texto-informativo">*As informações abaixo não são obrigatórias, 
+                  mas é importante informar o e-mail real do cliente para que 
+                  ele possa utilizar o login OneBeleza.</span> -->
+              <!-- <span class="texto-informativo">*Apesar do e-mail não ser obrigatório, é muito importante informar o e-mail real do cliente para que ele possa realizar
+                  o login no aplicativo One.</span> -->
+              <span class="texto-informativo">{{
+                "AGENDA.MODALS.CADASTRORAPIDO.MENSAGEM" | translate
+              }}</span>
+            </ion-col>
+          </ion-row>
+
+          <ion-row class="ion-justify-content-center">
+            <ion-col size-md="12">
+              <kendo-floatinglabel
+                text="{{ 'AGENDA.MODALS.CADASTRORAPIDO.EMAIL' | translate }}"
+              >
+                <input
+                  kendoTextBox
+                  type="text"
+                  formControlName="email"
+                  style="
+                    background-color: white;
+                    width: 100% !important;
+                    resize: none;
+                    border-radius: 10px;
+                    color: rgb(85, 84, 84);
+                    border-width: 1px;
+                    border-style: solid;
+                    border-color: #656565;
+                  "
+                />
+              </kendo-floatinglabel>
+            </ion-col>
+          </ion-row>
+
+          <ion-row class="ion-justify-content-center">
+            <ion-col size-md="12">
+              <kendo-floatinglabel
+                text="{{ 'AGENDA.MODALS.CADASTRORAPIDO.CPF' | translate }}"
+              >
+                <input
+                  type="text"
+                  class="text_box"
+                  maxlength="14"
+                  formControlName="cpf"
+                  kendoTextBox
+                  (input)="setCpfMask($event)"
+                  style="
+                    background-color: white;
+                    width: 100% !important;
+                    resize: none;
+                    border-radius: 10px;
+                    color: rgb(85, 84, 84);
+                    border-width: 1px;
+                    border-style: solid;
+                    border-color: #656565;
+                  "
+                />
+              </kendo-floatinglabel>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+    </form>
+  </div>
+</ion-content>
+
+<ion-footer class="backgroundFooterApp">
+  <ion-row class="global-footer-row">
+    <ion-col size="6" class="global-footer-col-left">
+      <ion-button
+        
+        class="back global-back-btn "
+        type="cancel"
+        (click)="closeModal()"
+        expand="block"
+      >
+        {{
+          "AGENDA.MODALS.CADASTRORAPIDO.CANCEL" | translate
+        }}
+      </ion-button>
+    </ion-col>
+    <ion-col size="6" class="global-footer-col-right">
+      <ion-button
+        class="submit-btn global-footer-btn backgroundButtonApp"
+        expand="block"
+        type="button"
+        (click)="cadastraCliente()"
+        ><!-- [disabled]="!createCadastroRapidoForm.valid" -->
+        <!--entre button e  click  [disabled]="( !createCadastroRapidoForm.valid)? true : (cadastroButtonWaitingAPI == true? true : false)" -->
+        <span style="color: var(--cor-texto-botaoAgendar);">{{ "AGENDA.MODALS.CADASTRORAPIDO.CONFIRM" | translate }}</span>
+      </ion-button>
+    </ion-col>
+  </ion-row>
+</ion-footer>

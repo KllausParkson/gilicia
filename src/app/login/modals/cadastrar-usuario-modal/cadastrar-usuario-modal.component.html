@@ -1,0 +1,156 @@
+<ion-header mode="md">
+  <ion-toolbar>
+    <ion-title style="color: var(--cor-texto-barraTopo)"
+      >{{ "LOGIN.MODALCADASTRO.TITLE" | translate }}
+    </ion-title>
+    <ion-buttons slot="primary">
+      <ion-button (click)="closeModal()">
+        <ion-icon
+          name="close"
+          slot="icon-only"
+          style="transform: scale(1.5); color: var(--cor-texto-barraTopo)"
+        ></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="backgroundContentApp">
+  <ion-grid>
+    <form [formGroup]="novaContaForm" (ngSubmit)="onSubmit()">
+      <ion-row class="ion-justify-content-end colorTextApp">
+        <ion-col
+          class="ion-text-end ion-align-itens-center"
+          style="font-size: 13px"
+          size="6"
+        >
+          <ion-label style="color: red"
+            >*{{ "LOGIN.REGISTER.REQUIREDFIELDS" | translate }}</ion-label
+          >
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="12">
+          <kendo-floatinglabel text="{{ 'LOGIN.NOMECOMPLETO' | translate }} *">
+            <input
+              formControlName="nomeCompleto"
+              kendoTextBox
+              class="input"
+              type="text"
+            />
+          </kendo-floatinglabel>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="12">
+          <kendo-floatinglabel text="{{ 'LOGIN.EMAIL' | translate }} *">
+            <input
+              formControlName="email"
+              kendoTextBox
+              class="input"
+              type="email"
+            />
+          </kendo-floatinglabel>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="12">
+          <kendo-floatinglabel text="{{ 'LOGIN.CELULAR' | translate }} *">
+            <input
+              formControlName="celular"
+              name="celular"
+              kendoTextBox
+              (input)="setTelefoneMask($event)"
+              class="input"
+              type="tel"
+              maxlength="20"
+            />
+          </kendo-floatinglabel>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="12">
+          <kendo-floatinglabel text="{{ 'LOGIN.ANIVERSARIO' | translate }} ">
+            <kendo-datepicker
+              formControlName="aniversario"
+              style="border: none"
+            ></kendo-datepicker>
+          </kendo-floatinglabel>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-align-itens-center">
+        <ion-col class="show-passowrd-btn" size="12">
+          <kendo-floatinglabel text="{{ 'LOGIN.SENHA' | translate }} *">
+            <input
+              formControlName="senha"
+              kendoTextBox
+              class="input-password"
+              type="{{ showPassword ? 'text' : 'password' }}"
+              maxlength="20"
+            />
+          </kendo-floatinglabel>
+          <ion-button
+            style="margin-left: -5px; height: 36px"
+            class="ion-align-self-end"
+            fill="clear"
+            color="medium"
+            (click)="changePasswordVisibility()"
+          >
+            <img
+              style="height: 20px"
+              *ngIf="!showPassword"
+              src="https://oneproducao.blob.core.windows.net/one2/Icones/eye_closed_icon.svg"
+            />
+            <ion-icon *ngIf="showPassword" name="eye-outline"></ion-icon>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="12">
+          <kendo-floatinglabel text="{{ 'LOGIN.CONFIRMARSENHA' | translate }}*">
+            <input
+              formControlName="confirmarSenha"
+              kendoTextBox
+              class="input"
+              type="{{ showPassword ? 'text' : 'password' }}"
+              minlength="4"
+            />
+          </kendo-floatinglabel>
+          <div class="validation-errors">
+            <ng-container
+              *ngFor="let validation of validation_messages.confirmarSenha"
+            >
+              <div
+                class="error-message"
+                *ngIf="
+                  novaContaForm
+                    .get('confirmarSenha')
+                    .hasError('confirmedValidator') &&
+                  (novaContaForm.get('confirmarSenha').dirty ||
+                    novaContaForm.get('confirmarSenha').touched)
+                "
+              >
+                <ion-icon name="information-circle-outline"></ion-icon>
+                {{ validation.message | translate }}
+              </div>
+            </ng-container>
+          </div>
+        </ion-col>
+      </ion-row>
+    </form>
+  </ion-grid>
+</ion-content>
+<ion-footer class="backgroundFooterApp">
+  <ion-row>
+    <ion-col size="12">
+      <ion-button class="backgroundButtonApp"
+        type="submit"
+        style="cursor: pointer"
+        disabled="{{ bloqueiaCadastro }}"
+        (click)="onSubmit()"
+        expand="block"
+      >
+        {{ "LOGIN.CADASTRAR" | translate }}
+      </ion-button>
+    </ion-col>
+  </ion-row>
+</ion-footer>

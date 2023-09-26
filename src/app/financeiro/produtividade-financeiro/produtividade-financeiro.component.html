@@ -1,0 +1,125 @@
+<ion-grid mode="md" style="height: auto">
+  <ion-row class="ion-justify-content-center">
+    <ion-col size-xs="12" size-sm="10" size-md="7" size-lg="6" size-xl="5">
+      <ion-row class="ion-justify-content-center">
+        <ion-col size="12">
+          <ion-card class="ion-no-padding backgroundCard">
+            <app-data-toolbar
+              [startDate]="startDate"
+              [endDate]="endDate"
+              (dateEmmiter)="receiveDate($event)"
+            ></app-data-toolbar>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-justify-content-center cards" style="font-size: larger;">
+        <ion-col size="8">
+          <ion-row>
+            <ion-col class="card-title backgroundButtonApp">
+              {{ 'FINANCEIRO.PRODUTIVIDADE.TOTAL' | translate}}
+            </ion-col>
+          </ion-row>
+          <ion-row class="ion-align-items-center">
+            <ion-col class="card-value backgroundButtonApp">
+              {{produtividade != undefined ? (produtividade.totalFaturadoGeral | currencyGlobal) : (0 | currencyGlobal)}}
+            </ion-col>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+      <ion-card class="backgroundCard">
+        <ion-card-content>
+          <ion-row style="font-size: medium; color: var(--ion-color-primary);">
+            <ion-col>
+              <ion-row class="ion-justify-content-start">
+                {{ 'FINANCEIRO.PRODUTIVIDADE.TOTALSERVICOS' | translate }}
+              </ion-row>
+            </ion-col>
+            <ion-col>
+              <ion-row class="ion-justify-content-end">
+                {{produtividade != undefined ? (produtividade.totalFaturadoServico | currencyGlobal) : (0 | currencyGlobal)}}
+                <ion-icon class="icon"></ion-icon>
+              </ion-row>
+            </ion-col>
+          </ion-row>
+        </ion-card-content>
+      </ion-card>
+      <ion-card class="backgroundCard">
+        <ion-card-content>
+          <ion-row style="font-size: medium; color: var(--ion-color-primary);">
+            <ion-col>
+              <ion-row class="ion-justify-content-start colorTextApp">
+                {{ 'FINANCEIRO.PRODUTIVIDADE.TOTALPRODUTOS' | translate }}
+              </ion-row>
+            </ion-col>
+            <ion-col>
+              <ion-row class="ion-justify-content-end colorTextApp">
+                {{produtividade != undefined ? (produtividade.totalFaturadoProduto | currencyGlobal) : (0 | currencyGlobal)}}
+                <ion-icon class="icon"></ion-icon>
+              </ion-row>
+            </ion-col>
+          </ion-row>
+        </ion-card-content>
+      </ion-card>
+      <ion-card  class="backgroundCard" *ngFor="let dia of produtividade?.datas">
+        <ion-card-content>
+          <ion-row style="font-size: medium; color: var(--ion-color-primary);">
+            <ion-col>
+              <ion-row class="ion-justify-content-start">
+                {{ dia.data | date:'shortDate' }}
+              </ion-row>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <div *ngFor="let ficha of dia.fichas;">
+                <ion-row style="color: var(--ion-color-primary)">
+                  <ion-col size="7">
+                    <ion-row class="ion-justify-content-start">
+                      {{ getNomeSobrenome(ficha.nomeCliente) }}
+                    </ion-row>
+                  </ion-col>
+                  <ion-col size="5">
+                    <ion-row class="ion-justify-content-end">
+                      {{ ficha.valorTotal | currencyGlobal }}
+                    </ion-row>
+                  </ion-col>
+                </ion-row>
+                <ion-row *ngFor="let servico of ficha.servicos;" style="font-size: small;">
+                  <ion-col size="0.5">
+                    <ion-icon name="cut-outline" style="padding-top: 2px;"></ion-icon>
+                  </ion-col>
+                  <ion-col size="6.5" style="margin-left: 4px;">
+                    <ion-row class="ion-justify-content-start colorTextApp">
+                      {{ servico.nomeServico }}
+                    </ion-row>
+                  </ion-col>
+                  <ion-col size="4.8">
+                    <ion-row class="ion-justify-content-end colorTextApp">
+                      {{ servico.valorServico | currencyGlobal }}
+                    </ion-row>
+                  </ion-col>
+                </ion-row>
+                <ion-row *ngFor="let produto of ficha.produtos;" style="font-size: small;">
+                  <ion-col size="0.5">
+                    <ion-icon name="flask-outline" style="padding-top: 2px;"></ion-icon>
+                  </ion-col>
+                  <ion-col size="6.5" style="margin-left: 4px;">
+                    <ion-row class="ion-justify-content-start colorTextApp">
+                      {{ produto.nomeProduto }}
+                    </ion-row>
+                  </ion-col>
+                  <ion-col size="4.8">
+                    <ion-row class="ion-justify-content-end colorTextApp">
+                      {{ produto.valorProduto | currencyGlobal }}
+                    </ion-row>
+                  </ion-col>
+                </ion-row>
+                <div class="one-line"></div>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-grid>

@@ -1,0 +1,34 @@
+.observacao {
+  background-color: white;
+  width: 100% !important;
+  resize: none;
+  border-radius: 10px;
+  height: 78px !important;
+  color: rgb(85, 84, 84);
+  padding: 10px;
+}
+
+ion-modal {
+  height: 240px;
+  top: 25%;
+  left: 5%;
+  width: 340px;
+  border: solid 1px grey;
+  border-radius: 15px;
+}
+
+textarea {
+  //border: none;
+  overflow: auto;
+  outline: none;
+
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+
+  resize: none; /*remove the resize handle on the bottom right*/
+}
+
+ion-toolbar {
+  --background: var(--cor-fundo-barraTopo);
+}

@@ -1,0 +1,54 @@
+<ion-grid style="height: auto">
+  <ion-row>
+    <ion-col size="12">
+      <app-data-toolbar
+        [startDate]="startDate"
+        [endDate]="endDate"
+        (dateEmmiter)="receiveDate($event)"
+      ></app-data-toolbar>
+    </ion-col>
+  </ion-row>
+  <ion-row *ngIf="receitas">
+    <ion-col size="12">
+      <ion-list class="global-list-relatorios  ">
+        <ion-grid class="backgroundCard">
+          <ion-item class="backgroundCardItem">
+            <ion-label>{{'RELATORIOS.RECEITASAPURADAS.TOTAL' | translate}}</ion-label>
+            <ion-label class="ion-text-end global-bold-primary">{{receitas.totalReceitaGeral | currencyGlobal}}</ion-label>
+          </ion-item>
+          <ion-item class="backgroundCardItem">
+            <ion-label>{{'RELATORIOS.RECEITASAPURADAS.TOTALFICHAS' | translate}}</ion-label>
+            <ion-label class="ion-text-end global-bold-primary">{{receitas.totalFichas}}</ion-label>
+          </ion-item>
+          <ion-item class="backgroundCardItem">
+            <ion-label>
+              {{'RELATORIOS.RECEITASAPURADAS.TICKETMEDIO' | translate}}
+            </ion-label>
+            <ion-label class="ion-text-end global-bold-primary">{{receitas.ticketMedio | currencyGlobal}}</ion-label>
+          </ion-item>
+          <ion-item class="backgroundCardItem">
+            <ion-label>{{'RELATORIOS.RECEITASAPURADAS.TOTALSERVICOS' | translate}}</ion-label>
+            <ion-label class="ion-text-end global-bold-primary">{{receitas.totalReceitaServicos | currencyGlobal}}</ion-label>
+          </ion-item>
+          <ion-item class="backgroundCardItem" lines="none">
+            <ion-label>{{'RELATORIOS.RECEITASAPURADAS.TOTALPRODUTOS' | translate}}</ion-label>
+            <ion-label class="ion-text-end global-bold-primary">{{receitas.totalReceitaProdutos | currencyGlobal}}</ion-label>
+          </ion-item>
+          <ion-item class="backgroundCardItem" lines="none">
+            <ion-label>{{'RELATORIOS.RECEITASAPURADAS.TOTALCREDANT' | translate}}</ion-label>
+            <ion-label class="ion-text-end global-bold-primary">{{receitas.totalReceitaCredAnt | currencyGlobal}}</ion-label>
+          </ion-item>
+          <ion-item class="backgroundCardItem" lines="none">
+            <ion-label>{{'RELATORIOS.RECEITASAPURADAS.TOTALORCAMENTOS' | translate}}</ion-label>
+            <ion-label class="ion-text-end global-bold-primary">{{receitas.totalReceitaOrca | currencyGlobal}}</ion-label>
+          </ion-item>
+          <ion-item class="backgroundCardItem" lines="none">
+            <ion-label>{{'RELATORIOS.RECEITASAPURADAS.TOTALOUTROS' | translate}}</ion-label>
+            <ion-label class="ion-text-end global-bold-primary">{{receitas.totalOutros | currencyGlobal}}</ion-label>
+          </ion-item>
+        </ion-grid>
+        
+      </ion-list>
+    </ion-col>
+  </ion-row>
+</ion-grid>

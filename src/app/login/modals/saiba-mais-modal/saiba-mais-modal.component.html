@@ -1,0 +1,99 @@
+<ion-header mode="md" size="6">
+  <ion-toolbar class="ion-text-center" style="padding-top: 0 !important">
+    <ion-title style="color: var(--cor-texto-barraTopo)"
+      >{{ "LOGIN.SAIBAMAIS.TEXT" | translate }}
+    </ion-title>
+    <ion-buttons slot="primary">
+      <ion-button (click)="closeModal()">
+        <ion-icon
+          name="close"
+          slot="icon-only"
+          style="transform: scale(1.5); color: var(--cor-texto-barraTopo)"
+        ></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="smmodal backgroundContentApp" scrollY="true">
+  <ion-grid class="ion-justify-content-end colorTextApp backgroundContentApp">
+    <ion-row class="texto">
+      <ion-col class="content-col" size="12">
+        <span>{{ "LOGIN.OFERECIMENTO" | translate }}</span
+        ><br /><br />
+
+        <small>{{ "LOGIN.POLITICATEXTO" | translate }}&nbsp;</small>
+        <a
+          class="politica"
+          (click)="exibePolitica()"
+          style="font-size: 12px; font-weight: bolder; cursor: pointer"
+          >{{ "LOGIN.POLITICA" | translate }}</a
+        >
+        <br />
+        <small>{{ "LOGIN.TEXTOTERMOS" | translate }}&nbsp;</small>
+        <a
+          class="politica"
+          (click)="exibeTermos()"
+          style="font-size: 12px; font-weight: bolder; cursor: pointer"
+          >{{ "LOGIN.TERMOS" | translate }}</a
+        >
+        <br />
+        <small>{{ "LOGIN.TEXTOBLOG" | translate }}&nbsp;</small>
+        <a
+          href="https://onebeleza.com.br/blog/"
+          style="font-size: 12px; font-weight: bolder; cursor: pointer"
+          >{{ "LOGIN.BLOG" | translate }}</a
+        >
+        <small>{{ "LOGIN.TEXTOBLOGRESTO" | translate }}&nbsp;</small
+        ><br /><br />
+
+        <small style="font-weight: bolder">{{
+          "LOGIN.OURSITE" | translate
+        }}</small
+        ><br />
+        <small>
+          <ion-label>
+            <a class="item-decoration" href="https://www.onebeleza.com.br"
+              >www.onebeleza.com.br</a
+            >
+          </ion-label> </small
+        ><br /><br />
+
+        <small style="font-weight: bolder">{{
+          "LOGIN.EMAILSUPORTE" | translate
+        }}</small
+        ><br />
+        <small>
+          <ion-label>
+            <a class="item-decoration" href="mailto:suporte@mmtools.com.br"
+              >suporte@mmtools.com.br</a
+            >
+          </ion-label> </small
+        ><br /><br />
+
+        <small style="font-weight: bolder">{{
+          "LOGIN.TELCONTATO" | translate
+        }}</small
+        ><br />
+        <small>
+          <ion-label>
+            <a class="item-decoration" href="tel: +55 31 98481-6695">{{
+              telefone1
+            }}</a>
+          </ion-label> </small
+        ><br />
+        <small>
+          <ion-label>
+            <a class="item-decoration" href="tel: +55 31 98418-6722">{{
+              telefone2
+            }}</a>
+          </ion-label>
+        </small>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col style="display: flex; justify-content: flex-end">
+        <small> {{ "LOGIN.VERSAO" | translate }}: {{ version }} </small>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

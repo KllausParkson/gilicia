@@ -1,0 +1,277 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title
+      style="
+        padding-inline-start: 10px !important;
+        text-align: unset;
+        color: var(--cor-texto-barraTopo);
+      "
+      *ngIf="dadosServicoPesquisado != undefined"
+      >{{ dadosServicoPesquisado.service.nomeServico }}
+    </ion-title>
+    <!--{{'AGENDA.MODALS.LANCARSERVICOPESQUISADO.TITLE' | translate}}-->
+    <ion-title
+      style="
+        padding-inline-start: 10px !important;
+        text-align: unset;
+        color: var(--cor-texto-barraTopo);
+      "
+      *ngIf="dadosProdutoPesquisado != undefined"
+      >{{ dadosProdutoPesquisado.product.descricaoProduto }}
+    </ion-title>
+    <ion-buttons slot="primary">
+      <ion-button (click)="closeModal()">
+        <ion-icon
+          name="close"
+          slot="icon-only"
+          style="transform: scale(1.5); color: var(--cor-texto-barraTopo)"
+        ></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="backgroundContentApp">
+  <ion-row
+    *ngIf="dadosServicoPesquisado != undefined"
+    style="padding-top: 20px"
+  >
+    <ion-col size="1"></ion-col>
+    <ion-col size="5">
+      <kendo-floatinglabel class="colorTextApp"
+        text="{{
+          'AGENDA.MODALS.RESUMOAGENDAMENTO.LANCARSERVICOPRODUTO.QUANTIDADE'
+            | translate
+        }}"
+      >
+        <kendo-numerictextbox
+          [autoCorrect]="true"
+          [format]="'n'"
+          [step]="1"
+          [(value)]="setupService.quantidade"
+          [min]="1"
+          [max]=""
+          class="valor"
+          (click)="setKeyboardNumeric($event)"
+        >
+        </kendo-numerictextbox>
+      </kendo-floatinglabel>
+    </ion-col>
+    <ion-col size="5">
+      <kendo-floatinglabel class="colorTextApp"
+        text="{{
+          'AGENDA.MODALS.RESUMOAGENDAMENTO.LANCARSERVICOPRODUTO.PRECO'
+            | translate
+        }}"
+      >
+        <kendo-numerictextbox
+          [autoCorrect]="true"
+          [format]="'c2'"
+          [step]="0.01"
+          [(value)]="setupService.preco"
+          [min]="dadosServicoPesquisado.descontoMax"
+          [max]="dadosServicoPesquisado.precoMax"
+          class="valor"
+          (click)="setKeyboardNumeric($event)"
+        >
+        </kendo-numerictextbox>
+      </kendo-floatinglabel>
+    </ion-col>
+    <ion-col size="1"></ion-col>
+  </ion-row>
+  <ion-row *ngIf="dadosServicoPesquisado != undefined">
+    <ion-col size="1"></ion-col>
+    <ion-col size="10">
+      <kendo-floatinglabel
+        text="{{
+          'AGENDA.MODALS.RESUMOAGENDAMENTO.LANCARSERVICOPRODUTO.OBSERVACAO'
+            | translate
+        }}"
+      >
+        <textarea
+          kendoTextArea
+          maxlength="199"
+          class="noBorder"
+          [(ngModel)]="setupService.observacao"
+          (ngModelChange)="onChange($event)"
+          style="
+            background-color: white;
+            border-radius: 10px;
+            width: 100% !important;
+            resize: none;
+            height: 70px !important;
+          "
+        >
+        </textarea>
+      </kendo-floatinglabel>
+    </ion-col>
+    <ion-col size="1"></ion-col>
+  </ion-row>
+
+  <ion-row
+    *ngIf="dadosProdutoPesquisado != undefined"
+    style="padding-top: 20px"
+  >
+    <ion-col size="1"></ion-col>
+    <ion-col size="5">
+      <kendo-floatinglabel
+        text="{{
+          'AGENDA.MODALS.RESUMOAGENDAMENTO.LANCARSERVICOPRODUTO.QUANTIDADE'
+            | translate
+        }}"
+      >
+        <kendo-numerictextbox
+          [autoCorrect]="true"
+          [format]="'n'"
+          [step]="1"
+          [(value)]="setupProduct.quantidade"
+          [min]="1"
+          [max]=""
+          class="valor"
+          (click)="setKeyboardNumeric($event)"
+        >
+        </kendo-numerictextbox>
+      </kendo-floatinglabel>
+    </ion-col>
+    <ion-col size="5">
+      <kendo-floatinglabel
+        text="{{
+          'AGENDA.MODALS.RESUMOAGENDAMENTO.LANCARSERVICOPRODUTO.PRECO'
+            | translate
+        }}"
+      >
+        <kendo-numerictextbox
+          [autoCorrect]="true"
+          [format]="'c2'"
+          [step]="0.01"
+          [(value)]="setupProduct.preco"
+          [min]="dadosProdutoPesquisado.descontoMax"
+          [max]="dadosProdutoPesquisado.precoMax"
+          class="valor"
+          (click)="setKeyboardNumeric($event)"
+        >
+        </kendo-numerictextbox>
+      </kendo-floatinglabel>
+    </ion-col>
+    <ion-col size="1"></ion-col>
+  </ion-row>
+  <ion-row *ngIf="dadosProdutoPesquisado != undefined">
+    <ion-col size="1"></ion-col>
+    <ion-col size="10">
+      <textarea
+        kendoTextArea
+        maxlength="199"
+        placeholder="observacao"
+        [(ngModel)]="setupProduct.observacao"
+        (ngModelChange)="onChange($event)"
+        style="
+          background-color: white;
+          width: 100% !important;
+          resize: none;
+          border-radius: 10px;
+          height: 70px !important;
+          color: rgb(85, 84, 84);
+        "
+      >
+      </textarea>
+    </ion-col>
+    <ion-col size="1"></ion-col>
+  </ion-row>
+
+  <ion-row
+    *ngIf="
+      dadosServicoPesquisado != undefined &&
+      dadosServicoPesquisado.service.colaboradorAuxiliarID != null
+    "
+  >
+    <ion-col size="12">
+      <kendo-floatinglabel
+        text="{{
+          'AGENDA.MODALS.RESUMOAGENDAMENTO.LANCARSERVICOPRODUTO.PESQUISARAUXILIAR'
+            | translate
+        }}"
+      >
+        <kendo-combobox
+          [data]="listColaboradoresAgendaveis"
+          [filterable]="true"
+          (filterChange)="pesquisaColaboradores($event)"
+          (valueChange)="changeColaborador($event)"
+          [textField]="'nomeProfissional'"
+          [valueField]="'profissionalId'"
+          [valueNormalizer]="valueNormalizer"
+          [value]="{
+            nomeProfissional:
+              dadosServicoPesquisado.service.colaboradorAuxiliarNome,
+            profissionalId: dadosServicoPesquisado.service.colaboradorAuxiliarID
+          }"
+          [allowCustom]="true"
+          style="
+            background-color: white;
+            width: 100% !important;
+            resize: none;
+            border-radius: 10px;
+            height: 50px !important;
+            color: rgb(85, 84, 84);
+          "
+        >
+          <!--[loading]="pesquisaClienteLoader"-->
+          <ng-template kendoComboBoxItemTemplate let-dataItem>
+            <ion-grid class="pesquisa-container">
+              <ion-row>
+                <ion-col>
+                  {{
+                    "AGENDA.MODALS.RESUMOAGENDAMENTO.LANCARSERVICOPRODUTO.PESQUISA.NOME"
+                      | translate
+                  }}:{{ dataItem.nomeProfissional }}
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col size="12">
+                  {{
+                    "AGENDA.MODALS.RESUMOAGENDAMENTO.LANCARSERVICOPRODUTO.PESQUISA.EMAIL"
+                      | translate
+                  }}: {{ dataItem.email }}
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col size="12">
+                  {{
+                    "AGENDA.MODALS.RESUMOAGENDAMENTO.LANCARSERVICOPRODUTO.PESQUISA.CELULAR"
+                      | translate
+                  }}: {{ dataItem.celular }}
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ng-template>
+          <ng-template kendoComboBoxNoDataTemplate>
+            <ion-row>
+              {{ "AGENDA.BUSCANAORETORNOURESULTADO" | translate }}
+            </ion-row>
+          </ng-template>
+        </kendo-combobox>
+      </kendo-floatinglabel>
+    </ion-col>
+  </ion-row>
+</ion-content>
+
+<ion-footer class="ion-no-border">
+  <ion-row
+    class=""
+    style="background-color: var(--ion-color-primary); justify-content: center"
+  >
+    <ion-button
+      
+      class="desmarcarButton backgroundButtonApp"
+      expand="block"
+      type="submit"
+      (click)="verificaServicoDuplicado()"
+      style=" box-shadow: none"
+      [disabled]="launchButtonWaitingAPI == true ? true : false"
+    >
+      {{
+        "AGENDA.MODALS.RESUMOAGENDAMENTO.LANCARSERVICOPRODUTO.SERVICOPESQUISADO.REGISTRAR"
+          | translate
+      }}
+    </ion-button>
+  </ion-row>
+</ion-footer>

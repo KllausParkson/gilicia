@@ -1,0 +1,55 @@
+<ion-grid fixed>
+  <ion-row>
+    <ion-col size="12">
+      <app-data-toolbar
+        [startDate]="startDate"
+        [endDate]="endDate"
+        (dateEmmiter)="receiveDate($event)"
+      ></app-data-toolbar>
+    </ion-col>
+  </ion-row>
+  <ion-row *ngIf="chart?.length > 0">
+    <ion-col size="12">
+      <kendo-chart class="colorTextApp">
+        <ng-template  kendoChartDonutCenterTemplate>
+          {{"RELATORIOS.PRODUTOS.VALORTOTAL" | translate}}
+          <h3 class="colorTextApp">{{topProdutos.valorTotal | currencyGlobal}}</h3>
+        </ng-template>
+        <kendo-chart-area background="transparent" [height]="300">
+        </kendo-chart-area>
+        <kendo-chart-series>
+          <kendo-chart-series-item
+                type="donut" [data]="chart"
+                field="porcentagem" categoryField="nomeProduto" colorField="cor" [holeSize]="75">
+                <kendo-chart-series-item-tooltip>
+                  <ng-template let-value="value" let-dataItem="dataItem">
+                    {{value}}% - {{dataItem.nomeProduto}}
+                  </ng-template>
+                </kendo-chart-series-item-tooltip>
+            <kendo-chart-series-item-labels
+              [content]="labelContent"
+              color="#fff" background="#00000044">
+            </kendo-chart-series-item-labels>
+          </kendo-chart-series-item>
+        </kendo-chart-series>
+        <kendo-chart-legend [visible]="false"></kendo-chart-legend>
+      </kendo-chart>
+    </ion-col>
+  </ion-row>
+  <ion-row class="legenda" *ngIf="chart?.length > 0" [ngStyle]="{'max-height': divContentHeight}">
+    <ion-col size="12">
+      <ion-card class="global-card-relatorios backgroundCard colorTextApp" *ngFor="let produto of chart">
+        <div class="status" [ngStyle]="{'background-color': produto.cor}"></div>
+        <div class="descricao">
+          <ion-label class="global-txt-cap">{{produto.nomeProduto}}</ion-label>
+          <ion-label style="display: flex; align-items: center;" class="global-bold-primary">{{getValorFormatado(produto)}}</ion-label>
+        </div>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+  <ion-row class="colorTextApp" *ngIf="!chart || chart?.length == 0">
+    <ion-col class="message" size="12">
+      {{"RELATORIOS.PRODUTOS.MESSAGE" | translate}}
+    </ion-col>
+  </ion-row>
+</ion-grid>

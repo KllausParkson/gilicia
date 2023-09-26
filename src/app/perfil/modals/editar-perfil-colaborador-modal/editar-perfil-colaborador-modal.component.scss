@@ -1,0 +1,101 @@
+.img {
+  ion-img {
+    //padding-top: 10px;
+    box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.17);
+    border-radius: 30px;
+
+    //tamanho da imagem padronizado
+    height: 280px;
+    width: 280px;
+    //usado para a imgagem preencher o componente, pode cortar a imagem
+    object-fit: cover;
+    margin: auto;
+  }
+
+  ion-img::part(image) {
+    border-radius: 30px;
+    border: none;
+  }
+
+  .new-image {
+    //position: absolute;
+    //right: 60%;
+    bottom: 0;
+  }
+
+  .remove-image {
+    //position: absolute;
+    //right: 25%;
+    bottom: 0;
+  }
+}
+
+.linha {
+  justify-content: center;
+}
+.show {
+  display: flex;
+  align-items: flex-end;
+
+  .input-password {
+    border: 0.5px solid #c1c1c1;
+    border-right: none;
+    border-radius: 10px 0px 0px 10px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  ion-button::part(native) {
+    border: 0.5px solid var(--cor-fundo-botaoAgendar) !important;
+    border-left: none !important;
+    border-radius: 0px 10px 10px 0px !important;
+    padding: 18px !important;
+    //right: 5px !important;
+
+    width: 65px !important;
+  }
+}
+
+.curriculo {
+  height: auto !important;
+  background-color: white;
+  border-radius: 10px;
+}
+
+ion-content {
+  // overwrite inline styles
+  --offset-bottom: auto !important;
+  --overflow: hidden;
+  overflow: auto;
+  &::-webkit-scrollbar {
+    display: hide;
+  }
+}
+.text-descriçao {
+  color: #656565;
+  font-size: initial;
+}
+.text-senha {
+  color: var(--ion-color-primary);
+  cursor: pointer;
+  font-weight: bolder;
+  text-decoration: underline;
+}
+.k-textbox-container,
+.k-floating-label-container {
+  color: var(--ion-color-primary) !important;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: -20px;
+  width: 120%;
+  height: 100%;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.5); /*dim the background*/
+}
+
+ion-toolbar {
+  --background: var(--cor-fundo-barraTopo);
+}

@@ -1,0 +1,121 @@
+{
+	"AGENDA": {
+		"MODALS": {
+			"INFOSEMPRESAMODAL": {
+				"SOBRE": "約",
+				"TELEFONE": "電話番号"
+			}
+		}
+	},
+	"SHARED": {
+		"AVALIAR": {
+			"COMENTE": "コメント",
+			"HEADER": "によって提供されるサービスを評価する",
+			"SAVE": "評価します",
+			"TITLE": "共同編集者を評価する"
+		},
+		"BUSCANAORETORNOURESULTADO": "検索は結果を返しませんでした",
+		"MENU": {
+			"AGENDA": "スケジュール",
+			"AVALIACOES": "評価",
+			"CLIENTES": "顧客",
+			"COMPARTILHAR": "共有アプリ",
+			"ESCOLHERESTABELECIMENTO": "設立を変更する",
+			"FATURAMENTO": "生産性",
+			"FINANCEIRO": "ファイナンス",
+			"HISTORICO": "ファイナンス",
+			"LOGOUT": {
+				"CANCEL": "いや",
+				"HEADER": "1つを残す",
+				"MESSAGE": "外出しますか？",
+				"OUT": "はい"
+			},
+			"LUCRATIVIDADE": "収益性",
+			"LUCRATIVIDADE GERAL": "全体的な収益性",
+			"MENUCLASSICO": {
+				"HISTORICOCLIENTE": "顧客履歴"
+			},
+			"OPCOES": "オプション",
+			"PERFIL": "プロフィール",
+			"PRODUTOS": "製品",
+			"RECEITASAPURADAS": "獲得した収入",
+			"RECEITASESTIMADAS": "推定収益",
+			"RELATAR": "問題を報告します",
+			"RELATORIOS": "報告",
+			"RESUMOCHATBOT": "チャットボットの概要",
+			"SAIR": "ログアウト",
+			"SEMAVALIACOES": "レビューなし",
+			"SERVICOS": "サービス",
+			"TROCARPERFIL": "プロファイルを変更する"
+		},
+		"MODALEDITAR": {
+			"ALTERARSENHA": "パスワードを変更する",
+			"ANIVERSARIO": "誕生日",
+			"CANCELAR": "キャンセルする",
+			"CELULAR": "携帯電話",
+			"CLIQUEAQUI": "ここをクリック",
+			"CONFIRMAR": "新しいパスワードを確認する",
+			"CONTAEXCLUIDASUCESSO": "アカウントが正常に削除されました!",
+			"CPF": "CPF",
+			"CURRICULO": "あなたの仕事について",
+			"EDITAR": "パスワードを編集",
+			"EMAIL": "メール",
+			"ERROEXCLUIRCONTA": "アカウントの削除中にエラーが発生しました!",
+			"EXCLUIRCONTA": "アカウントを削除する",
+			"MODALEDITAR": {
+				"EDITAR": "パスワードを編集",
+				"SALVARSENHA": "パスワードを保存する"
+			},
+			"NAOPREENCHER": "パスワードを変更したくない場合は、上のフィールドを空白のままにします。",
+			"NOME": "名",
+			"REMOVERFOTOCANCELAR": "キャンセルする",
+			"REMOVERFOTOHEADER": "この写真を削除しますか？",
+			"REMOVERFOTOMESSAGE": "削除は自動的に保存されます。",
+			"REMOVERFOTOOK": "削除する",
+			"REQUIREDFIELDS": "必須フィールド",
+			"SALVAR": "保存する",
+			"SALVARSENHA": "パスワードを保存する",
+			"SENHA": "新しいパスワードを入力してください",
+			"SENHAATUAL": "現在のパスワードを入力してください",
+			"SENHAINCOMPATIVEL": "パスワードが一致していません！",
+			"SENHAINCORRETA": "現在のパスワードが正しくありません！",
+			"SENHAPADRAO": "デフォルトのパスワードがあります。",
+			"SUCESSO": "成功！",
+			"TEXTALTERAR": "パスワードを変更しますか？",
+			"TEXTOEXCLUIRCONTA": "アカウントを削除すると完全に削除され、この操作は元に戻せません。 アカウントを削除しますか?",
+			"TITLE": "プロファイル編集",
+			"TITLEATUALIZARDADOS": "データの更新"
+		},
+		"NOTIFICACAO": {
+			"AGENDEAGORA": "今すぐスケジュールします。",
+			"APAGAR": "スイッチを切る",
+			"AVALIAR": "専門家を評価する",
+			"CANCELAR": "キャンセルする",
+			"FECHAR": "近い",
+			"INSERIR": "議事に挿入",
+			"LIMPAR": "掃除",
+			"REMOVER": "カレンダーから削除",
+			"SEMNOTIFICACOES": "現在、通知はありません。 施設にお問い合わせいただくか、",
+			"TITLE": "通知"
+		},
+		"RELATAR": {
+			"ANEXAR": "説明されているバグを説明する写真を選択してください:(一度に1枚選択してください）",
+			"ASSUNTO": "レポートの種類を説明してください例：バグ/エラー、情報の欠落、提案...",
+			"ENVIAR": "参加する",
+			"ENVIARFOTO": "写真を送信",
+			"FOTOSENVIADAS": "写真の数：",
+			"NENHUMANEXO": "写真が選択されていません！",
+			"NOTIFICACAO": "問題の詳細を、どのように発生したかを段階的に説明します。必要に応じて、ウェブサイトからお問い合わせください。",
+			"RESUMO": "何が起こったのか少し説明してください",
+			"TELEFONECONTATO": "電話に連絡する",
+			"TITLE": "問題を報告します",
+			"TOAST": {
+				"ADDFOTOERRO": "写真の追加中にエラーが発生しました。",
+				"ADDFOTOSUCESS": "写真が正常に追加されました！",
+				"ADICIONANDO": "写真を追加しています...",
+				"ERRO": "エラー！",
+				"SUCESSO": "成功！"
+			}
+		}
+	}
+}

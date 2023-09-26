@@ -1,0 +1,574 @@
+<ion-header mode="md">
+  <ion-toolbar>
+    <div class="overlay" *ngIf="overlayDivControl == true"></div>
+    <ion-title
+      *ngIf="editarAgendamento == 0"
+      style="color: var(--cor-texto-barraTopo)"
+      >{{ "AGENDA.MODALS.NOVOAGENDAMENTOPROFISSIONAL.TITLE" | translate }}
+    </ion-title>
+    <ion-title
+      *ngIf="editarAgendamento == 1"
+      style="color: var(--cor-texto-barraTopo)"
+      >{{'AGENDA.MODALS.NOVOAGENDAMENTOPROFISSIONAL.TITLEEDICAO' | translate}}
+    </ion-title>
+    <ion-buttons slot="primary">
+      <ion-button (click)="closeModal()" *ngIf="editarAgendamento == 0">
+        <ion-icon
+          name="close"
+          slot="icon-only"
+          style="transform: scale(1.5); color: var(--cor-texto-barraTopo)"
+        ></ion-icon>
+      </ion-button>
+      <ion-button (click)="closeModalEditar()" *ngIf="editarAgendamento == 1">
+        <ion-icon
+          name="close"
+          slot="icon-only"
+          style="transform: scale(1.5); color: var(--cor-texto-barraTopo)"
+        ></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<div class="backgroundApp" id="1">
+  <div class="overlay" *ngIf="overlayDivControl == true"></div>
+  <!-- <ion-row style="padding: 15px; color: #8d8d8d; font-weight: bold;" >
+    {{ 'AGENDA.MODALS.NOVOAGENDAMENTOPROFISSIONAL.CLIENTESPRESENTES' | translate }}
+  </ion-row>
+  <ion-segment class="SwipedTabs-tabs" style="overflow-x: scroll;" [ngStyle]="{'justify-content': (listClientesPresentes?.length == 0? 'center': 'unset')}" scrollable>
+    <ng-container *ngIf="listClientesPresentes != undefined">
+      <ng-container *ngIf="listClientesPresentes?.length != 0">
+        <ion-segment-button *ngFor="let clientePresente of listClientesPresentes; index as i" id="segment-{{i}}" (click)="selectTab(i)"
+        > [ngClass]="{ 'SwipedTabs-activeTab' : ( SwipedTabsSlider  && ( SwipedTabsSlider.getActiveIndex() == i || (  tabs?.length -1 == i && SwipedTabsSlider.isEnd()))) }"
+            <div>
+              <img [src]="'https://oneproducao.blob.core.windows.net/one2/Imagens/Sem_FotoPerfil.png'" style="transform: scale(0.07); border-radius: 50%;"/>
+              <br>
+              <span style="font-size: 10px; padding-top: 5px;">{{ clientePresente.nomeCliente }}</span>
+            </div>
+        </ion-segment-button>
+      </ng-container>
+    </ng-container>
+    <ng-container *ngIf="listClientesPresentes != undefined && listClientesPresentes?.length == 0">
+      <ion-row style="color: #8d8d8d; text-align: right;">
+        {{ 'AGENDA.MODALS.NOVOAGENDAMENTOPROFISSIONAL.ALLCLIENTSABSENT' | translate }}
+      </ion-row>
+    </ng-container>
+  </ion-segment> -->
+
+  <ion-row> </ion-row>
+  <!-- <form *ngIf="formGroup" [formGroup]="formGroup"> -->
+  <ion-row style="font-size: 10px">
+    <ion-col size="1"></ion-col>
+    <ion-col size="10" style="text-align: left; color: var(--ion-color-danger)"
+      ><span style="color: var(--ion-color-danger)">*</span>
+      {{
+        "AGENDA.MODALS.NOVOAGENDAMENTOPROFISSIONAL.REQUIREDFIELD" | translate
+      }}</ion-col
+    >
+    <ion-col size="1"></ion-col>
+  </ion-row>
+  <div>
+    <div>
+      <ion-row class="k-form-field ion-justify-content-center">
+        <ion-col size-md="1" size-xs="1">
+          <!-- <ion-row class="ion-justify-content-center" style="margin-top: 15px;">
+              <ion-icon name="person-add" style="color: var(--ion-color-primary); font-size: 27px; cursor: pointer;" title="Cadastro Rápido" (click)="AtivarCadastroRapido()"></ion-icon>
+            </ion-row> -->
+        </ion-col>
+        <ion-col
+          *ngIf="
+            (gatilhoCadastro && parametrosLight.colaboradorCadastrarCliente) ||
+              tipoLogin === 'gestor';
+            else semPermissao
+          "
+          size-md="9"
+          size-xs="9"
+        >
+          <kendo-floatinglabel
+            text="*{{
+              'AGENDA.MODALS.NOVOAGENDAMENTOPROFISSIONAL.CLIENTE' | translate
+            }}"
+          >
+            <kendo-combobox
+              #box_cliente
+              class="pesquisar-cliente"
+              [data]="listClientes"
+              [filterable]="true"
+              (filterChange)="pesquisaClientes($event)"
+              (valueChange)="changeCliente($event)"
+              [textField]="'nomeCliente'"
+              [valueField]="'clienteId'"
+              [loading]="pesquisaClienteLoader"
+              [value]="dadosAgendamento"
+              [disabled]="editarAgendamento == 0 ? false : true"
+              [allowCustom]="true"
+              [valueNormalizer]="valueNormalizer"
+              ><!--                formControlName="clienteNome"            [valueNormalizer]="valueNormalizer"-->
+              <ng-template kendoComboBoxItemTemplate let-dataItem>
+                <ion-row>
+                  <ion-col>
+                    <ion-row>
+                      {{
+                        "AGENDA.MODALS.NOVOAGENDAMENTOPROFISSIONAL.INFOCLIENTE.NAME"
+                          | translate
+                      }}: {{ dataItem.nomeCliente }}
+                    </ion-row>
+                    <ion-row>
+                      {{
+                        "AGENDA.MODALS.NOVOAGENDAMENTOPROFISSIONAL.INFOCLIENTE.EMAIL"
+                          | translate
+                      }}: {{ dataItem.email }}
+                    </ion-row>
+                    <ion-row>
+                      {{
+                        "AGENDA.MODALS.NOVOAGENDAMENTOPROFISSIONAL.INFOCLIENTE.PHONE"
+                          | translate
+                      }}: {{ dataItem.celular }}
+                    </ion-row>
+                    <ion-row>
+                      {{
+                      "AGENDA.MODALS.NOVOAGENDAMENTOPROFISSIONAL.INFOCLIENTE.CODIGO"
+                      | translate
+                      }}: {{ dataItem.codigo }}
+                    </ion-row>
+                  </ion-col>
+                </ion-row>
+              </ng-template>
+              <ng-template kendoComboBoxNoDataTemplate>
+                <ion-row>
+                  {{ "AGENDA.BUSCANAORETORNOURESULTADO" | translate }}
+                </ion-row>
+              </ng-template>
+            </kendo-combobox>
+          </kendo-floatinglabel>
+        </ion-col>
+
+        <ng-template #semPermissao>
+          <ion-col size-md="10" size-xs="10">
+            <kendo-floatinglabel
+              text="*{{
+                'AGENDA.MODALS.NOVOAGENDAMENTOPROFISSIONAL.CLIENTE' | translate
+              }}"
+            >
+              <kendo-combobox
+                #box_cliente
+                class="pesquisar-cliente"
+                [data]="listClientes"
+                [filterable]="true"
+                (filterChange)="pesquisaClientes($event)"
+                (valueChange)="changeCliente($event)"
+                [textField]="'nomeCliente'"
+                [valueField]="'clienteId'"
+                [loading]="pesquisaClienteLoader"
+                [value]="dadosAgendamento"
+                [disabled]="editarAgendamento == 0 ? false : true"
+                [allowCustom]="true"
+                [valueNormalizer]="valueNormalizer"
+                ><!--                formControlName="clienteNome"            [valueNormalizer]="valueNormalizer"-->
+                <ng-template kendoComboBoxItemTemplate let-dataItem>
+                  <ion-row>
+                    <ion-col>
+                      <ion-row>
+                        {{
+                          "AGENDA.MODALS.NOVOAGENDAMENTOPROFISSIONAL.INFOCLIENTE.NAME"
+                            | translate
+                        }}: {{ dataItem.nomeCliente }}
+                      </ion-row>
+                      <ion-row>
+                        {{
+                          "AGENDA.MODALS.NOVOAGENDAMENTOPROFISSIONAL.INFOCLIENTE.EMAIL"
+                            | translate
+                        }}: {{ dataItem.email }}
+                      </ion-row>
+                      <ion-row>
+                        {{
+                          "AGENDA.MODALS.NOVOAGENDAMENTOPROFISSIONAL.INFOCLIENTE.PHONE"
+                            | translate
+                        }}: {{ dataItem.celular }}
+                      </ion-row>
+                    </ion-col>
+                  </ion-row>
+                </ng-template>
+                <ng-template kendoComboBoxNoDataTemplate>
+                  <ion-row>
+                    {{ "AGENDA.BUSCANAORETORNOURESULTADO" | translate }}
+                  </ion-row>
+                </ng-template>
+              </kendo-combobox>
+            </kendo-floatinglabel>
+          </ion-col>
+        </ng-template>
+
+        <ion-col
+          *ngIf="
+            (gatilhoCadastro && parametrosLight.colaboradorCadastrarCliente) ||
+            tipoLogin === 'gestor'
+          "
+          id="cadastro_rapido_btn"
+          size="1"
+        >
+          <ion-icon
+            *ngIf="editarAgendamento == 0"
+            name="person-add"
+            title="Cadastro Rápido"
+            (click)="openCadastroRapidoModal()"
+          ></ion-icon>
+        </ion-col>
+        <ion-col size-md="1" size-xs="1">
+          <!--<ion-row class="ion-justify-content-center" style="margin-top: 15px;">
+              <ion-icon name="person-add" style="color: var(--ion-color-primary); font-size: 27px; cursor: pointer;" title="Cadastro Rápido" (click)="AtivarCadastroRapido()"></ion-icon>
+            </ion-row>-->
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="1"></ion-col>
+        <ion-col size-md="10" size-xs="10">
+          <kendo-floatinglabel
+            text="*{{
+              'AGENDA.MODALS.NOVOAGENDAMENTOPROFISSIONAL.SERVICO' | translate
+            }}"
+          >
+            <kendo-combobox
+              #box_servico
+              class="default-combobox"
+              [data]="pesquisaServicos"
+              [filterable]="true"
+              (filterChange)="pesquisaServicosProfissional($event)"
+              (valueChange)="changeServico($event)"
+              [textField]="'nomeServico'"
+              [valueField]="'servicoId'"
+              [loading]="pesquisaServicosLoader"
+              [value]="dadosAgendamento"
+              [allowCustom]="true"
+              [valueNormalizer]="valueNormalizer"
+            >
+              <!--                  formControlName="servicoDescricao"          [valueNormalizer]="valueNormalizer"-->
+              <ng-template kendoComboBoxItemTemplate let-dataItem>
+                <ion-row>
+                  <ion-col>
+                    <!-- <ion-row>
+                    {{'AGENDA.MODALS.NOVOAGENDAMENTOPROFISSIONAL.INFOSERVICO.GROUP' | translate }}: {{dataItem.gservNome}}
+                  </ion-row> -->
+                    <ion-row>
+                      {{
+                        "AGENDA.MODALS.NOVOAGENDAMENTOPROFISSIONAL.INFOSERVICO.NAME"
+                          | translate
+                      }}: {{ dataItem.nomeServico }}
+                    </ion-row>
+                    <ion-row>
+                      {{
+                        "AGENDA.MODALS.NOVOAGENDAMENTOPROFISSIONAL.INFOSERVICO.PRICE"
+                          | translate
+                      }}: {{ dataItem.precoServico | currencyGlobal }}
+                    </ion-row>
+                    <ion-row>
+                      {{
+                        "AGENDA.MODALS.NOVOAGENDAMENTOPROFISSIONAL.INFOSERVICO.DURATION"
+                          | translate
+                      }}: {{ dataItem.tempoExecucaoServico?.substr(0, 5) }}
+                    </ion-row>
+                  </ion-col>
+                </ion-row>
+              </ng-template>
+              <ng-template kendoComboBoxNoDataTemplate>
+                <ion-row>
+                  {{ "AGENDA.BUSCANAORETORNOURESULTADO" | translate }}
+                </ion-row>
+              </ng-template>
+            </kendo-combobox>
+          </kendo-floatinglabel>
+          <div class="validation-errors">
+            <!-- <ng-container *ngFor="let validation of validation_messages.Servicos">
+                <div class="error-message"
+                  *ngIf="formGroup.get('Servicos').hasError(validation.type) && (formGroup.get('Servicos').dirty || formGroup.get('Servicos').touched)">
+                  <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message | translate }}
+                </div>
+              </ng-container> -->
+          </div>
+        </ion-col>
+        <ion-col size="1"></ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="1"></ion-col>
+        <ion-col size="10">
+          <kendo-floatinglabel
+            style="
+              color: var(--ion-color-primary);
+              font-size: 13px;
+              font-weight: bold;
+            "
+            text="*{{
+              'AGENDA.MODALS.NOVOAGENDAMENTOPROFISSIONAL.DATASELECIONADA'
+                | translate
+            }}"
+          >
+            <kendo-datepicker
+              [value]="dataSelecionada"
+              [(ngModel)]="dataSelecionada"
+              [min]="today"
+              (valueChange)="atualizaMinDateFinal($event)"
+              style="width: 100%; height: 38px; border-radius: 12px"
+            >
+              <kendo-datepicker-messages
+                today="{{
+                  'AGENDA.MODALS.NOVOAGENDAMENTO.MESSAGES.HOJE' | translate
+                }}"
+              ></kendo-datepicker-messages>
+            </kendo-datepicker>
+          </kendo-floatinglabel>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="1"></ion-col>
+        <ion-col size="10">
+          <kendo-floatinglabel
+            style="font-weight: bold; color: var(--ion-color-primary)"
+            text="{{
+              'AGENDA.MODALS.NOVOAGENDAMENTOPROFISSIONAL.OBSERVACAO' | translate
+            }}"
+          >
+            <textarea
+              kendoTextArea
+              maxlength="199"
+              [(ngModel)]="observacao"
+              style="
+                background-color: white;
+                width: 100% !important;
+                resize: none;
+                border-radius: 10px;
+                height: 50px !important;
+                color: rgb(85, 84, 84);
+              "
+            ></textarea
+            ><!--(ngModelChange)="onChange($event, i, j)" -->
+          </kendo-floatinglabel>
+        </ion-col>
+        <ion-col size="1"></ion-col>
+      </ion-row>
+    </div>
+  </div>
+  <!-- </form> -->
+</div>
+<div class="backgroundApp">
+  <ion-row style="padding: 15px 0">
+    <ion-col size="1"></ion-col>
+    <ion-col
+      size="10"
+      style="text-align: center; color: var(--ion-color-primary)"
+      *ngIf="listHorariosDisponiveis?.length != 0; else semHorarios"
+    >
+      *{{
+        "AGENDA.MODALS.NOVOAGENDAMENTOPROFISSIONAL.ESCOLHERHORARIO"
+          | translate
+          | translate
+      }}
+      ({{ listHorariosDisponiveis?.length }} Disponíveis)
+    </ion-col>
+    <ng-template #semHorarios>
+      <ion-col
+        size="10"
+        style="text-align: center; color: var(--ion-color-primary)"
+      >
+        *{{
+          "AGENDA.MODALS.NOVOAGENDAMENTOPROFISSIONAL.ESCOLHERHORARIO"
+            | translate
+            | translate
+        }}
+      </ion-col>
+    </ng-template>
+    <ion-col size="1"></ion-col>
+  </ion-row>
+  <ion-row style="padding-bottom: 15px;">
+    <ion-col size="1"></ion-col>
+    <ion-col
+      size="10"
+      style="text-align: center; color: var(--ion-color-primary)"
+    >
+      <ion-button class="backgroundButtonApp" type="submit" 
+      (click)="personalizarHorario()" expand="block" style="height: 50px; margin: 0">
+        <div class="overlay" *ngIf="overlayDivControl == true"></div>
+        <span style="color: var(--cor-texto-botaoAgendar);">
+          {{
+          "AGENDA.MODALS.NOVOAGENDAMENTOPROFISSIONAL.PERSONALIZARHORARIO"
+          | translate
+          }}</span>
+      </ion-button>
+    </ion-col>
+    <ion-col size="1"></ion-col>
+  </ion-row>
+</div>
+
+<ion-content class="backgroundContentApp" *ngIf = "!horarioPersonalizado">
+  <ion-row
+    *ngIf="
+      listHorariosDisponiveis != null && listHorariosDisponiveis?.length != 0
+    "
+  >
+    <ion-col size="1"></ion-col>
+    <ion-col
+      size="10"
+      class="ion-justify-content-center"
+      [ngStyle]="{ 'max-width': '98%', 'max-height': borderHeight }"
+      style="text-align: center; min-width: 320px; bottom: 5px; right: 5px"
+    >
+      <ng-container
+        *ngIf="
+          listHorariosDisponiveis != null && listHorariosDisponiveis?.length != 0
+        "
+      >
+        <ion-col
+          class="container-horarios-livres"
+          [ngStyle]="{ 'max-width': '100%', 'max-height': divHeight }"
+        >
+          <ng-container *ngFor="let horario of listHorariosDisponiveis">
+            <ion-button
+              class="horarios"
+              (click)="selecionaHorarioButton($event, horario)"
+              [ngStyle]="{
+                'padding-left':
+                  listHorariosDisponiveis?.length == 1 ? 'unset' : 'unset'
+              }"
+              [disabled]="horario.disabled"
+            >
+              {{ horario.horarioInicio?.substr(0, 5) }} -
+              {{ horario.horarioFinal?.substr(0, 5) }}
+            </ion-button>
+          </ng-container>
+        </ion-col>
+      </ng-container>
+    </ion-col>
+    <ion-col size="1"></ion-col>
+  </ion-row>
+
+  <ion-row
+    *ngIf="
+      listHorariosDisponiveis?.length == 0 &&
+      (servicoSelecionado == null || clienteCadastrado == null)
+    "
+  >
+    <ion-col size="1"></ion-col>
+    <ion-col
+      size="10"
+      style="
+        border: 1px dashed gray;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: gray;
+      "
+      [ngStyle]="{ height: borderHeight }"
+    >
+      {{
+        "AGENDA.MODALS.NOVOAGENDAMENTOPROFISSIONAL.HORARIOSDISPONIVEIS"
+          | translate
+      }}</ion-col
+    >
+    <ion-col size="1"></ion-col>
+  </ion-row>
+  <ion-row
+    *ngIf="
+      listHorariosDisponiveis?.length == 0 &&
+      servicoSelecionado != null &&
+      clienteCadastrado != null
+    "
+  >
+    <ion-col size="1"></ion-col>
+    <ion-col
+      size="10"
+      style="
+        border: 1px dashed gray;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: gray;
+      "
+      [ngStyle]="{ height: borderHeight }"
+      >{{
+        "AGENDA.MODALS.NOVOAGENDAMENTOPROFISSIONAL.SEMHORARIOSDISPONIVEIS"
+          | translate
+      }}</ion-col
+    >
+    <ion-col size="1"></ion-col>
+  </ion-row>
+</ion-content>
+
+<ion-content class="backgroundContentApp" *ngIf="horarioPersonalizado">
+
+<ion-row style="padding-top: 55px; text-align-last: center;">
+<ion-col size="1"></ion-col>
+<ion-col size="4">
+  <span style="color: var(--ion-color-primary)">{{
+  "AGENDA.MODALS.NOVOAGENDAMENTOPROFISSIONAL.HORARIOINICIO"
+  | translate
+  }}</span>
+  <ion-item> 
+  <ion-datetime
+      displayFormat="HH:mm"
+      pickerFormat="HH mm"
+      id="since"
+      (ionChange)="selecionaHorarioInicio()"
+  ></ion-datetime></ion-item>
+</ion-col>
+<ion-col size="2">
+  <br><br>
+  <span style="font-weight: bold;"> - </span>
+</ion-col>
+<ion-col size="4">
+  <span style="color: var(--ion-color-primary)">{{
+  "AGENDA.MODALS.NOVOAGENDAMENTOPROFISSIONAL.HORARIOFIM"
+  | translate
+  }}</span>
+  <ion-item>
+  <ion-datetime
+      displayFormat="HH:mm"
+      pickerFormat="HH mm"
+      id="until"
+      (ionChange)="selecionaHorarioFim()"
+  ></ion-datetime></ion-item>
+</ion-col>
+<ion-col size="1"></ion-col>
+</ion-row>
+</ion-content>
+
+<ion-footer class="backgroundFooterApp">
+  <div class="overlay" *ngIf="overlayDivControl == true"></div>
+
+  <ion-row class="global-footer-row">
+    <ion-col size="12" class="global-footer-col">
+      <ion-button
+        class="backgroundButtonApp"
+        type="submit"
+        [disabled]="
+          editarAgendamento == 1
+            ? editadoBoolean == true
+              ? false
+              : dadosAgendamento.observacao !== observacao
+              ? false
+              : true
+            : !servicoSelecionado || !clienteCadastrado || !horarioSelecionado
+            ? true
+            : scheduleButtonWaitingAPI == true
+            ? true
+            : false
+        "
+        (click)="agendarAtendimento()"
+        expand="block"
+        style="height: 50px; margin: 0"
+      >
+        <!-- [disabled]="(editarAgendamento == 0 ? (!servicoSelecionado || !clienteCadastrado || !horarioSelecionado? true: false) : )" -->
+        <!-- [disabled]="(segment == 'servicos'? marcados: (listNovosAgendamentos?.length == 0 ? true: false))"-->
+        <div class="overlay" *ngIf="overlayDivControl == true"></div>
+        <span style="color: var(--cor-texto-botaoAgendar);" *ngIf="editarAgendamento == 0">{{
+          "AGENDA.MODALS.NOVOAGENDAMENTOPROFISSIONAL.AGENDAR" | translate
+        }}</span>
+        <span style="color: var(--cor-texto-botaoAgendar);" *ngIf="editarAgendamento == 1">{{
+          "AGENDA.MODALS.NOVOAGENDAMENTOPROFISSIONAL.CONFIRMAREDICAO"
+            | translate
+        }}</span>
+      </ion-button>
+    </ion-col>
+  </ion-row>
+</ion-footer>

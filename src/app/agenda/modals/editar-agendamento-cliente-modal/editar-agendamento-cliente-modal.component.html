@@ -1,0 +1,207 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title style="color: var(--cor-texto-barraTopo)">{{
+      "AGENDA.MODALS.EDITARAGENDAMENTOCLIENTEMODAL.EDITARAGENDAMENTO"
+        | translate
+    }}</ion-title>
+    <ion-buttons slot="primary">
+      <ion-button (click)="closeModal()">
+        <ion-icon
+          name="close"
+          slot="icon-only"
+          style="transform: scale(1.5); color: var(--cor-texto-barraTopo)"
+        ></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="backgroundContentApp" scrollY="false">
+  <ion-grid fixed>
+    <form [formGroup]="agendaForm">
+      <ion-row>
+        <ion-col size="12">
+          <kendo-floatinglabel
+            text="{{
+              'AGENDA.MODALS.EDITARAGENDAMENTOCLIENTEMODAL.SERVICO' | translate
+            }}*"
+            style="color: var(--ion-color-primary)"
+          >
+            <kendo-combobox
+              id="1"
+              formControlName="nomeServico"
+              [valuePrimitive]="true"
+              class="default-combobox"
+              [data]="listaServicosPesquisados"
+              (filterChange)="pesquisaServicosProfissional($event)"
+              [filterable]="true"
+              (valueChange)="changeServico($event)"
+              [textField]="'nomeServico'"
+              [valueField]="'servicoId'"
+              [value]="servicoSelecionado"
+              [allowCustom]="true"
+              [valueNormalizer]="valueNormalizer"
+            >
+              <ng-template kendoComboBoxItemTemplate let-dataItem>
+                <ion-row>
+                  <ion-col>
+                    <ion-row>
+                      {{
+                        "AGENDA.MODALS.NOVOAGENDAMENTOPROFISSIONAL.INFOSERVICO.NAME"
+                          | translate
+                      }}: {{ dataItem.nomeServico }}
+                    </ion-row>
+                    <ion-row>
+                      {{
+                        "AGENDA.MODALS.NOVOAGENDAMENTOPROFISSIONAL.INFOSERVICO.PRICE"
+                          | translate
+                      }}: {{ dataItem.precoServico | currencyGlobal }}
+                    </ion-row>
+                    <ion-row>
+                      {{
+                        "AGENDA.MODALS.NOVOAGENDAMENTOPROFISSIONAL.INFOSERVICO.DURATION"
+                          | translate
+                      }}: {{ dataItem.tempoExecucaoServico?.substr(0, 5) }}
+                    </ion-row>
+                  </ion-col>
+                </ion-row>
+              </ng-template>
+              <ng-template kendoComboBoxNoDataTemplate>
+                <ion-row>
+                  {{ "AGENDA.BUSCANAORETORNOURESULTADO" | translate }}
+                </ion-row>
+              </ng-template>
+            </kendo-combobox>
+          </kendo-floatinglabel>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="12">
+          <kendo-floatinglabel
+            text="{{
+              'AGENDA.MODALS.EDITARAGENDAMENTOCLIENTEMODAL.PROFISSIONAL'
+                | translate
+            }}*"
+            style="color: var(--ion-color-primary)"
+          >
+            <kendo-combobox
+              formControlName="nomeColab"
+              [valuePrimitive]="true"
+              class="default-combobox"
+              (filterChange)="pesquisaProfissionais($event)"
+              [value]="profissionalSelecionado"
+              [data]="listaProfissionaisPesquisados"
+              (valueChange)="changeProfissional($event)"
+              [filterable]="true"
+              [textField]="'nome'"
+              [valueField]="'profissionalId'"
+              [allowCustom]="true"
+              [valueNormalizer]="valueNormalizer"
+              style="border: 0"
+              ><!--[loading]="pesquisaClienteLoader"-->
+              <ng-template kendoComboBoxItemTemplate let-dataItem>
+                <ion-row>
+                  <ion-col>
+                    <ion-row>
+                      <ion-avatar slot="start" class="imagemOne"
+                        ><ion-img
+                          [src]="
+                            dataItem.foto != null
+                              ? dataItem.foto
+                              : 'https://oneproducao.blob.core.windows.net/one2/Imagens/Sem_FotoPerfil.png'
+                          "
+                        ></ion-img
+                      ></ion-avatar>
+                      <ion-label>{{ dataItem.nome }}</ion-label>
+                    </ion-row>
+                  </ion-col>
+                </ion-row>
+              </ng-template>
+              <ng-template kendoComboBoxNoDataTemplate>
+                <ion-row>
+                  {{ "AGENDA.BUSCANAORETORNOURESULTADO" | translate }}
+                </ion-row>
+              </ng-template>
+            </kendo-combobox>
+          </kendo-floatinglabel>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="12">
+          <kendo-floatinglabel
+            text="{{
+              'AGENDA.MODALS.EDITARAGENDAMENTOCLIENTEMODAL.DATA' | translate
+            }}*"
+            style="color: var(--ion-color-primary)"
+          >
+            <kendo-datepicker
+              formControlName="dataAg"
+              style="border: none"
+              (valueChange)="changeData($event)"
+            ></kendo-datepicker>
+          </kendo-floatinglabel>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="12">
+          <kendo-floatinglabel
+            text="{{
+              'AGENDA.MODALS.EDITARAGENDAMENTOCLIENTEMODAL.HORARIOSDISPONIVEIS'
+                | translate
+            }}*"
+            style="color: var(--ion-color-primary)"
+          >
+            <kendo-combobox
+              formControlName="horarioSelecionado"
+              [valuePrimitive]="true"
+              class="default-combobox"
+              [data]="listaHorariosDisponiveis"
+              [textField]="'horarioFormatado'"
+              [valueField]="'horarioFormatado'"
+              (valueChange)="changeHorario($event)"
+              [value]="horarioSelecionado"
+              [allowCustom]="true"
+              [valueNormalizer]="valueNormalizer"
+            >
+              <ng-template kendoComboBoxItemTemplate let-dataItem>
+                <ion-row>
+                  <ion-col>
+                    <ion-row>
+                      {{ dataItem.horarioInicio?.substr(0, 5) }} -
+                      {{ dataItem.horarioFinal?.substr(0, 5) }}
+                    </ion-row>
+                  </ion-col>
+                </ion-row>
+              </ng-template>
+            </kendo-combobox>
+          </kendo-floatinglabel>
+        </ion-col>
+      </ion-row>
+    </form>
+  </ion-grid>
+</ion-content>
+<ion-footer class="backgroundFooterApp">
+  <ion-row class="global-footer-row">
+    <ion-col size="6" class="global-footer-col-left">
+      <ion-button
+        type="cancel"
+        class="global-back-btn"
+        disabled="{{ !agendaForm.valid }}"
+        (click)="closeModal()"
+        expand="block"
+      >
+        {{ "AGENDA.APPOINTMENT.DESMARCARALERT.CANCELAR" | translate }}
+      </ion-button>
+    </ion-col>
+    <ion-col size="6" class="global-footer-col-right">
+      <ion-button
+        type="submit"
+        class="global-footer-btn backgroundButtonApp"
+        disabled="{{ !agendaForm.valid }}"
+        (click)="editar()"
+        expand="block"
+      >
+        {{ "AGENDA.MODALS.EDITARAGENDAMENTOCLIENTEMODAL.SALVAR" | translate }}
+      </ion-button>
+    </ion-col>
+  </ion-row>
+</ion-footer>

@@ -1,0 +1,80 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title
+      *ngIf="dadosProdutoPesquisado != undefined"
+      style="color: var(--cor-texto-barraTopo)"
+      >{{ dadosProdutoPesquisado.product.descricaoProduto }}
+    </ion-title>
+    <ion-buttons slot="primary">
+      <ion-button (click)="closeModal()">
+        <ion-icon
+          name="close"
+          slot="icon-only"
+          style="transform: scale(1.5); color: var(--cor-texto-barraTopo)"
+        ></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="backgroundContentApp">
+  <ion-row class="colorTextApp">
+    <ion-col size="12">
+      <kendo-floatinglabel
+        text="*{{
+          'AGENDA.MODALS.RESUMOAGENDAMENTO.NOVAQUIMICA.PARTES' | translate
+        }}"
+      >
+        <textarea
+          kendoTextArea
+          maxlength="199"
+          [(ngModel)]="setupQuimica.partes"
+          style="width: 100% !important; resize: none; border-radius: 10px"
+        ></textarea>
+      </kendo-floatinglabel>
+    </ion-col>
+  </ion-row>
+
+  <ion-row class="colorTextApp">
+    <ion-col size="12">
+      <kendo-floatinglabel
+        text="*{{
+          'AGENDA.MODALS.RESUMOAGENDAMENTO.NOVAQUIMICA.OBSERVACAO' | translate
+        }}"
+      >
+        <textarea
+          kendoTextArea
+          maxlength="199"
+          [(ngModel)]="setupQuimica.observacao"
+          style="
+            width: 100% !important;
+            resize: none;
+            border-radius: 10px;
+            min-height: 70px;
+          "
+        ></textarea>
+      </kendo-floatinglabel>
+    </ion-col>
+  </ion-row>
+</ion-content>
+
+<ion-footer class="ion-no-border">
+  <ion-row
+    class=""
+    style="background-color: var(--ion-color-primary); justify-content: center"
+  >
+    <ion-button
+      
+      class="desmarcarButton backgroundButtonApp"
+      expand="block"
+      type="submit"
+      (click)="adicionarQuimica()"
+      style="color: black; box-shadow: none; width: 100%"
+    >
+      {{
+        "AGENDA.MODALS.RESUMOAGENDAMENTO.LANCARSERVICOPRODUTO.PRODUTOPESQUISADOQUIMICA.ADICIONAR"
+          | translate
+      }}
+    </ion-button>
+  </ion-row>
+</ion-footer>

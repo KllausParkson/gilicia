@@ -1,0 +1,52 @@
+<ion-card class="card backgroundCard colorTextApp">
+  <ion-grid fixed>
+    <ion-row class="ion-justify-content-end">
+      <ion-col class="ion-text-end" size="6">
+        <!--{{getDaysName(date.getMonth(), date.getFullYear())}}-->
+        <ion-text color="primary">{{data | date:"shortDate" | titlecase}} - {{horario.substring(0,5) | titlecase}}</ion-text>
+      </ion-col>
+
+    </ion-row>
+
+
+    <ion-row  class="card-title ion-justify-content-between">
+
+      <ion-col class="bold" size="12">
+        <ion-text color="primary">
+          {{"FINANCEIRO.HISTORICO-CLIENTE.HISTORICOOBSERVACAO.PROFISSIONAL" | translate}}:
+        </ion-text>
+        <ion-text>
+          {{nomeProf}}
+        </ion-text>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="card-title ion-justify-content-between">
+    
+      <ion-col class="bold" size="12">
+        <ion-text color="primary">
+          {{"FINANCEIRO.HISTORICO-CLIENTE.HISTORICOOBSERVACAO.SERVICO" | translate}}:
+        </ion-text>
+        <ion-text>
+          {{nomeServ}}
+        </ion-text>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="ion-justify-content-between">
+
+      <ion-col class="bold" size="4">
+        <br>
+        <ion-text color="primary">
+          {{"FINANCEIRO.HISTORICO-CLIENTE.HISTORICOOBSERVACAO.OBSERVACAO" | translate}}:
+        </ion-text>
+      </ion-col>
+
+      <ion-col size="8" class="ion-text-end">
+        <br>
+        <ion-text>{{observacao}} </ion-text>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+</ion-card>
